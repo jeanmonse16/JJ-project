@@ -1,6 +1,6 @@
 import React from 'react'
-import InputGroup from '../login/InputGroup'
-import Go from '../login/Go'
+import InputGroup from './InputGroup'
+import Go from './Go'
 
 const LoginForm = () =>{
     return(
@@ -15,14 +15,14 @@ const LoginForm = () =>{
                             <div className="remember"><input type="checkbox" id="remember" /><label htmlFor="remember">Recordar</label></div>
                             <a href="#" className="forgot">¿Olvidaste tu contraseña?</a>
                         </div>
-                        <Go goText="INICIAR SECCION"/>
+                        <Go goText="INICIAR SESIÓN"/>
                     </form>
                 </div>
             </div>
             <div className="section">
                 <div className="login-text">
                     <p>Inicia seccion en tu cuenta de TaskMaster</p>
-                    <p>¿no tienes una cuenta?</p>
+                    <p className="no-account">¿no tienes una cuenta?</p>
                     <div className="access-register">
                         <button>REGISTRARSE</button>
                     </div>
