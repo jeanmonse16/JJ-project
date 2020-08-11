@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.login-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/login-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    position: absolute;
+}
+.login-container .login-center{
+    width: 100%;
+    min-width: 700px;
+    min-height: 400px;
+    margin-top: 5%;
+}
+.login-container .login-center .section{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.login-container .login-center .section .login-form{
+    margin: 6% auto 5%;
+    width: 70%;
+    min-width: 300px;
+    min-height: 400px;
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/login-bg-df.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border: solid 5px white;
+    border-radius: 15px;
+}
+.login-container .login-center .section .login-form h2{
+    padding-top: 45px;
+    padding-bottom: 25px;
+    color: #2bcbba;
+    font-weight: 800;
+}
+.login-container .login-center .section .login-form .input-group{
+    position: relative;
+    width: 60%;
+    min-width: 250px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.login-container .login-center .section .login-form .input-group input{
+    height: 40px;
+    width: 100%;
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: solid 2px black;
+}
+.login-container .login-center .section .login-form .input-group input:focus{
+    outline: 0;
+}
+.login-container .login-center .section .login-form .login-options{
+    width: 60%;
+    min-width: 250px;
+    margin: auto;
+    height: 20px;
+    margin-bottom: 25px;
+    color: white;
+    position: relative;
+}
+.login-container .login-center .section .login-form .login-options .remember{
+    position: absolute;
+    left: 0;
+}
+.login-container .login-center .section .login-form .login-options .remember input{
+    margin-right: 10px;
+}
+.login-container .login-center .section .login-form .login-options .forgot{
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    color: white;
+}
+.login-container .login-center .section .login-form .login-options .forgot:hover{
+    text-decoration: underline;
+}
+.login-container .login-center .section .login-form .btn{
+    background-color: #2bcbba;
+    border: solid 2px black;
+    padding: 12px;
+    border-radius: 20px;
+    width: 60%;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transform: scale(1);
+}
+.login-container .login-center .section .login-form .btn:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.login-container .login-center .section .login-form .btn:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.login-container .login-center .section .login-text{
+    margin: 25% auto;
+    width: 95%;
+    min-width: 300px;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.login-container .login-center .section .login-text .access-register{
+    width: 100%;
+    margin-top: 20px;
+}
+.login-container .login-center .section .login-text .access-register button{
+    text-decoration: none;
+    color: white;
+    text-shadow: none;
+    background-color: #2bcbba;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+.login-container .login-center .section .login-text .access-register button:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.login-container .login-center .section .login-text .access-register button:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
