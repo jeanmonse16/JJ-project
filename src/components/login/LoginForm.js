@@ -17,6 +17,12 @@ const LoginForm = () =>{
                         </div>
                         <Go goText="INICIAR SESIÓN"/>
                     </form>
+                    <div className="login-thro-text">
+                        <p>Ó</p>
+                        <p>INGRESA A TRAVÉS DE TU CUENTA DE:</p>
+                    </div>
+                    <button className="login-thro"><i className="login-icons fab fa-facebook-f"></i></button>
+                    <button className="login-thro"><i className="login-icons fab fa-google"></i></button>
                 </div>
             </div>
             <div className="section">

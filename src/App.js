@@ -4,6 +4,6 @@ import Register from './pages/Register'
 
 export default () =>{
     return(
-        <Register />
+        <Login />
     )
 }

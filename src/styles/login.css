@@ -16,7 +16,7 @@
     width: 100%;
     min-width: 700px;
     min-height: 400px;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 .login-container .login-center .section{
     float: left;
@@ -24,7 +24,7 @@
     text-align: center;
 }
 .login-container .login-center .section .login-form{
-    margin: 6% auto 5%;
+    margin: auto;
     width: 70%;
     min-width: 300px;
     min-height: 400px;
@@ -145,4 +145,38 @@
     outline: 0;
     box-shadow: black 0 0 5px;
     transform: scale(1);
+}
+.login-container .login-center .section .login-form .login-thro-text{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2bcbba;
+    font-weight: 1000;
+    text-shadow: black 0 0 5px;
+}
+.login-container .login-center .section .login-form .login-thro{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    background-color: white;
+    border: solid 2px black;
+    padding: 10px;
+    border-radius: 20px;
+    width: 20%;
+    transform: scale(1);
+}
+.login-container .login-center .section .login-form .login-thro:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.login-container .login-center .section .login-form .login-thro:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.login-container .login-center .section .login-form .login-thro .login-icons{
+    font-size: 20px;
+    color: #2bcbba;
 }

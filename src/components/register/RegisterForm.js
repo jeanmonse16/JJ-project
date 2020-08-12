@@ -23,6 +23,12 @@ const RegisterForm = () =>{
                         <InputGroup inputType="password" inputId="confirmedPassword" inputPlaceHolder="Confirma tu contraseña"/>
                         <Go goText="REGISTARSE"/>
                     </form>
+                    <div className="register-thro-text">
+                        <p>Ó</p>
+                        <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
+                    </div>
+                    <button className="register-thro"><i className="register-icons fab fa-facebook-f"></i></button>
+                    <button className="register-thro"><i className="register-icons fab fa-google"></i></button>
                 </div>
             </div>
         </div>
