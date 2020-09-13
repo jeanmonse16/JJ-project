@@ -5,7 +5,7 @@ import Go from './Go'
 const LoginForm = () =>{
     return(
         <div className="login-center">
-            <div className="section">
+            <div className="section-left">
                 <div className=" login-form">
                     <h2>INGRESA</h2>
                     <form>
@@ -25,10 +25,10 @@ const LoginForm = () =>{
                     <button className="login-thro"><i className="login-icons fab fa-google"></i></button>
                 </div>
             </div>
-            <div className="section">
+            <div className="section-right">
                 <div className="login-text">
                     <p>Inicia seccion en tu cuenta de TaskMaster</p>
-                    <p className="no-account">¿no tienes una cuenta?</p>
+                    <p className="no-account">¿No tienes una cuenta?</p>
                     <div className="access-register">
                         <button>REGISTRARSE</button>
                     </div>
