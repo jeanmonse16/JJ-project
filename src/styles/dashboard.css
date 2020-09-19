@@ -8,32 +8,26 @@
     height: 60px;
     border-bottom: solid 1px black;
     background-color: #2bcbba;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    z-index: 200;
+
+    /*FLEX*/
     display: flex;
-    justify-content: center;
-    z-index: 20;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center{
-    width: 90%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-between;
+.dashboard-container .dashboard-top-container .section{
+    flex: 1 1;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section{
-    width: 300px;
-}
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .hamburger-menu{
+.dashboard-container .dashboard-top-container .section .hamburger-button{
+    position: relative;
+    left: 20px;
     width: 50px;
     margin-top: 17px;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .hamburger-menu:hover{
+.dashboard-container .dashboard-top-container .section .hamburger-button .hamburger:hover{
     cursor: pointer;
     color: black;
     transform: scale(1.1);
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .hamburger .line{
+.dashboard-container .dashboard-top-container .section .hamburger-button .hamburger .line{
     display: block;
     width: 33px;
     height: 3px;
@@ -41,68 +35,229 @@
     border-radius: 3px;
     background-color: black;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .logo{
+.dashboard-container .dashboard-top-container .section .logo{
     text-align: center;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .logo img{
+.dashboard-container .dashboard-top-container .section .logo img{
     height: 50px;
     width: 50px;
     margin-top: 5px;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu{
+.dashboard-container .dashboard-top-container .section{
     position: relative;
     width: 100%;
     height: 60px;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu label{
+.dashboard-container .dashboard-top-container .section .notification-button{
     position: absolute;
-    right: 125px;
-    font-size: 18px;
-    margin-top: 17.5px;
-    transform: scale(1);
-}
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu label:hover{
-    cursor: pointer;
-    text-decoration: underline;
-    transform: scale(1.1);
-}
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .notification-button{
-    position: absolute;
-    right: 60px;
+    right: 240px;
     height: 60px;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .notification-button button{
+.dashboard-container .dashboard-top-container .section .notification-button label{
     position: absolute;
     z-index: 1;
     top: 5px;
     right: 0;
+    font-size: 12.5px;
     background-color: #fc5c65;
     border: solid 1px black;
     border-radius: 3px;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .notification-button button:hover{
+.dashboard-container .dashboard-top-container .section .notification-button label:hover{
     cursor: pointer;
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .notification-button .notification-button-icon{
+.dashboard-container .dashboard-top-container .section .notification-button .notification-button-icon{
     font-size: 30px;
     margin-top: 15px;
     cursor: pointer;
     transform: scale(1);
 }
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .notification-button .notification-button-icon:hover{
-    cursor: pointer;
-    transform: scale(1.15);
-}
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .exit-button{
-    position: absolute;
-    right: 0;
-    font-size: 40px;
-    margin-top: 10px;
-    transform: scale(1);
-}
-.dashboard-container .dashboard-top-container .dashboard-top-center .section .right-menu .exit-button:hover{
+.dashboard-container .dashboard-top-container .section .notification-button .notification-button-icon:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+.dashboard-container .dashboard-top-container .section .profile-box{
+    position: absolute;
+    right: 20px;
+    height: 60px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashboard-top-container .section .profile-box label{
+    font-size: 18px;
+    margin-right: 15px;
+}
+.dashboard-container .dashboard-top-container .section .profile-box label:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.dashboard-container .dashboard-top-container .section .profile-box img{
+    width: 40px;
+    height: 40px;
+    border: solid 5px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.dashboard-container .dashboard-top-container .section .profile-box img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container{
+    position: absolute;
+    left: 0; 
+    top: 61px;
+    width: 280px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 1px 5px black;
+    display: none;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box{
+    list-style: none;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label{
+    position: relative;
+    padding: 10px 10px 10px 30px;
+    font-size: 15px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .hamburger-option-icon{
+    font-size: 15px;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .derecha{
+    position: absolute;
+    right: 10px;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .izquierda{
+    position: absolute;
+    left: 10px;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box ul{
+    display: block;
+}
+.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box ul li label{
+    padding: 10px 10px 10px 50px;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container{
+    position: absolute;
+    right: 5px; 
+    top: 61px;
+    width: 300px;
+    height: 395px;
+    padding: 30px 10px 10px 10px;
+    filter: drop-shadow(0 1px 2px black);
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: white;
+    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 83px 20px, 73px 0, 63px 20px, 0 20px);
+    content: '';
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 5px;
+    
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description{
+    width: 80%;
+    height: 60px;
+    border-left: solid 1px rgb(175, 175, 175);
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description .title{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 2.5px 10px 2.5px 10px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    text-align: left;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description .description-text{
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+    overflow: hidden;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-view{
+    width: 20%;
+    height: 60px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-view .notification-view-icon{
+    font-size: 30px;
+    color: black;
+}
+.dashboard-container .dashboard-top-container .profile-menu-container{
+    position: absolute;
+    right: 5px; 
+    top: 61px;
+    width: 180px;
+    padding: 30px 10px 10px 10px;
+    filter: drop-shadow(0 1px 2px black);
+    display: none;
+}
+.dashboard-container .dashboard-top-container .profile-menu-container::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: white;
+    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 170px 20px, 160px 0, 150px 20px, 0 20px);
+    content: '';
+}
+.dashboard-container .dashboard-top-container .profile-menu-container label{
+    position: relative;
+    padding: 10px 10px 10px 30px;
+    font-size: 15px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashboard-top-container .profile-menu-container label:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dashboard-container .dashboard-top-container .profile-menu-container label .profile-option-icon{
+    position: absolute;
+    left: 10px;
 }
 .dashboard-container .principal-menu-container{
     position: fixed;
@@ -110,52 +265,88 @@
     width: 100%;
     height: 30px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
-    z-index: 30;
+    z-index: 100;
     background-color: white;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
-.dashboard-container .principal-menu-container nav{
-    width: 90%;
-    margin: auto;
-}
-.dashboard-container .principal-menu-container nav ul{
-    list-style: none;
-}
-.dashboard-container .principal-menu-container nav ul li{
-    margin-top: 3.5px;
-    height: 26.5px;
-    display: inline-block;
-    transform: scale(1);
-}
-.dashboard-container .principal-menu-container nav ul li:hover{
-    transform: scale(1.1);
-}
-.dashboard-container .principal-menu-container nav ul li label{
+.dashboard-container .principal-menu-container label{
+    position: relative;
     font-size: 15px;
-    margin-right: 20px;
+    line-height: 30px;
+    padding: 0 12.5px 0 12.5px;
 }
-.dashboard-container .principal-menu-container nav ul li label:hover{
+.dashboard-container .principal-menu-container label:hover{
+    background-color: rgb(230, 230, 230);
     cursor: pointer;
     text-decoration: underline;
+}
+.dashboard-container .principal-menu-container label .options{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+    filter: drop-shadow(0 2px 2px black);
+
+    /*FLEX*/
+    display: none;
+    flex-direction: column;
+}
+.dashboard-container .principal-menu-container label:hover > .options{
+    display: flex;
+}
+.dashboard-container .principal-menu-container label .options label{
+    font-size: 15px;
+    line-height: 25px;
+}
+.dashboard-container .principal-menu-container label .options .search-task-container{
+    position: relative;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dashboard-container .principal-menu-container label .options .search-task-container input{
+    font-size: 15px;
+    padding: 2px 30px 2px 10px;
+}
+.dashboard-container .principal-menu-container label .options .search-task-container .search-task-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+}
+.dashboard-container .principal-menu-container label .options .search-task-container .search-task-icon:hover{
+    cursor: text;
+}
+.dashboard-container .principal-menu-container label .options hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .dashboard-container .task-container{
     position: absolute;
     top: 90px;
     width: 100%;
-    height: 300px;
 }
 .dashboard-container .task-container .task-center{
     width: 1260px;
     margin: auto;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    /*FLEX*/
     display: flex;
-    justify-content: center;
 }
 .dashboard-container .task-container .task-center .column-container{
     position: relative;
     width: 420px;
+
+    /*FLEX*/
+    flex: 1 1;
 }
-.dashboard-container .task-container .task-center .column-container hr{
+.dashboard-container .task-container .task-center .column-container .separation{
     position: absolute;
     right: 0;
     top: 5px;
@@ -167,7 +358,7 @@
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer{
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 35px;
     margin-top: 10px;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input{
@@ -180,11 +371,11 @@
     border: none;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input:hover{
-    border-bottom: solid 2px black;
+    border-bottom: dashed 2px black;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input:focus{
     outline: none;
-    border-bottom: solid 2px black;
+    border-bottom: dashed 2px black;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon{
     position: absolute;
@@ -199,38 +390,46 @@
     position: relative;
     width: 300px;
     height: 200px;
-    margin: auto;
+    margin: 20px auto 20px auto ;
     background-color: white;
     box-shadow: 0 0 5px black;
     border-radius: 10px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container:hover{
+    transform: scale(1.01);
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header{
-    position: relative;
+    position: absolute;
+    top: 0;
+    z-index: 50;
     width: 100%;
     height: 30px;
-    background-color: #fc5c65;
+    background-color: #2bcbba;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 1px 2px black;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+
+    /*FLEX*/
     display: flex;
     align-items: center;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header label{
     font-size: 15px;
-    margin-left: 20px;
+    font-weight: 500;
+    margin-left: 10px;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header .maxi-button{
     position: absolute;
-    right: 20px;
+    right: 10px;
     font-size: 15px;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header .mini-button{
     position: absolute;
-    right: 45px;
+    right: 35px;
     font-size: 15px;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header .maxi-button:hover,
@@ -239,61 +438,95 @@
     transform: scale(1.1);
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-date{
-    width: 160px;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 30px;
+    filter: drop-shadow(0 0 2px black);
+    font-size: 15px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-date::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 180px;
     height: 30px;
     margin: auto;
-    font-size: 15px;
-    background-color: #fc5c65;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    box-shadow: 0 1px 2px black;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #2bcbba;
+    clip-path: polygon(20% 100%, 80% 100%, 100% 0, 0 0);
+    content: '';
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-date label{
     font-size: 15px;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-description{
-    width: 240px;
+    position: absolute;
+    bottom: 0;
+    width: 220px;
     height: 100px;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     font-size: 15px;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
     margin: auto;
-    margin-top: 20px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    background-color: #fc5c6485;
+    clip-path: polygon(10% 0, 90% 0, 100% 20%, 100% 100%, 0 100%, 0 20%);
+    background-color: #92e4dc;
+    content: '';
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach{
     position: absolute;
     bottom: 0;
-    right: 30px;
     width: 240px;
     height: 50px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    background-color: #fc5c65;
-    box-shadow: 0 -1px 2px black;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+
+    /*FLEX*/
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    margin: auto;
+    background-color: #2bcbba;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    content: '';
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach{
     width: 30px;
     height: 30px;
     margin-left: 5px;
     margin-right: 5px;
-    border: solid 5px #eb3b5a; 
+    border: solid 5px #128579; 
     border-radius: 99rem;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach .new-attach-button{
     color: black;
@@ -304,12 +537,16 @@
     height: 30px;
     margin-left: 5px;
     margin-right: 5px;
-    border: solid 5px #eb3b5a; 
+    border: solid 5px #128579; 
     border-radius: 99rem;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-attach-button{
     color: black;

@@ -8,19 +8,64 @@ const Dashboard = () =>{
     return(
         <div className="dashboard-container">
             <Top 
-                username = "DictadorMarico69"    
+                username = "DictadorMarico69" 
+                notificationAcount="1"
             />
             <div className="principal-menu-container">
-                <nav>
-                    <ul>
-                        <li><label id="add-button">Añadir</label></li>
-                        <li><label id="edit">Edición</label></li>
-                        <li><label id="select">Selección</label></li>
-                        <li><label id="view">Vista</label></li>
-                        <li><label id="search">Buscar</label></li>
-                        <li><label id="help">Ayuda</label></li>
-                    </ul>
-                </nav>
+                <label id="add-btn">Añadir
+                    <div className="options">
+                        <label>Nueva tarea</label>
+                        <label>Nueva Columna</label>
+                    </div>
+                </label>
+                <label id="edit-btn">Edición
+                    <div className="options">
+                        <label>Paso adelante</label>
+                        <label>Paso atrás</label>
+                        <hr />
+                        <label>Editar tarea</label>
+                        <label>Editar Columna</label>
+                        <hr />
+                        <label>Cotar</label>
+                        <label>Copiar</label>
+                        <label>Pegar</label>
+                    </div>
+                </label>
+                <label id="select-btn">Selección
+                    <div className="options">
+                        <label>Todo</label>
+                        <label>Deseleccionar</label>
+                        <label>Volver a seleccionar</label>
+                    </div>
+                </label>
+                <label id="view-btn">Vista
+                    <div className="options">
+                        <label>Cambiar color</label>
+                    </div>
+                </label>
+                <label id="search-btn">Buscar
+                    <div className="options">
+                        <div className="search-task-container">
+                            <input type="text" placeholder="Ingresa el titulo de la tarea" />
+                            <i className="search-task-icon far fa-search"></i>
+                        </div>
+                    </div>
+                </label>
+                <label id="help-btn">Ayuda
+                    <div className="options">
+                        <label>Bienvenida</label>
+                        <label>Documentacion</label>
+                        <label>Trucos y consejos</label>
+                        <hr />
+                        <label>Siguenos en Instagram</label>
+                        <label>Siguenos en Youtube</label>
+                        <label>Siguenos en Twitter</label>
+                        <hr />
+                        <label>Reportar problema</label>
+                        <hr />
+                        <label>Acerca de</label>
+                    </div>
+                </label>
             </div>
             <div className="task-container">
                 <div className="task-center">
@@ -34,14 +79,14 @@ const Dashboard = () =>{
                             date="10/10/10 12:55pm"
                             description="xdd"
                         />
-                        <hr />
+                        <hr className="separation"/>
                     </div>
                     <div className="column-container">
                         <ColumnTitle 
                             title="Eventos"
                             titleId="title-column-2"
                         />
-                        <hr />
+                        <hr className="separation"/>
                     </div>
                     <div className="column-container">
                         <ColumnTitle 
