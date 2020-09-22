@@ -1,0 +1,111 @@
+import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+import { signUp } from '../../_services/user_service'
+import RedirectTo from '../../_utils/RedirectTo'
+import { ValidateMany } from '../../_utils/Validator'
+import { Loader } from '../../_utils/Loader'
+import InputGroup from '../login/InputGroup'
+import Go from '../login/Go'
+
+const RegisterForm = () => {
+  const registerLoader = Loader()
+  const [signUpLoading, setSignUpLoading] = useState(registerLoader.isLoading())
+
+  const [UserData, setUserData] = useState({
+    email: '',
+    password: '',
+    confirmedPassword: ''
+  })
+
+  const onChange = e => {
+    setUserData({
+      ...UserData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    const wrongData = ValidateMany([{ value: UserData.email, type: 'email' }, { value: UserData.password, type: 'password' }, { value: UserData.confirmedPassword, type: 'password' }])
+      .filter(result => result !== 'succesfully Validated')
+
+    if (wrongData.length) {
+      console.error(wrongData[0])
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: wrongData[0]
+      })
+    } else if (UserData.password !== UserData.confirmedPassword) {
+      console.error('Las contraseñas no coinciden')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Las contraseñas no coinciden'
+      })
+    } else {
+      registerLoader.loading()
+      setSignUpLoading(registerLoader.isLoading())
+      signUp(UserData)
+        .then(response => {
+          registerLoader.loaded()
+          setSignUpLoading(registerLoader.isLoading())
+          RedirectTo(`/waiting-for-account-activation?email=${response.data.message.email}`)
+        })
+        .catch(error => {
+          registerLoader.loaded()
+          setSignUpLoading(registerLoader.isLoading())
+          const errorResponse = error.response
+          if (errorResponse.status === 400) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Algo salió mal al procesar tu solicitud, intentalo de nuevo.'
+            })
+          }
+        })
+    }
+  }
+
+  return (
+    <div className='register-center'>
+      <div className='section'>
+        <div className='register-text'>
+          <p>Registrate en TaskMaster</p>
+          <p className='already-account'>¿ya tienes una cuenta?</p>
+          <div className='access-login'>
+            <button onClick={e => RedirectTo('/sign-in', e)}>INICIAR SESIÓN</button>
+          </div>
+        </div>
+      </div>
+      <div className='section'>
+        <div className=' register-form'>
+          <h2>REGISTRATE</h2>
+          <form>
+            <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+            <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+            <InputGroup inputType='password' inputName='confirmedPassword' inputPlaceHolder='Confirma tu contraseña' onChange={onChange} />
+            <Go goText='REGISTARSE' handleClick={onSubmit} loading={signUpLoading} />
+          </form>
+          <div className='register-thro-text'>
+            <p>Ó</p>
+            <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
+          </div>
+          <FacebookLogin
+            appId='928954197608186'
+            autoload
+            callback={(response) => console.log(response)}
+            render={() => (
+              <button className='register-thro' onClick={() => RedirectTo(`${USERS_API}socialauth/facebook`)}><i className='register-icons fab fa-facebook-f' /></button>
+            )}
+          />
+          <button className='register-thro' onClick={() => RedirectTo(`${USERS_API}socialauth/google`)}><i className='register-icons fab fa-google' /></button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default RegisterForm

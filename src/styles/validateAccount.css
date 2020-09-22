@@ -1,0 +1,54 @@
+.validate-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/validate-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+    text-align: center;
+}
+.validate-container .validate-message{
+    width: 40%;
+    margin: auto;
+    min-width: 300px;
+    min-height: 200px;
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/validate-bg-df.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border: solid 5px white;
+    border-radius: 15px;
+    position: relative;
+    margin-top: 5%;
+}
+.validate-container .validate-message p{
+    color: white;
+    font-size: 22px;
+}
+.validate-container .validate-message .validate-text{
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.validate-container .validate-message .btn{
+    background-color: #2bcbba;
+    border: solid 2px black;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 60%;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transform: scale(1);
+}
+.validate-container .validate-message .btn:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.validate-container .validate-message .btn:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
