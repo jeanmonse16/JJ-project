@@ -4,7 +4,7 @@
   "description": "JJ-project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --https --history-api-fallback",
+    "dev": "webpack-dev-server --open --history-api-fallback",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
