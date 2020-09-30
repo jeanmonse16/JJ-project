@@ -75,7 +75,9 @@ module.exports = (env, argv) => {
         template: 'src/index.html'
       }),
       new webpack.DefinePlugin({
-        USERS_API: JSON.stringify('http://localhost:3010/users/')
+        USERS_API: JSON.stringify('http://localhost:3010/users/'),
+        FACEBOOK_APP_ID: JSON.stringify('928954197608186'),
+        GOOGLE_APP_ID: JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
       })
     ]
   }

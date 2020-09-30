@@ -73,3 +73,27 @@ export function sendEmailForPasswordUpdate (email) {
     })
   })
 }
+
+export function facebookSignIn (user) {
+  return Axios({
+    method: 'post',
+    // eslint-disable-next-line no-undef
+    url: `${USERS_API}socialauth/facebook`,
+    headers: {
+      'Content-type': 'application/json'
+    },
+    data: JSON.stringify({ user: user })
+  })
+}
+
+export function googleSignIn (user) {
+  return Axios({
+    method: 'post',
+    // eslint-disable-next-line no-undef
+    url: `${USERS_API}socialauth/google`,
+    headers: {
+      'Content-type': 'application/json'
+    },
+    data: JSON.stringify({ user: user })
+  })
+}

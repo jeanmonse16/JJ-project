@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
+import { FacebookSignIn, GoogleSignIn } from '../../_utils/SocialSignIn'
 import { signUp } from '../../_services/user_service'
 import RedirectTo from '../../_utils/RedirectTo'
 import { ValidateMany } from '../../_utils/Validator'
@@ -93,15 +94,8 @@ const RegisterForm = () => {
             <p>Ó</p>
             <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
           </div>
-          <FacebookLogin
-            appId='928954197608186'
-            autoload
-            callback={(response) => console.log(response)}
-            render={() => (
-              <button className='register-thro' onClick={() => RedirectTo(`${USERS_API}socialauth/facebook`)}><i className='register-icons fab fa-facebook-f' /></button>
-            )}
-          />
-          <button className='register-thro' onClick={() => RedirectTo(`${USERS_API}socialauth/google`)}><i className='register-icons fab fa-google' /></button>
+          <FacebookSignIn page='register' />
+          <GoogleSignIn page='register' />
         </div>
       </div>
     </div>
