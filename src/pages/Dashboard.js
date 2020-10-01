@@ -3,6 +3,7 @@ import '../styles/dashboard.css'
 import Top from '../components/dashboard/Top'
 import ColumnTitle from '../components/dashboard/ColumnTitle'
 import Card from '../components/dashboard/Card'
+import CardModal from '../components/dashboard/CardModal'
 
 const Dashboard = () =>{
     return(
@@ -67,6 +68,7 @@ const Dashboard = () =>{
                     </div>
                 </label>
             </div>
+            <CardModal />
             <div className="task-container">
                 <div className="task-center">
                     <div className="column-container">
@@ -75,8 +77,8 @@ const Dashboard = () =>{
                             titleId="title-column-1"
                         />
                         <Card 
-                            cardTitle="Tarea"
-                            date="10/10/10 12:55pm"
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
                             description="xdd"
                         />
                         <hr className="separation"/>
