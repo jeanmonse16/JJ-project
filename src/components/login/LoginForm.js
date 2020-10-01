@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import InputGroup from './InputGroup'
 import Go from './Go'
 import { ValidateMany } from '../../_utils/Validator'
+import { FacebookSignIn, GoogleSignIn } from '../../_utils/SocialSignIn'
 import { Loader } from '../../_utils/Loader'
 import { signIn } from '../../_services/user_service'
 import RedirectTo from '../../_utils/RedirectTo'
@@ -76,8 +77,10 @@ const LoginForm = () => {
             <p>Ó</p>
             <p>INGRESA A TRAVÉS DE TU CUENTA DE:</p>
           </div>
-          <button className='login-thro'><i className='login-icons fab fa-facebook-f' /></button>
-          <button className='login-thro'><i className='login-icons fab fa-google' /></button>
+          {/* <button className='login-thro'><i className='login-icons fab fa-facebook-f' /></button>
+          <button className='login-thro'><i className='login-icons fab fa-google' /></button> */}
+          <FacebookSignIn page='login' />
+          <GoogleSignIn page='login' />
         </div>
       </div>
       <div className='section'>
