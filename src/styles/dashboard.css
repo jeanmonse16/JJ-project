@@ -7,89 +7,84 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 50px;
     border-bottom: solid 1px black;
     background-color: #2bcbba;
     z-index: 200;
 
     /*FLEX*/
     display: flex;
+    justify-content: space-between;
 }
-.dashboard-container .dashboard-top-container .section{
-    flex: 1 1;
+.dashboard-container .dashboard-top-container{
+    /*FLEX*/
+    display: flex;
+    align-items: center;
 }
-.dashboard-container .dashboard-top-container .section .hamburger-button{
-    position: relative;
-    left: 20px;
-    width: 50px;
-    margin-top: 17px;
+.dashboard-container .dashboard-top-container .hamburger-button{
+    font-size: 30px;
+    margin-left: 20px;
 }
-.dashboard-container .dashboard-top-container .section .hamburger-button .hamburger:hover{
+.dashboard-container .dashboard-top-container .hamburger-button:hover{
     cursor: pointer;
-    color: black;
     transform: scale(1.1);
 }
-.dashboard-container .dashboard-top-container .section .hamburger-button .hamburger .line{
-    display: block;
-    width: 33px;
-    height: 3px;
-    margin-top: 8px;
-    border-radius: 3px;
-    background-color: black;
-}
-.dashboard-container .dashboard-top-container .section .logo{
-    text-align: center;
-}
-.dashboard-container .dashboard-top-container .section .logo img{
-    height: 50px;
-    width: 50px;
-    margin-top: 5px;
-}
 .dashboard-container .dashboard-top-container .section{
-    position: relative;
-    width: 100%;
-    height: 60px;
+    height: 100%;
+
+    /*FLEX*/
+    display: flex;
 }
 .dashboard-container .dashboard-top-container .section .notification-button{
-    position: absolute;
-    right: 240px;
-    height: 60px;
+    position: relative;
+    width: 30px;
+    height: 100%;
+    margin-right: 15px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
 }
-.dashboard-container .dashboard-top-container .section .notification-button label{
-    position: absolute;
-    z-index: 1;
-    top: 5px;
-    right: 0;
-    font-size: 12.5px;
-    background-color: #fc5c65;
-    border: solid 1px black;
-    border-radius: 3px;
-}
-.dashboard-container .dashboard-top-container .section .notification-button label:hover{
-    cursor: pointer;
-}
-.dashboard-container .dashboard-top-container .section .notification-button .notification-button-icon{
+.dashboard-container .dashboard-top-container .section .notification-button .notification-icon{
     font-size: 30px;
-    margin-top: 15px;
-    cursor: pointer;
-    transform: scale(1);
 }
-.dashboard-container .dashboard-top-container .section .notification-button .notification-button-icon:hover{
+.dashboard-container .dashboard-top-container .section .notification-button .notification-icon:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-.dashboard-container .dashboard-top-container .section .profile-box{
+.dashboard-container .dashboard-top-container .section .notification-button .notification-number{
     position: absolute;
-    right: 20px;
-    height: 60px;
+    top: 10px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    background-color: #fc5c65;
+    border: solid 1px black;
+    border-radius: 99rem;
+    z-index: 1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .dashboard-top-container .section .notification-button .notification-number:hover{
+    cursor: pointer;
+}
+.dashboard-container .dashboard-top-container .section .profile-box{
+    margin-right: 20px;
+    height: 100%;
 
     /*FLEX*/
     display: flex;
     align-items: center;
 }
 .dashboard-container .dashboard-top-container .section .profile-box label{
-    font-size: 18px;
-    margin-right: 15px;
+    font-size: 15px;
+    margin-right: 10px;
 }
 .dashboard-container .dashboard-top-container .section .profile-box label:hover{
     cursor: pointer;
@@ -98,7 +93,7 @@
 .dashboard-container .dashboard-top-container .section .profile-box img{
     width: 40px;
     height: 40px;
-    border: solid 5px black;
+    border: solid 1px black;
     border-radius: 99rem;
     object-fit: cover;
     object-position: 50% 50%;
@@ -112,7 +107,7 @@
 .dashboard-container .dashboard-top-container .hamburger-menu-container{
     position: absolute;
     left: 0; 
-    top: 61px;
+    top: 51px;
     width: 300px;
     background-color: white;
     box-shadow: 0 1px 5px black;
@@ -155,7 +150,7 @@
 .dashboard-container .dashboard-top-container .notification-menu-container{
     position: absolute;
     right: 5px; 
-    top: 61px;
+    top: 51px;
     width: 320px;
     height: 375px;
     padding-top: 20px;
@@ -174,7 +169,7 @@
     right: 0;
     z-index: -1;
     background-color: white;
-    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 83px 20px, 73px 0, 63px 20px, 0 20px);
+    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 113px 20px, 103px 0, 93px 20px, 0 20px);
     content: '';
 }
 .dashboard-container .dashboard-top-container .notification-menu-container .notification-section{
@@ -225,7 +220,7 @@
 .dashboard-container .dashboard-top-container .profile-menu-container{
     position: absolute;
     right: 5px; 
-    top: 61px;
+    top: 51px;
     width: 200px;
     padding-top: 20px;
     filter: drop-shadow(0 1px 2px black);
@@ -239,7 +234,7 @@
     right: 0;
     z-index: -1;
     background-color: white;
-    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 170px 20px, 160px 0, 150px 20px, 0 20px);
+    clip-path: polygon(0 100%, 100% 100%, 100% 20px, 175px 20px, 165px 0, 155px 20px, 0 20px);
     content: '';
 }
 .dashboard-container .dashboard-top-container .profile-menu-container label{
@@ -262,7 +257,7 @@
 }
 .dashboard-container .principal-menu-container{
     position: fixed;
-    top: 61px;
+    top: 51px;
     width: 100%;
     height: 30px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -340,7 +335,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     display: none;
 }
 .dashboard-container .dash-modal .dash-body{
@@ -348,9 +342,6 @@
     width: 50%;
     max-width: 650px;
     min-width: 400px;
-    height: 70%;
-    max-height: 450px;
-    min-height: 300px;
     background-color: white;
     border-radius: 5px;
     padding: 20px 50px 20px 50px;
@@ -408,26 +399,134 @@
     display: flex;
 }
 .dashboard-container .dash-modal .dash-body .center .description-area{
-    flex:  1 1;
-    height: 160px;
-    min-height: 140px;
-    max-height: 140px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 100px;
     padding: 10px;
     background-color: white;
     font-size: 15px;
     font-weight: 500;
     border: solid 2px black;
     border-radius: 10px;
+
+    /*FLEX*/
+    flex:  1 1;
 }
 .dashboard-container .dash-modal .dash-body .center .description-area:focus{
     outline: 0;
     border: solid 2px #2bcbba;
     box-shadow: black 0px 0px 5px;
 }
-.dashboard-container .dash-modal .dash-body .center .files-container{
+.dashboard-container .dash-modal .dash-body .files-container{
+    width: 100%;
+    height: 160px;
+    margin-bottom: 30px;
     background-color: white;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container{
+    width: 47.5%;
+    height: 100%;
     border: solid 2px black;
     border-radius: 10px;
+
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop{
+    margin: 4px;
+    border-radius: 5px;
+    text-align: center;
+    border: dashed 3px grey;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop .upload-file-button{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    overflow: hidden;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop .upload-file-button:hover{
+    color: #2bcbba;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop .upload-file-button .upload-file-icon{
+    font-size: 50px;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop .upload-file-button input{
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop .upload-file-button input:hover{
+    cursor: pointer;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-drop-container .file-drop p{
+    margin: 5px;
+    font-size: 12px;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box{
+    width: 47.5%;
+    height: 100%;
+    border: solid 2px black;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot{
+    position: relative;
+    border-bottom: solid 2px black;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot:last-child{
+    border-bottom: none;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .empty{
+    color: gray;
+    font-size: 15px;
+    font-weight: 500;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container:hover{
+    cursor: pointer;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container .file-up-icon{
+    font-size: 25px;
+    padding: 0 10px;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container p{
+    text-align: center;
+    font-size: 15px;
 }
 .dashboard-container .dash-modal .dash-body .bottom{
     width: 100%;
@@ -455,17 +554,8 @@
     box-shadow: black 0 0 5px;
     transform: scale(1);
 }
-
-
-
-
-
-
-
-
 .dashboard-container .task-container{
-    position: absolute;
-    top: 90px;
+    margin-top: 80px;
     width: 100%;
 }
 .dashboard-container .task-container .task-center{
@@ -544,7 +634,7 @@
     position: relative;
     width: 50px;
     height: 100%;
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(215, 215, 215);
 
     /*FLEX*/
     display: flex;
@@ -555,7 +645,7 @@
     width: 250px;
     height: 40px;
     z-index: 50;
-    background-color: #00acc1;
+    background-color: #00bcd4;
 
     /*FLEX*/
     display: flex;
@@ -647,7 +737,7 @@
 .dashboard-container .task-container .task-center .column-container .card-container .card-header{
     width: 100%;
     height: 20px;
-    border-bottom: solid 2px lightgray;
+    box-shadow: 0 1px 3px gray; 
 
     /*FLEX*/
     display: flex;
@@ -667,7 +757,7 @@
 .dashboard-container .task-container .task-center .column-container .card-container .card-date{
     width: 100%;
     height: 40px;
-    border-top: solid 2px lightgray;
+    box-shadow: 0 -1px 3px gray; 
 
     /*FLEX*/
     display: flex;

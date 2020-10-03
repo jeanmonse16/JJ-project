@@ -1,29 +1,17 @@
 import React from 'react'
 import NotificationSection from './NotificationSection'
 
-import logotype from '../../images/logo.png'
 import ProfileImg from '../../images/profile-image.png'
 
 const Top = (props) =>{
     const {username, notificationAcount} = props
     return(
         <div className="dashboard-top-container">
-            <div className="section">
-                <div className="hamburger-button">
-                    <div className="hamburger">
-                        <span className="line" />
-                        <span className="line" />
-                        <span className="line" />
-                    </div>
-                </div>
-            </div>
-            <div className="section">
-                <div className="logo"><img src={logotype}/></div>
-            </div>
+            <i className="hamburger-button far fa-bars"></i>
             <div className="section">
                 <div className="notification-button">
-                    <label>{notificationAcount}</label>
-                    <i className="notification-button-icon far fa-bell"></i>
+                    <div className="notification-number">{notificationAcount}</div>
+                    <i className="notification-icon far fa-bell"></i>
                 </div>
                 <div className="profile-box">
                     <label>{username}</label>

@@ -15,24 +15,19 @@ const Card = (props) =>{
                     </div>
                 </div>
                 <FileAttach
-                    fileColor = "#00bcd4" 
+                    fileColor = "#26c6da" 
                     fileName = "menudeopciones.jpg"
                     fileIcon = "file-attach-icon far fa-file-word"
                 />
                 <FileAttach 
-                    fileColor = "#26c6da" 
+                    fileColor = "#4dd0e1" 
                     fileName = "menudeopciones.jpg"
                     fileIcon = "file-attach-icon far fa-file-powerpoint"
                 />
                 <FileAttach 
-                    fileColor = "#4dd0e1" 
-                    fileName = "menudeopciones.jpg"
-                    fileIcon = "file-attach-icon far fa-file-pdf"
-                />
-                <FileAttach 
                     fileColor = "#80deea" 
                     fileName = "menudeopciones.jpg"
-                    fileIcon = "file-attach-icon far fa-file-image"
+                    fileIcon = "file-attach-icon far fa-file-pdf"
                 />
             </div>
             <div className="card-information">

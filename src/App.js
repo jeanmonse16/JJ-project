@@ -9,6 +9,6 @@ import Dashboard from './pages/Dashboard'
 
 export default () =>{
     return(
-        <Home />
+        <Dashboard />
     )
 }

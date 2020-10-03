@@ -10,7 +10,7 @@ const Dashboard = () =>{
         <div className="dashboard-container">
             <Top 
                 username = "DictadorMarico69" 
-                notificationAcount="1"
+                notificationAcount="9"
             />
             <div className="principal-menu-container">
                 <label id="add-btn">Añadir
