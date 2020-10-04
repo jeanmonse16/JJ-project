@@ -34,6 +34,9 @@ const Dashboard = () =>{
                 </label>
                 <label id="select-btn">Selección
                     <div className="options">
+                        <label>Seleccionar tarea</label>
+                        <label>Seleccionar columna</label>
+                        <hr />
                         <label>Todo</label>
                         <label>Deseleccionar</label>
                         <label>Volver a seleccionar</label>
@@ -81,14 +84,37 @@ const Dashboard = () =>{
                             date="15/10/2020 12:55pm"
                             description="xdd"
                         />
-                        <hr className="separation"/>
+                        <Card 
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
+                            description="xdd"
+                        />
+                        <Card 
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
+                            description="xdd"
+                        />
                     </div>
                     <div className="column-container">
                         <ColumnTitle 
                             title="Eventos"
                             titleId="title-column-2"
                         />
-                        <hr className="separation"/>
+                        <Card 
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
+                            description="xdd"
+                        />
+                        <Card 
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
+                            description="xdd"
+                        />
+                        <Card 
+                            cardTitle="Tarea de matematica"
+                            date="15/10/2020 12:55pm"
+                            description="xdd"
+                        />
                     </div>
                     <div className="column-container">
                         <ColumnTitle 

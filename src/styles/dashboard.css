@@ -1,11 +1,13 @@
 .dashboard-container{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
 }
 .dashboard-container .dashboard-top-container{
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 50px;
     border-bottom: solid 1px black;
@@ -14,12 +16,8 @@
 
     /*FLEX*/
     display: flex;
-    justify-content: space-between;
-}
-.dashboard-container .dashboard-top-container{
-    /*FLEX*/
-    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .dashboard-container .dashboard-top-container .hamburger-button{
     font-size: 30px;
@@ -256,8 +254,7 @@
     left: 10px;
 }
 .dashboard-container .principal-menu-container{
-    position: fixed;
-    top: 51px;
+    position: sticky;
     width: 100%;
     height: 30px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -318,7 +315,7 @@
     font-size: 15px;
 }
 .dashboard-container .principal-menu-container label .options .search-task-container .search-task-icon:hover{
-    cursor: text;
+    cursor: pointer;
 }
 .dashboard-container .principal-menu-container label .options hr{
     margin-top: 5px;
@@ -555,11 +552,14 @@
     transform: scale(1);
 }
 .dashboard-container .task-container{
-    margin-top: 80px;
-    width: 100%;
+    overflow: hidden;
+
+    /*FLEX*/
+    flex: 1 1;
 }
 .dashboard-container .task-container .task-center{
     width: 1260px;
+    height: 100%;
     margin: auto;
     /*FLEX*/
     display: flex;
@@ -567,24 +567,33 @@
 .dashboard-container .task-container .task-center .column-container{
     position: relative;
     width: 420px;
+    height: 100%;
+    margin-top: 5px;
+    border-right: dashed 2px gray;
+    overflow: auto;
 
     /*FLEX*/
     flex: 1 1;
 }
-.dashboard-container .task-container .task-center .column-container .separation{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 1px;
-    height: 600px;
-    background-color: black;
-    border: none;
+.dashboard-container .task-container .task-center .column-container::-webkit-scrollbar{
+    width: 15px;
+}
+.dashboard-container .task-container .task-center .column-container::-webkit-scrollbar-thumb{
+    background-color: #2bcbba;
+    border-radius: 10px;
+    border: solid 5px white;
+    display: none;
+}
+.dashboard-container .task-container .task-center .column-container:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.dashboard-container .task-container .task-center .column-container:last-child{
+    border-right: none;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer{
     position: relative;
     width: 100%;
     height: 35px;
-    margin-top: 10px;
 
     /*FLEX*/
     display: flex;
@@ -612,7 +621,7 @@
     font-size: 20px;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon:hover{
-    cursor: text;
+    cursor: pointer;
 }
 .dashboard-container .task-container .task-center .column-container .card-container{
     position: relative;
