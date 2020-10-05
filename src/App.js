@@ -1,6 +1,5 @@
 import React from 'react'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import LogSign from './pages/LogSign'
 import Validate from './pages/ValidateAccount'
 import Waiting from './pages/WaitingActivation'
 import Home from './pages/Home'
@@ -9,6 +8,6 @@ import Dashboard from './pages/Dashboard'
 
 export default () =>{
     return(
-        <Dashboard />
+        <LogSign />
     )
 }

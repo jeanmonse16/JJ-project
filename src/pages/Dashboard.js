@@ -49,9 +49,14 @@ const Dashboard = () =>{
                 </label>
                 <label id="search-btn">Buscar
                     <div className="options">
-                        <div className="search-task-container">
+                        <div className="search-container">
                             <input type="text" placeholder="Ingresa el titulo de la tarea" />
-                            <i className="search-task-icon far fa-search"></i>
+                            <i className="search-icon far fa-search"></i>
+                        </div>
+                        <hr />
+                        <div className="search-container">
+                            <input type="text" placeholder="Ingresa el titulo de la columna" />
+                            <i className="search-icon far fa-search"></i>
                         </div>
                     </div>
                 </label>

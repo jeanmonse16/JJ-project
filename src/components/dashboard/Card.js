@@ -7,11 +7,12 @@ const Card = (props) =>{
         <div className="card-container">
             <div className="card-attach">
                 <div className="new-attach">
+                    <input type="file" />
                     <div className="new-title">
-                        <p>Click para añadir un archivo</p>
+                        <p>Click para subir un archivo</p>
                     </div>
                     <div className="new-attach-button">
-                        <i className="new-attach-icon fas fa-plus"></i>
+                        <i className="new-attach-icon far fa-plus"></i>
                     </div>
                 </div>
                 <FileAttach

@@ -47,7 +47,7 @@ const CardModal = () =>{
                             <FileUploaded 
                                 fileColor = "#80deea" 
                                 fileUpIcon = "file-up-icon far fa-file-pdf"
-                                fileUpName = "examendematematicas.jpg"
+                                fileUpName = "examendematematicarrrrrrrrrrrrrrdddds.jpg"
                             />
                         </div>
                         <div className="file-slot">

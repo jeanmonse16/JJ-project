@@ -296,7 +296,7 @@
     padding: 5px 0 5px 10px;
     font-size: 15px;
 }
-.dashboard-container .principal-menu-container label .options .search-task-container{
+.dashboard-container .principal-menu-container label .options .search-container{
     position: relative;
 
     /*FLEX*/
@@ -304,17 +304,17 @@
     flex-direction: column;
     justify-content: center;
 }
-.dashboard-container .principal-menu-container label .options .search-task-container input{
+.dashboard-container .principal-menu-container label .options .search-container input{
     border: none;
     font-size: 15px;
     padding: 10px 30px 10px 10px;
 }
-.dashboard-container .principal-menu-container label .options .search-task-container .search-task-icon{
+.dashboard-container .principal-menu-container label .options .search-container .search-icon{
     position: absolute;
     right: 10px;
     font-size: 15px;
 }
-.dashboard-container .principal-menu-container label .options .search-task-container .search-task-icon:hover{
+.dashboard-container .principal-menu-container label .options .search-container .search-icon:hover{
     cursor: pointer;
 }
 .dashboard-container .principal-menu-container label .options hr{
@@ -509,7 +509,6 @@
     height: 100%;
     background-color: white;
 
-    
     /*FLEX*/
     display: flex;
     align-items: center;
@@ -519,11 +518,25 @@
 }
 .dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container .file-up-icon{
     font-size: 25px;
-    padding: 0 10px;
+    margin: 0 10px;
 }
 .dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container p{
-    text-align: center;
     font-size: 15px;
+    margin-right: 5px;
+    overflow: hidden;
+
+    /*FLEX*/
+    flex: 1 1;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container .file-delete{
+    width: 20px;
+    margin-left: auto;
+    margin-right: 5px;
+    font-size: 18px;
+}
+.dashboard-container .dash-modal .dash-body .files-container .file-box .file-slot .file-up-container .file-delete:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 .dashboard-container .dash-modal .dash-body .bottom{
     width: 100%;
@@ -650,6 +663,7 @@
     flex-direction: column;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach{
+    position: relative;
     margin-left: -200px;
     width: 250px;
     height: 40px;
@@ -660,6 +674,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach input{
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach input:hover{
+    cursor: pointer;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .new-attach .new-title{
     width: 200px;

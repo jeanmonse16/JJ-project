@@ -6,6 +6,7 @@ const FileUploaded = (props) =>{
         <div className="file-up-container" style={{backgroundColor: `${fileColor}`}}>
             <i className={fileUpIcon}></i>
             <p>{fileUpName}</p>
+            <i className=" file-delete far fa-trash"></i>
         </div>
     )
 }
