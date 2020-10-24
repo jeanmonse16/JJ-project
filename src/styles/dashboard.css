@@ -157,7 +157,6 @@
     /*FLEX*/
     display: flex;
     flex-direction: column;
-    display: none;
 }
 .dashboard-container .dashboard-top-container .notification-menu-container::before{
     position: absolute;

@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NotificationSection from './NotificationSection'
 
 import ProfileImg from '../../images/profile-image.png'
 
 const Top = (props) =>{
     const {username, notificationAcount} = props
+    const [deploy, setDeploy] = useState(true)
+    const className = deploy ? "none" : ""
+
     return(
         <div className="dashboard-top-container">
             <i className="hamburger-button far fa-bars"></i>
             <div className="section">
-                <div className="notification-button">
+                <div className="notification-button" onClick={() => setDeploy(!deploy)}>
                     <div className="notification-number">{notificationAcount}</div>
                     <i className="notification-icon far fa-bell"></i>
                 </div>
@@ -39,7 +42,7 @@ const Top = (props) =>{
                     </li>
                 </ul>
             </div>
-            <div className="notification-menu-container">
+            <div className="notification-menu-container" style={{display: `${className}`}}>
                 <NotificationSection 
                     notificationTitle="Tarea caducada"   
                     notificationDescriptionText='La tarea Nº1 "Examen de matamaticas" se ha cadicad/a hace 12 horas'
