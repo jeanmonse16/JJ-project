@@ -8,6 +8,8 @@ import WaitingForActivation from './pages/WaitingActivation'
 import Home from './pages/Home'
 import PasswordForgotten from './pages/PasswordForgotten'
 import UpdatePassword from './pages/UpdatePassword'
+import Dashboard from './pages/Dashboard'
+import AboutUs from './pages/AboutOf'
 
 export default () => {
   return (
@@ -20,6 +22,8 @@ export default () => {
       <WaitingForActivation path='/waiting-for-account-activation' />
       <PasswordForgotten path='/password-forgotten' />
       <UpdatePassword path='/updateYourPassword' />
+      <AboutUs path='about-us' />
+      <Dashboard path='/:user' />
     </Router>
   )
 }

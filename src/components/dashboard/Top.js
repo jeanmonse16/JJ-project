@@ -1,7 +1,7 @@
 import React from 'react'
 import NotificationSection from './NotificationSection'
 
-import ProfileImg from '../../images/profile-image.png'
+import ProfileImg from '../../assets/images/profile-image.png'
 
 const Top = (props) =>{
     const {username, notificationAcount} = props
