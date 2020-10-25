@@ -1,7 +1,7 @@
 import React from 'react'
-import '../styles/register.css'
-import '../fontawesome-pro/all'
-import RegisterForm from '../components/register/RegisterForm'
+import '../assets/styles/register.css'
+import '../assets/fontawesome-pro/all'
+import RegisterForm from '../container/RegisterForm'
 
 export default () => {
   return (

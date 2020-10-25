@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import '../styles/validateAccount.css'
-import InputCamp from '../components/login/InputGroup'
-import Go from '../components/login/Go'
+import '../assets/styles/validateAccount.css'
+import InputCamp from '../components/InputGroup'
+import Go from '../components/Go'
 import { sendEmailForPasswordUpdate as sendEmailForPasswordUpdateRequest } from '../_services/user_service'
 import { ValidateOne } from '../_utils/Validator'
 import { Loader } from '../_utils/Loader'
@@ -49,7 +49,6 @@ export default () => {
           <InputCamp inputType='email' inputName='email' inputPlaceHolder='Ingresa aquí tu email' customStyles onChange={(e) => setUserEmail(e.target.value)} />
           <p>Pisa en el boton de abajo para enviar el link de actualización de contraseña</p>
           <Go goText='Enviar' loading={passwordUpdateLoading} handleClick={sendEmailForPasswordUpdate} />
-
         </div>
       </div>
     </div>

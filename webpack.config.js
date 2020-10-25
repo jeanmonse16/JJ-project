@@ -5,20 +5,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 module.exports = (env, argv) => {
+  console.log(argv)
   const development = {
-    "usersApi": JSON.stringify('http://localhost:3010/users/')
+    "authMethod": JSON.stringify('cookies'),
+    "USERS_API": JSON.stringify('http://localhost:3010/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
   }
 
   const production = {
-    "usersApi": JSON.stringify('not-available-yet/')
+    "authMethod": JSON.stringify('cookies'),
+    "USERS_API": JSON.stringify('http://localhost:3010/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
   }
 
-  const environmentSettings = {
-    // eslint-disable-next-line quote-props
-    "development": development,
-    "production": production,
-    "none": development
+  const local = {
+    "authMethod": JSON.stringify('jwt'),
+    "USERS_API": JSON.stringify('http://localhost:3010/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
   }
+
+  const environtmentSettings = { "development": development, "production": production, "local": local }
 
   return {
     devServer: {
@@ -75,9 +84,7 @@ module.exports = (env, argv) => {
         template: 'src/index.html'
       }),
       new webpack.DefinePlugin({
-        USERS_API: JSON.stringify('http://localhost:3010/users/'),
-        FACEBOOK_APP_ID: JSON.stringify('928954197608186'),
-        GOOGLE_APP_ID: JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
+        ENV: environtmentSettings[argv.mode] || environtmentSettings.local
       })
     ]
   }

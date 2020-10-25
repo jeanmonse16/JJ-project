@@ -46,7 +46,7 @@ export const FacebookSignIn = ({ page }) => {
 
   return (
     <FacebookLogin
-      appId={FACEBOOK_APP_ID}
+      appId={ENV.FACEBOOK_APP_ID}
       autoload
       fields='name, email,picture'
       callback={handleFacebookSignIn}
@@ -97,7 +97,7 @@ export const GoogleSignIn = ({ page }) => {
 
   return (
     <GoogleLogin
-      clientId={GOOGLE_APP_ID}
+      clientId={ENV.GOOGLE_APP_ID}
       render={renderProps => (
         <button className={`${page}-thro`} onClick={renderProps.onClick} disabled={renderProps.disabled}>  {isLoadingSignIn ? <Spinner width='19.06px' height='19.38px' color='#2bcbba' /> : <div> <i className={`${page}-icons fab fa-google`} /> </div>} </button>
       )}

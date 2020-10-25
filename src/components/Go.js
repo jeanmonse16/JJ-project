@@ -1,5 +1,5 @@
 import React from 'react'
-import Spinner from '../../_utils/Spinner'
+import Spinner from '../_utils/Spinner'
 
 const Go = (props) => {
   const { goText, handleClick, loading } = props

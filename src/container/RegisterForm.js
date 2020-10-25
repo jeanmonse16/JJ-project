@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import { FacebookSignIn, GoogleSignIn } from '../../_utils/SocialSignIn'
-import { signUp } from '../../_services/user_service'
-import RedirectTo from '../../_utils/RedirectTo'
-import { ValidateMany } from '../../_utils/Validator'
-import { Loader } from '../../_utils/Loader'
-import InputGroup from '../login/InputGroup'
-import Go from '../login/Go'
+import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
+import { signUp } from '../_services/user_service'
+import RedirectTo from '../_utils/RedirectTo'
+import { ValidateMany } from '../_utils/Validator'
+import { Loader } from '../_utils/Loader'
+import InputGroup from '../components/InputGroup'
+import Go from '../components/Go'
 
 const RegisterForm = () => {
   const registerLoader = Loader()

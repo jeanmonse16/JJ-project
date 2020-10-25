@@ -1,12 +1,14 @@
 import React from 'react'
-import '../styles/login.css'
-import '../fontawesome-pro/all'
-import LoginForm from '../components/login/LoginForm'
+import '../assets/styles/login.css'
+import '../assets/fontawesome-pro/all'
+import LoginForm from '../container/LoginForm'
 
-export default () => {
+const Login = () => {
   return (
     <div className='login-container'>
       <LoginForm />
     </div>
   )
 }
+
+export default Login

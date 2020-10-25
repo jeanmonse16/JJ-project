@@ -4,8 +4,8 @@ import { activateAccount as activateAccountRequest } from '../_services/user_ser
 import { Loader } from '../_utils/Loader'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import RedirectTo from '../_utils/RedirectTo'
-import '../styles/validateAccount.css'
-import Go from '../components/login/Go'
+import '../assets/styles/validateAccount.css'
+import Go from '../components/Go'
 import Spinner from '../_utils/Spinner'
 
 export default () => {

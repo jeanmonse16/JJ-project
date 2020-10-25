@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from '@reach/router'
+import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
-import InputGroup from './InputGroup'
-import Go from './Go'
-import { ValidateMany } from '../../_utils/Validator'
-import { FacebookSignIn, GoogleSignIn } from '../../_utils/SocialSignIn'
-import { Loader } from '../../_utils/Loader'
-import { signIn } from '../../_services/user_service'
-import RedirectTo from '../../_utils/RedirectTo'
+import InputGroup from '../components/InputGroup'
+import Go from '../components/Go'
+import { ValidateMany } from '../_utils/Validator'
+import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
+import { Loader } from '../_utils/Loader'
+import { signIn } from '../_services/user_service'
+import RedirectTo from '../_utils/RedirectTo'
+import { setUserSession } from '../_actions'
+import AuthMethod from '../AuthMethod'
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const loginLoader = Loader()
   const [signInLoading, setSignInLoading] = useState(loginLoader.isLoading())
 
@@ -30,7 +34,6 @@ const LoginForm = () => {
       .filter(result => result !== 'succesfully Validated')
 
     if (wrongData.length) {
-      console.error(wrongData[0])
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -41,20 +44,21 @@ const LoginForm = () => {
       setSignInLoading(loginLoader.isLoading())
       signIn(userInfo)
         .then(response => {
-          loginLoader.loaded()
-          setSignInLoading(loginLoader.isLoading())
-          console.log(response.data)
+          AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
+          RedirectTo('/dashboard')
         })
         .catch(error => {
-          loginLoader.loaded()
-          setSignInLoading(loginLoader.isLoading())
-          if (error.response.status === 400) {
+          if (error.response.status && error.response.status === 400) {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
               text: 'Algo salió mal o las Credenciales son inválidas, intentalo de nuevo.'
             })
           }
+        })
+        .finally(() => {
+          loginLoader.loaded()
+          setSignInLoading(loginLoader.isLoading())
         })
     }
   }
@@ -69,7 +73,7 @@ const LoginForm = () => {
             <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
             <div className='login-options'>
               <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
-              <a href='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</a>
+              <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
             </div>
             <Go goText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
           </form>
@@ -96,4 +100,12 @@ const LoginForm = () => {
   )
 }
 
-export default LoginForm
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = {
+  setUserSession
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

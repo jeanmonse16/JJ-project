@@ -5,7 +5,7 @@ export function signUp (user) {
   return Axios({
     method: 'post',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}auth/signup`,
+    url: `${ENV.USERS_API}auth/signup`,
     headers: {
       'Content-type': 'application/json'
     },
@@ -22,7 +22,7 @@ export function checkForAccountVerification (email) {
   return Axios({
     method: 'get',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}auth/checkForAccountVerification?email=${email}`,
+    url: `${ENV.USERS_API}auth/checkForAccountVerification?email=${email}`,
     headers: { 'Content-type': 'application/json' }
   })
 }
@@ -31,7 +31,7 @@ export function resendEmailForVerification (email) {
   return Axios({
     method: 'get',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}auth/resendEmailForActivation/${email}`,
+    url: `${ENV.USERS_API}auth/resendEmailForActivation/${email}`,
     headers: { 'Content-type': 'application/json' }
   })
 }
@@ -39,7 +39,7 @@ export function resendEmailForVerification (email) {
 export function activateAccount (hash) {
   return Axios({
     method: 'put',
-    url: `${USERS_API}auth/activate-account/${hash}`
+    url: `${ENV.USERS_API}auth/activate-account/${hash}`
   })
 }
 
@@ -47,10 +47,11 @@ export function signIn (user) {
   return Axios({
     method: 'post',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}auth/login`,
+    url: `${ENV.USERS_API}auth/login`,
     headers: {
       'Content-type': 'application/json'
     },
+    withCredentials: true,
     data: JSON.stringify({
       user: {
         email: user.email,
@@ -64,7 +65,7 @@ export function sendEmailForPasswordUpdate (email) {
   return Axios({
     method: 'post',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}auth/sendEmailForPasswordUpdate`,
+    url: `${ENV.USERS_API}auth/sendEmailForPasswordUpdate`,
     headers: {
       'Content-type': 'application/json'
     },
@@ -78,7 +79,7 @@ export function facebookSignIn (user) {
   return Axios({
     method: 'post',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}socialauth/facebook`,
+    url: `${ENV.USERS_API}socialauth/facebook`,
     headers: {
       'Content-type': 'application/json'
     },
@@ -90,10 +91,21 @@ export function googleSignIn (user) {
   return Axios({
     method: 'post',
     // eslint-disable-next-line no-undef
-    url: `${USERS_API}socialauth/google`,
+    url: `${ENV.USERS_API}socialauth/google`,
     headers: {
       'Content-type': 'application/json'
     },
     data: JSON.stringify({ user: user })
+  })
+}
+
+export function cookie () {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: 'http://localhost:3010/cookies',
+    headers: {
+      'Content-type': 'application/json'
+    }
   })
 }

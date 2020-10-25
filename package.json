@@ -4,7 +4,8 @@
   "description": "JJ-project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --https --history-api-fallback",
+    "dev": "webpack-dev-server --https --history-api-fallback  --mode=development",
+    "localDev": "webpack-dev-server --https --history-api-fallback  --mode=none",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -46,6 +47,9 @@
     "react-google-login": "^5.1.21",
     "react-icons": "3.7.0",
     "react-loader-spinner": "^3.1.14",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "sass": "1.22.12",
     "styled-components": "5.0.1",
     "sweetalert2": "^10.0.2"

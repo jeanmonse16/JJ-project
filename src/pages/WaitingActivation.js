@@ -5,9 +5,9 @@ import { checkForAccountVerification as checkForAccountVerificationRequest, rese
 import RedirectTo from '../_utils/RedirectTo'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import { Loader } from '../_utils/Loader'
-import '../styles/waitingActivation.css'
+import '../assets/styles/waitingActivation.css'
 import Spinner from '../_utils/Spinner'
-import Go from '../components/login/Go'
+import Go from '../components/Go'
 
 export default () => {
   /* ejemplo de como manejar parametros con la clase URLSEARCHPARAMS
