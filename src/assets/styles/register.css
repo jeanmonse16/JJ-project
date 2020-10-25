@@ -35,11 +35,13 @@
     border-radius: 15px;
 }
 .register-container .register-center .section .register-form h2{
-    padding-top: 40px;
+    padding-top: 30px;
     padding-bottom: 25px;
     color: #2bcbba;
-    font-weight: 1000;
+    font-size: 30px;
+    font-weight: 800;
     text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
 }
 .register-container .register-center .section .register-form .input-group{
     position: relative;
@@ -95,9 +97,16 @@
     color: white;
     text-shadow: 3px 3px 3px black;
 }
+.register-container .register-center .section .register-text p{
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
 .register-container .register-center .section .register-text .already-account{
     margin-top: 30px;
-    font-size: 25px;
+    font-size: 30px;
 }
 .register-container .register-center .section .register-text .access-login{
     width: 100%;
@@ -129,8 +138,9 @@
     margin-top: 20px;
     margin-bottom: 20px;
     color: #2bcbba;
-    font-weight: 1000;
+    font-weight: 800;
     text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 1.5px black;
 }
 .register-container .register-center .section .register-form .register-thro{
     margin-left: 10px;

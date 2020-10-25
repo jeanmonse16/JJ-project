@@ -11,6 +11,8 @@ import Arrow from '../assets/images/arrow.png'
 import SecondArrow from '../assets/images/arrow-2.png'
 import Check from '../assets/images/check.png'
 import Shield from '../assets/images/shield.png'
+import TaskMasterModeIcon from '../assets/images/taskmaster-mode-icon.png'
+import ThirdSectionBg from '../assets/images/third-section-bg.jpg'
 
 const Home = (props) => {
   const redirectToSignUp = event => {
@@ -56,7 +58,7 @@ const Home = (props) => {
             <div className='mode-box'>
               <div className='modes'>
                 <div className='modes-icon-container'>
-                  <i className='modes-icon fas fa-angle-double-down' />
+                  <img src={TaskMasterModeIcon} />
                 </div>
                 <div className='modes-text'>
                   <p>MODO TASKMASTER</p>
@@ -108,6 +110,10 @@ const Home = (props) => {
         </div>
       </div>
       <div className='third-section'>
+        <ul>
+          <li><img src={ThirdSectionBg} /></li>
+          <li><img src={ThirdSectionBg} /></li>
+        </ul>
         <div className='third-section-text'>
           <p className='title'>Gestiona miles y miles de tareas</p>
           <p className='subtitle'>con tu cuenta de TaskMaster</p>

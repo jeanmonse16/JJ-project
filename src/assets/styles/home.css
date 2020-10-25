@@ -17,42 +17,28 @@
     color: white;
 }
 .home-container .first-section .welcome .welcome-text{
-    width: 85%;
-    max-width: 900px;
-    margin: auto;
     font-size: 50px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 3px rgb(0, 0, 0);
-}
-.home-container .first-section .welcome .activities{
-    width: 75%;
-    max-width: 650px;
-    margin: auto;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 .home-container .first-section .welcome .activities label{
     padding: 15px;
     font-size: 35px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 .home-container .first-section .welcome .activities img{
     height: 25px;
 }
 .home-container .first-section .welcome .more{
-    width: 25%;
-    max-width: 300px;
-    margin: auto;
     font-size: 35px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 .home-container .first-section .welcome .only-page{
-    width: 35%;
-    max-width: 450px;
-    margin: auto;
     font-size: 45px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
@@ -138,13 +124,17 @@
     cursor: pointer;
     transform: scale(1.1);
 }
-
 .home-container .second-section .left-section .modes-container .mode-box .bottom{
     margin-top: 30px;
 }
 .home-container .second-section .left-section .modes-container .mode-box .modes-icon-container{
     width: 100%;
     height: 80%;
+    text-align: center;
+}
+.home-container .second-section .left-section .modes-container .mode-box .modes-icon-container img{
+    width: 130px;
+    margin-top: 30px;
     text-align: center;
 }
 .home-container .second-section .left-section .modes-container .mode-box .modes-icon-container .modes-icon{
@@ -195,12 +185,29 @@
     color: #2bcbba;
 }
 .home-container .third-section{
+    overflow: hidden;
     position: relative;
     height: 630px;
     width: 100%;
     background-color: #f1f1f1;
-    background-image: url('../images/third-section-bg.jpg');
+}
+.home-container .third-section ul{
+    display: flex;
+    position: absolute;
+    width: 200%;
+    animation: slider 20s infinite linear;
+}
+.home-container .third-section ul li{
+    width: 100%;
+    list-style: none;
+}
+.home-container .third-section ul li img{
+    width: 100%;
     background-size: cover;
+}
+@keyframes slider {
+    0% {margin-left: 0%;}
+    100%{margin-left: -100%;}
 }
 .home-container .third-section .third-section-text{
     position: absolute;
