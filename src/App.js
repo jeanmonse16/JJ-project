@@ -1,5 +1,4 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Router } from '@reach/router'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -23,7 +22,7 @@ export default () => {
       <PasswordForgotten path='/password-forgotten' />
       <UpdatePassword path='/updateYourPassword' />
       <AboutUs path='about-us' />
-      <Dashboard path='/:user' />
+      <Dashboard path='/dashboard' />
     </Router>
   )
 }

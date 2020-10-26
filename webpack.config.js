@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 module.exports = (env, argv) => {
-  console.log(argv)
   const development = {
     "authMethod": JSON.stringify('cookies'),
     "USERS_API": JSON.stringify('http://localhost:3010/users/'),
