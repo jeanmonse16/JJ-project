@@ -6,7 +6,7 @@ import { Loader } from './Loader'
 import Spinner from './Spinner'
 import Swal from 'sweetalert2'
 
-export const FacebookSignIn = ({ page }) => {
+export const FacebookSignIn = ({ page, authAction }) => {
   const facebookLoader = Loader()
   const [isLoadingSignIn, setIsLoadingSignIn] = useState(false)
 
@@ -28,9 +28,10 @@ export const FacebookSignIn = ({ page }) => {
         setIsLoadingSignIn(facebookLoader.isLoading())
         Swal.fire({
           icon: 'success',
-          title: 'Benvigut',
-          text: 'Disfruta de taskmaster mientras exponemos tus datos'
+          title: 'Bienvenido',
+          text: 'Disfruta de taskmaster!'
         })
+        setTimeout(() => authAction(response), 3000)
       })
       .catch(error => {
         console.log(error)
@@ -39,7 +40,7 @@ export const FacebookSignIn = ({ page }) => {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Algo salió mal, intentalo de nuevo crack'
+          text: 'Algo salió mal, intentalo de nuevo'
         })
       })
   }
@@ -57,7 +58,7 @@ export const FacebookSignIn = ({ page }) => {
   )
 }
 
-export const GoogleSignIn = ({ page }) => {
+export const GoogleSignIn = ({ page, authAction }) => {
   const googleLoader = Loader()
   const [isLoadingSignIn, setIsLoadingSignIn] = useState(false)
 
@@ -82,6 +83,7 @@ export const GoogleSignIn = ({ page }) => {
           title: 'Benvigut',
           text: 'Disfruta de taskmaster mientras exponemos tus datos'
         })
+        setTimeout(() => authAction(response), 3000)
       })
       .catch(error => {
         console.log(error)

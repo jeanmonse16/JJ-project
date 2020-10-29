@@ -14,7 +14,7 @@ const Header = () => {
       <div className='menu-container'>
         <div className='menu-border'>
           <Link to='/welcome' className='menu-botton-left activated'>INICIO</Link>
-          <Link to='/about' className='menu-botton'>ACERCA DE</Link>
+          <Link to='/about-us' className='menu-botton'>ACERCA DE</Link>
           <Link to='/sign-in' className='menu-botton'>INGRESAR</Link>
           <Link to='/sign-up' className='menu-botton-right'>REGISTRARSE</Link>
         </div>

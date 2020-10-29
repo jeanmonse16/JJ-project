@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
@@ -13,6 +13,7 @@ import { setUserSession } from '../_actions'
 import AuthMethod from '../AuthMethod'
 
 const LoginForm = (props) => {
+  const mountedRef = useRef(true)
   const loginLoader = Loader()
   const [signInLoading, setSignInLoading] = useState(loginLoader.isLoading())
 
@@ -46,13 +47,26 @@ const LoginForm = (props) => {
         .then(response => {
           AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
           RedirectTo('/dashboard')
+          if (!mountedRef.current) return null
         })
         .catch(error => {
-          if (error.response.status && error.response.status === 400) {
+          if (error.response.data.message === 'SOCIAL_SIGN_USER!!!') {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Este usuario esta registrado a través de Google o Facebook.'
+            })
+          } else if (error.response && error.response.status === 400) {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
               text: 'Algo salió mal o las Credenciales son inválidas, intentalo de nuevo.'
+            })
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Algo salió mal, intentalo de nuevo.'
             })
           }
         })
@@ -63,9 +77,20 @@ const LoginForm = (props) => {
     }
   }
 
+  const authAction = (response) => {
+    AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
+    RedirectTo('/dashboard')
+  }
+
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false
+    }
+  }, [])
+
   return (
     <div className='login-center'>
-      <div className='section'>
+      <div className='section-left'>
         <div className='login-form'>
           <h2>INGRESA</h2>
           <form>
@@ -83,11 +108,11 @@ const LoginForm = (props) => {
           </div>
           {/* <button className='login-thro'><i className='login-icons fab fa-facebook-f' /></button>
           <button className='login-thro'><i className='login-icons fab fa-google' /></button> */}
-          <FacebookSignIn page='login' />
-          <GoogleSignIn page='login' />
+          <FacebookSignIn page='login' authAction={authAction} />
+          <GoogleSignIn page='login' authAction={authAction} />
         </div>
       </div>
-      <div className='section'>
+      <div className='section-right'>
         <div className='login-text'>
           <p>Inicia seccion en tu cuenta de TaskMaster</p>
           <p className='no-account'>¿no tienes una cuenta?</p>

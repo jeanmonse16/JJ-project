@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { setUserSession } from '../_actions'
+import AuthMethod from '../AuthMethod'
 import Swal from 'sweetalert2'
 import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
 import { signUp } from '../_services/user_service'
@@ -9,7 +12,7 @@ import { Loader } from '../_utils/Loader'
 import InputGroup from '../components/InputGroup'
 import Go from '../components/Go'
 
-const RegisterForm = () => {
+const RegisterForm = (props) => {
   const registerLoader = Loader()
   const [signUpLoading, setSignUpLoading] = useState(registerLoader.isLoading())
 
@@ -70,6 +73,11 @@ const RegisterForm = () => {
     }
   }
 
+  const authAction = (response) => {
+    AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
+    RedirectTo('/dashboard')
+  }
+
   return (
     <div className='register-center'>
       <div className='section'>
@@ -94,12 +102,16 @@ const RegisterForm = () => {
             <p>Ó</p>
             <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
           </div>
-          <FacebookSignIn page='register' />
-          <GoogleSignIn page='register' />
+          <FacebookSignIn page='register' authAction={authAction} />
+          <GoogleSignIn page='register' authAction={authAction} />
         </div>
       </div>
     </div>
   )
 }
 
-export default RegisterForm
+const mapDispatchToProps = {
+  setUserSession
+}
+
+export default connect(null, mapDispatchToProps)(RegisterForm)
