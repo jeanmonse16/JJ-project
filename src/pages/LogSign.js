@@ -12,7 +12,7 @@ export default () =>{
             <div className="logSign-box">
                 <div className="section-left">
                     <div className="center">
-                    <p>Utiliza tu cuenta de Facebook o Goolge para ingresar</p>
+                    <p>Utiliza tu cuenta de Facebook o Google para ingresar</p>
                     <button className="facebook"><i className="facebook-icon fab fa-facebook-f"></i>Ingresar con Facebook</button>
                     <button className="google"><img className="google-icon" src={GoogleLogo}/> Ingresar con Google</button>
                     <p>Tu informacion personal esta protegida y reguardada a todo momento contra amenazas</p>

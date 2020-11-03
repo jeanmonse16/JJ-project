@@ -4,7 +4,7 @@ import Go from './Go'
 
 const LoginForm = () =>{
     return(
-        <div className=" login-form">
+        <div className="login-form">
             <h1>TaskMaster</h1>
             <p>Ingresa tus datos para acceder a tu cuenta</p>
             <form>
