@@ -1,13 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { Router, Redirect } from '@reach/router'
 import LogSign from './pages/LogSign'
-import Validate from './pages/ValidateAccount'
-import Waiting from './pages/WaitingActivation'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import ActivateAccount from './pages/ValidateAccount'
+import WaitingForActivation from './pages/WaitingActivation'
 import Home from './pages/Home'
-import AboutOf from './pages/AboutOf'
+import PasswordForgotten from './pages/PasswordForgotten'
+import UpdatePassword from './pages/UpdatePassword'
 import Dashboard from './pages/Dashboard'
+import AboutUs from './pages/AboutOf'
+import { setUserSession } from './_actions'
 
-export default () =>{
-    return(
-        <Dashboard />
-    )
+const App = (props) => {
+  const [isAuth, setIsAuth] = useState(function () {
+    return props.userSession
+  })
+
+  return (
+    <Router>
+      {isAuth() && <Redirect noThrow from='sign-up' to='/dashboard' />}
+      {isAuth() && <Redirect noThrow from='sign-in' to='/dashboard' />}
+      {isAuth() && <Redirect noThrow from='activate-account' to='/dashboard' />}
+      {isAuth() && <Redirect noThrow from='waiting-for-account-activation' to='/dashboard' />}
+      {isAuth() && <Redirect noThrow from='password-forgotten' to='/dashboard' />}
+      {isAuth() && <Redirect noThrow from='updateYourPassword' to='/dashboard' />}
+      {!isAuth() && <Redirect noThrow from='dashboard' to='/sign-in' />}
+      <Home default />
+      <Home path='/' />
+      <Dashboard path='/dashboard' />
+      <Register path='/sign-up' />
+      <Login path='/sign-in' />
+      <ActivateAccount path='/activate-account' />
+      <WaitingForActivation path='/waiting-for-account-activation' />
+      <PasswordForgotten path='/password-forgotten' />
+      <UpdatePassword path='/updateYourPassword' />
+      <AboutUs path='about-us' />
+    </Router>
+  )
 }
+
+const mapStateToProps = state => ({
+  ...state
+})
+
+const mapDispatchToProps = {
+  setUserSession
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

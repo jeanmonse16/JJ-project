@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/dashboard.css'
+import '../assets/styles/dashboard.css'
 import Top from '../components/dashboard/Top'
 import ColumnTitle from '../components/dashboard/ColumnTitle'
 import Card from '../components/dashboard/Card'
@@ -130,7 +130,7 @@ const Dashboard = () =>{
                 </div>
             </div>
         </div>
-    )
+  )
 }
 
 export default Dashboard

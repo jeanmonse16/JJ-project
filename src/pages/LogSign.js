@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/logSign.css'
+import '../assets/styles/logSign.css'
 import '../fontawesome-pro/all'
 import LoginForm from '../components/login/LoginForm'
 import RegisterForm from '../components/register/RegisterForm'
