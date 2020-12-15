@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import '../assets/styles/validateAccount.css'
-import InputCamp from '../components/InputGroup'
-import Go from '../components/Go'
+import InputGroup from '../components/InputGroup'
+import ButtonGroup from '../components/ButtonGroup'
 import { sendEmailForPasswordUpdate as sendEmailForPasswordUpdateRequest } from '../_services/user_service'
 import { ValidateOne } from '../_utils/Validator'
 import { Loader } from '../_utils/Loader'
@@ -42,13 +41,13 @@ export default () => {
   }
 
   return (
-    <div className='validate-container'>
-      <div className='validate-message'>
-        <div className='validate-text'>
+    <div className='password-forgotten-container'>
+      <div className='password-forgotten-message'>
+        <div className='password-forgotten-text'>
           <p>Ingresa tu correo asociado a una cuenta de <strong>TaskMaster.</strong></p>
-          <InputCamp inputType='email' inputName='email' inputPlaceHolder='Ingresa aquí tu email' customStyles onChange={(e) => setUserEmail(e.target.value)} />
+          <InputGroup inputType='email' inputName='email' inputPlaceHolder='Ingresa aquí tu email' customStyles onChange={(e) => setUserEmail(e.target.value)} />
           <p>Pisa en el boton de abajo para enviar el link de actualización de contraseña</p>
-          <Go goText='Enviar' loading={passwordUpdateLoading} handleClick={sendEmailForPasswordUpdate} />
+          <ButtonGroup buttonText='ENVIAR' loading={passwordUpdateLoading} handleClick={sendEmailForPasswordUpdate} />
         </div>
       </div>
     </div>

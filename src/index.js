@@ -6,13 +6,18 @@ import App from './App'
 import initialState from './initialState'
 import reducer from './_reducers'
 
+import './assets/styles/styles.css'
+import './assets/fontawesome-pro/all'
+
+import Dashboard from './pages/LogSign'
+
 const store = createStore(reducer, initialState)
 
 const container = document.getElementById('app')
 
 render(
   <Provider store={store}>
-    <App />
+    <Dashboard />
   </Provider>,
   container
 )

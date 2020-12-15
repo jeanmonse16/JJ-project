@@ -1,9 +1,10 @@
 import React from 'react'
-import '../assets/styles/dashboard.css'
 import Top from '../components/dashboard/Top'
-import ColumnTitle from '../components/dashboard/ColumnTitle'
-import Card from '../components/dashboard/Card'
-import CardModal from '../components/dashboard/CardModal'
+import Column from '../components/dashboard/Column'
+import NewTaskModal from '../components/dashboard/NewTaskModal'
+import WelcomeModal from '../components/dashboard/welcomeModal'
+import Tutorial from '../components/dashboard/Tutorial'
+import ProfileModal from '../components/dashboard/ProfileModal'
 
 const Dashboard = () =>{
     return(
@@ -24,12 +25,12 @@ const Dashboard = () =>{
                         <label>Paso adelante</label>
                         <label>Paso atrás</label>
                         <hr />
-                        <label>Editar tarea</label>
-                        <label>Editar Columna</label>
+                        <label>Editar actividad</label>
                         <hr />
-                        <label>Cotar</label>
-                        <label>Copiar</label>
-                        <label>Pegar</label>
+                        <label>Eliminar actividad</label>
+                        <label>Eliminar columna</label>
+                        <hr />
+                        <label>Mover actividad</label>
                     </div>
                 </label>
                 <label id="select-btn">Selección
@@ -37,7 +38,6 @@ const Dashboard = () =>{
                         <label>Seleccionar tarea</label>
                         <label>Seleccionar columna</label>
                         <hr />
-                        <label>Todo</label>
                         <label>Deseleccionar</label>
                         <label>Volver a seleccionar</label>
                     </div>
@@ -76,59 +76,27 @@ const Dashboard = () =>{
                     </div>
                 </label>
             </div>
-            <CardModal />
             <div className="task-container">
                 <div className="task-center">
-                    <div className="column-container">
-                        <ColumnTitle 
-                            title="Tareas"
-                            titleId="title-column-1"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                    </div>
-                    <div className="column-container">
-                        <ColumnTitle 
-                            title="Eventos"
-                            titleId="title-column-2"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                        <Card 
-                            cardTitle="Tarea de matematica"
-                            date="15/10/2020 12:55pm"
-                            description="xdd"
-                        />
-                    </div>
-                    <div className="column-container">
-                        <ColumnTitle 
-                            title="Juegos"
-                            titleId="title-column-3"
-                        />
+                    <Column 
+                        columnNumber="1"
+                    />
+                    <div className="new-column-container">
+                        <div className="new-column-center">
+                            <i className="new-column-icon fal fa-plus"></i>
+                            <p>Añadir nueva columna</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <NewTaskModal />
+            <WelcomeModal />
+            <Tutorial />
+            <ProfileModal
+                userName="DictadorMarico69"
+                userEmail="hermanadeluis@gmail.com"
+                userPassword="********"
+            />
         </div>
   )
 }

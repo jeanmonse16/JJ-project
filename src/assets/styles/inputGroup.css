@@ -1,0 +1,23 @@
+.input-group{
+    position: relative;
+    width: 60%;
+    min-width: 250px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.input-group input{
+    height: 40px;
+    width: 100%;
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: solid 2px black;
+}
+.input-group input:focus{
+    outline: 0;
+    border: solid 2px #2bcbba;
+    box-shadow: black 0px 0px 15px;
+}

@@ -5,9 +5,8 @@ import { checkForAccountVerification as checkForAccountVerificationRequest, rese
 import RedirectTo from '../_utils/RedirectTo'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import { Loader } from '../_utils/Loader'
-import '../assets/styles/waitingActivation.css'
 import Spinner from '../_utils/Spinner'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 
 export default () => {
   /* ejemplo de como manejar parametros con la clase URLSEARCHPARAMS
@@ -79,7 +78,7 @@ export default () => {
               <p>Revisa el link de activación que se te envió a tu correo electrónico</p>
               <div className='resend'>
                 <p>¿No recibiste ningún link de activación en tu correo?</p>
-                <Go goText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending} />
+                <ButtonGroup buttonText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending} />
               </div>
             </div>
           </>

@@ -3,7 +3,7 @@ import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 import InputGroup from '../components/InputGroup'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 import { ValidateMany } from '../_utils/Validator'
 import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
 import { Loader } from '../_utils/Loader'
@@ -89,6 +89,7 @@ const LoginForm = (props) => {
   }, [])
 
   return (
+    /*
     <div className='login-center'>
       <div className='section-left'>
         <div className='login-form'>
@@ -100,15 +101,13 @@ const LoginForm = (props) => {
               <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
               <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
             </div>
-            <Go goText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
+            <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
           </form>
           <div className='login-thro-text'>
             <p>Ó</p>
             <p>INGRESA A TRAVÉS DE TU CUENTA DE:</p>
           </div>
-          {/* <button className='login-thro'><i className='login-icons fab fa-facebook-f' /></button>
-          <button className='login-thro'><i className='login-icons fab fa-google' /></button> */}
-          <FacebookSignIn page='login' authAction={authAction} />
+          <FacebookSignIn page='facebook' authAction={authAction} />
           <GoogleSignIn page='login' authAction={authAction} />
         </div>
       </div>
@@ -122,6 +121,21 @@ const LoginForm = (props) => {
         </div>
       </div>
     </div>
+    */
+    
+
+  <div className='login-form'>
+    <h2>INGRESA</h2>
+    <form>
+      <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+      <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+      <div className='login-options'>
+        <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
+        <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
+      </div>
+      <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
+    </form>
+  </div>
   )
 }
 

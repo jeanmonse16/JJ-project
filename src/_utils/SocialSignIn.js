@@ -5,8 +5,9 @@ import { facebookSignIn as facebookSignInRequest, googleSignIn as googleSignInRe
 import { Loader } from './Loader'
 import Spinner from './Spinner'
 import Swal from 'sweetalert2'
+import GoogleIcon from '../assets/images/G-Logo.png'
 
-export const FacebookSignIn = ({ page, authAction }) => {
+export const FacebookSignIn = ({ customClass, authAction=null }) => {
   const facebookLoader = Loader()
   const [isLoadingSignIn, setIsLoadingSignIn] = useState(false)
 
@@ -52,13 +53,13 @@ export const FacebookSignIn = ({ page, authAction }) => {
       fields='name, email,picture'
       callback={handleFacebookSignIn}
       render={(renderProps) => (
-        <button className={`${page}-thro`} onClick={renderProps.onClick}> {isLoadingSignIn ? <Spinner width='19.06px' height='19.38px' color='#2bcbba' /> : <div> <i className={`${page}-icons fab fa-facebook-f`} /> </div>}</button>
+        <button className={`${customClass}`} onClick={renderProps.onClick}> {isLoadingSignIn ? <Spinner width='19.06px' height='19.38px' color='#2bcbba' /> : <div> <i className="facebook-icon fab fa-facebook-f" /> Ingresar con Facebook</div>}</button>
       )}
     />
   )
 }
 
-export const GoogleSignIn = ({ page, authAction }) => {
+export const GoogleSignIn = ({ customClass, authAction=null }) => {
   const googleLoader = Loader()
   const [isLoadingSignIn, setIsLoadingSignIn] = useState(false)
 
@@ -101,7 +102,7 @@ export const GoogleSignIn = ({ page, authAction }) => {
     <GoogleLogin
       clientId={ENV.GOOGLE_APP_ID}
       render={renderProps => (
-        <button className={`${page}-thro`} onClick={renderProps.onClick} disabled={renderProps.disabled}>  {isLoadingSignIn ? <Spinner width='19.06px' height='19.38px' color='#2bcbba' /> : <div> <i className={`${page}-icons fab fa-google`} /> </div>} </button>
+        <button className={`${customClass}`} onClick={renderProps.onClick} disabled={renderProps.disabled}>  {isLoadingSignIn ? <Spinner width='19.06px' height='19.38px' color='#2bcbba' /> : <div> <img className="google-icon" src={GoogleIcon} />Ingresar con Google</div>} </button>
       )}
       buttonText='Login'
       onSuccess={handleGoogleSignIn}

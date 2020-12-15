@@ -1,4 +1,5 @@
 import React from 'react'
+import '../assets/styles/inputGroup.css'
 
 const InputGroup = (props) => {
   const { inputType, inputName, inputPlaceHolder, onChange, customStyles } = props

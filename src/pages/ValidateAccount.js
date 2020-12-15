@@ -7,8 +7,7 @@ import { activateAccount as activateAccountRequest } from '../_services/user_ser
 import { Loader } from '../_utils/Loader'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import RedirectTo from '../_utils/RedirectTo'
-import '../assets/styles/validateAccount.css'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 import Spinner from '../_utils/Spinner'
 
 const ValidateAccount = (props) => {
@@ -60,12 +59,12 @@ const ValidateAccount = (props) => {
               ? <>
                 <p>Tu cuenta de <strong>TaskMaster</strong> ya estaba activa.</p>
                 <p>Pisa en el boton de abajo para iniciar sesión</p>
-                <Go goText='IR AL SIGN IN' handleClick={() => RedirectTo('/sign-in')} />
+                <ButtonGroup buttonText='IR AL SIGN IN' handleClick={() => RedirectTo('/sign-in')} />
               </>
               : <>
                 <p>Tu cuenta de <strong>TaskMaster</strong> ha sido activada.</p>
                 <p>Pisa en el boton de abajo para ir a tu organizador</p>
-                <Go goText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard} />
+                <ButtonGroup buttonText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard} />
               </>
           // eslint-disable-next-line react/jsx-curly-newline
           }

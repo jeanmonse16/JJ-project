@@ -1,18 +1,26 @@
 import React from 'react'
+import ButtonGroup from '../ButtonGroup'
 import FileUploaded from './FileUploaded'
 
-const CardModal = () =>{
+const NewTaskModal = () =>{
     return(
-        <div className="dash-modal">
-            <div className="dash-body">
-                <i className="dash-exit-icon far fa-times"></i>
-                <h2>Añadir una actividad</h2>
-                <div className="top">
+        <div className="new-task-modal">
+            <div className="new-task-modal-body">
+                <i className="new-task-modal-exit-icon far fa-times"></i>
+                <h2>AÑADIR UNA ACTIVIDAD</h2>
+                <div className="new-task-modal-top">
                     <input type="text" placeholder="TITULO"/>
                     <input type="text" placeholder="DD/MM/AAAA"/>
                 </div>
-                <div className="center">
+                <div className="description-container">
                     <textarea className="description-area" placeholder="DESCRIPCION" />
+                </div>
+                <div className="select-column-container">
+                    <select className="select-column">
+                        <option>ELIGE UNA COLUMNA DONDE GUARDAR LA ACTIVIDAD</option>
+                        <option>Columna numero 1 - Tarea</option>
+                        <option>Columna numero 2 - Juegos</option>
+                    </select>
                 </div>
                 <div className="files-container">
                     <div className="file-drop-container">
@@ -37,27 +45,26 @@ const CardModal = () =>{
                         <div className="file-slot">
                             <label className="empty">- VACIO -</label>
                             <FileUploaded 
-                                fileColor = "#4dd0e1" 
-                                fileUpIcon = "file-up-icon far fa-file-powerpoint"
-                                fileUpName = "examendematematicas.jpg"
+                                fileColor = "#26c6da" 
+                                fileUpIcon = "file-up-icon far fa-file-word"
+                                fileUpName = "examendematematicsdsdsdsdsddsdsas.jpg"
                             />
                         </div>
                         <div className="file-slot">
                             <label className="empty">- VACIO -</label>
-                            <FileUploaded 
-                                fileColor = "#80deea" 
-                                fileUpIcon = "file-up-icon far fa-file-pdf"
-                                fileUpName = "examendematematicarrrrrrrrrrrrrrdddds.jpg"
-                            />
                         </div>
                         <div className="file-slot">
                             <label className="empty">- VACIO -</label>
                         </div>
                     </div>
                 </div>
-                <div className="bottom">
-                    <button className="btn">DESCARTAR</button>
-                    <button className="btn">GUARDAR</button>
+                <div className="new-task-modal-bottom">
+                    <ButtonGroup 
+                        buttonText="DESCARTAR"
+                    />
+                    <ButtonGroup 
+                        buttonText="GUARDAR"
+                    />
                 </div>
 
             </div>
@@ -65,4 +72,4 @@ const CardModal = () =>{
     )
 }
 
-export default CardModal
+export default NewTaskModal

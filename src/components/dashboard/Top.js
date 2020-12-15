@@ -45,17 +45,37 @@ const Top = (props) =>{
             <div className="notification-menu-container" style={{display: `${className}`}}>
                 <NotificationSection 
                     notificationTitle="Tarea caducada"   
-                    notificationDescriptionText='La tarea Nº1 "Examen de matamaticas" se ha cadicad/a hace 12 horas'
-                    notificationIcon="notification-view-icon fal fa-engine-warning"
+                    notificationDescriptionText='La tarea #112156 "Examen de matamaticas" se ha cadicad/a hace 12 horas'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
                 />
                 <NotificationSection 
                     notificationTitle="Reunion caducada"   
-                    notificationDescriptionText='La Reunion Nº13 "Asamblea" se ha cadicado/a hace 2 dias'
-                    notificationIcon="notification-view-icon fal fa-engine-warning"
+                    notificationDescriptionText='La Reunion #13165 "Asamblea" se ha cadicado/a hace 2 dias'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
+                />
+                <NotificationSection 
+                    notificationTitle="Reunion caducada"   
+                    notificationDescriptionText='La Reunion #13165 "Asamblea" se ha cadicado/a hace 2 dias'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
+                />
+                <NotificationSection 
+                    notificationTitle="Reunion caducada"   
+                    notificationDescriptionText='La Reunion #13165 "Asamblea" se ha cadicado/a hace 2 dias'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
+                />
+                <NotificationSection 
+                    notificationTitle="Reunion caducada"   
+                    notificationDescriptionText='La Reunion #13165 "Asamblea" se ha cadicado/a hace 2 dias'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
+                />
+                <NotificationSection 
+                    notificationTitle="Reunion caducada"   
+                    notificationDescriptionText='La Reunion #13165 "Asamblea" se ha cadicado/a hace 2 dias'
+                    notificationIcon="notification-view-icon fas fa-exclamation-circle"
                 />
             </div>
             <div className="profile-menu-container">
-                <label><i className="profile-option-icon far fa-user"></i>Editar perfil</label>
+                <label><i className="profile-option-icon far fa-user"></i>Perfil</label>
                 <label><i className="profile-option-icon fal fa-tools"></i>Soporte y Ayuda</label>
                 <label><i className="profile-option-icon far fa-moon-stars"></i>Modo oscuro</label>
                 <label><i className="profile-option-icon fas fa-chart-bar"></i>Estadisticas</label>

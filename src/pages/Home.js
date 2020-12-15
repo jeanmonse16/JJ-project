@@ -4,9 +4,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { navigate } from '@reach/router'
 
-import '../assets/styles/home.css'
-import '../assets/fontawesome-pro/all'
-
 import Arrow from '../assets/images/arrow.png'
 import SecondArrow from '../assets/images/arrow-2.png'
 import Check from '../assets/images/check.png'
