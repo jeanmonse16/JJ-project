@@ -18,7 +18,7 @@ export const FacebookSignIn = ({ page, authAction }) => {
       facebook_id: response.id,
       facebook_fullname: response.name,
       email: response.email,
-      facebook_picture: response.picture.data.url
+      profile_picture: response.picture.data.url
     }
 
     return facebookSignInRequest(facebookUser)
@@ -71,7 +71,7 @@ export const GoogleSignIn = ({ page, authAction }) => {
       email: response.profileObj.email,
       google_given_name: response.profileObj.givenName,
       google_fullname: response.profileObj.name,
-      google_picture: response.profileObj.imageUrl
+      profile_picture: response.profileObj.imageUrl
     }
     return googleSignInRequest(googleUser)
       .then(response => {
