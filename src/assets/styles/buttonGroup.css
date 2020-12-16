@@ -1,0 +1,21 @@
+.btn{
+    min-width: 120px;
+    padding: 10px;
+    background-color: #2bcbba;
+    border: solid 2px black;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transform: scale(1);
+}
+.btn:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.btn:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
