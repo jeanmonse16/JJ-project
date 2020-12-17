@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Router, Redirect } from '@reach/router'
-import LogSign from './pages/LogSign'
+import Auth from './pages/Auth'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import ActivateAccount from './pages/ValidateAccount'
@@ -30,8 +30,8 @@ const App = (props) => {
       <Home default />
       <Home path='/' />
       <Dashboard path='/dashboard' />
-      <Register path='/sign-up' />
-      <Login path='/sign-in' />
+      <Auth path='/sign-up' />
+      <Auth path='/sign-in' />
       <ActivateAccount path='/activate-account' />
       <WaitingForActivation path='/waiting-for-account-activation' />
       <PasswordForgotten path='/password-forgotten' />

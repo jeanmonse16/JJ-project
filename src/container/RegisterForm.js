@@ -62,13 +62,11 @@ const RegisterForm = (props) => {
           registerLoader.loaded()
           setSignUpLoading(registerLoader.isLoading())
           const errorResponse = error.response
-          if (errorResponse.status === 400) {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Algo salió mal al procesar tu solicitud, intentalo de nuevo.'
-            })
-          }
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo salió mal al procesar tu solicitud, intentalo de nuevo.'
+          })
         })
     }
   }
@@ -79,7 +77,7 @@ const RegisterForm = (props) => {
   }
 
   return (
-    /*<div className='register-center'>
+  /* <div className='register-center'>
       <div className='section'>
         <div className='register-text'>
           <p>Registrate en TaskMaster</p>
@@ -126,4 +124,3 @@ const mapDispatchToProps = {
 }
 
 export default connect(null, mapDispatchToProps)(RegisterForm)
-
