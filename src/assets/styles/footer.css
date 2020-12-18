@@ -36,65 +36,64 @@
     color: #2bcbba;
     transform: scale(1.1);
 }
-.footer-section .footer-container .content .options{
-    float: left;
+.footer-section .footer-container .content .page-options{
+    width: 100%;
+
+    /*FLEX*/
+    display: flex;
+}
+.footer-section .footer-container .content .page-options .page-information{
     width: 70%;
     margin-top: 35px;
     text-align: center;
     font-size: 20px;
 }
-.footer-section .footer-container .content .options a{
+.footer-section .footer-container .content .page-options .page-information a{
     text-decoration: none;
     color: white;
     margin-left: 1%;
     margin-right: 1%;
 }
-.footer-section .footer-container .content .options a:hover{
+.footer-section .footer-container .content .page-options .page-information a:hover{
     text-decoration: underline;
     color: #2bcbba;
 }
-.footer-section .footer-container .content .change-languages{
-    float: left;
+.footer-section .footer-container .content .page-options .change-languages{
     width: 30%;
+
+    /*FLEX*/
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
 }
-.footer-section .footer-container .content .change-languages .language{
-    width: 300px;
+.footer-section .footer-container .content .page-options .change-languages .language{
+    width: 140px;
+    margin-bottom: 10px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
 }
-.footer-section .footer-container .content .change-languages .language .languages-name{
-    float: left;
-    width: 40%;
-    height: 50px;
+.footer-section .footer-container .content .page-options .change-languages .language:last-child{
+    margin-bottom: 0;
 }
-.footer-section .footer-container .content .change-languages .language .languages-name p{
-    margin-top: 15px;
-}
-.footer-section .footer-container .content .change-languages .language .languages-name p:hover{
-    text-decoration: underline;
-    color: #2bcbba;
+.footer-section .footer-container .content .page-options .change-languages .language:hover{
     cursor: pointer;
 }
-.footer-section .footer-container .content .change-languages .language .languages-img{
-    float: left;
-    text-align: left;
-    width: 60%;
-    height: 50px;
+.footer-section .footer-container .content .page-options .change-languages .language:hover > p{
+    text-decoration: underline;
+    color: #2bcbba;
 }
-.footer-section .footer-container .content .change-languages .language .languages-img div{
+.footer-section .footer-container .content .page-options .change-languages .language:hover > img{
+    border: solid 5px #2bcbba;
+}
+.footer-section .footer-container .content .page-options .change-languages .language p{
+    margin-top: 15px;
+}
+.footer-section .footer-container .content .page-options .change-languages .language img{
     width: 30px;
     height: 30px;
     margin-top: 5px;
     border: solid 5px white;
     border-radius: 99rem;
-}
-.footer-section .footer-container .content .change-languages .language .languages-img .spain{
-    background-image: url('../images/spain.png');
-    background-size: cover;
-}
-.footer-section .footer-container .content .change-languages .language .languages-img .usa{
-    background-image: url('../images/usa.png');
-    background-size: cover;
-}
-.footer-section .footer-container .content .change-languages .language .languages-img div:hover{
-    border: solid 5px #2bcbba;
-    cursor: pointer;
 }

@@ -140,7 +140,7 @@ const Home = (props) => {
                 </div>
                 <div className='characteristic-text'>
                   <h1>SEGURO</h1>
-                  <p>toda tu información está asegurada y respaldada</p>
+                  <p>Toda tu información está asegurada y respaldada</p>
                 </div>
               </div>
             </div>
@@ -157,8 +157,8 @@ const Home = (props) => {
             </div>
           </div>
         </div>
-        <div className='down' onClick={() => scrollTo(0)}>
-          <i className='down-icon fas fa-angle-double-down' />
+        <div className='up' onClick={() => scrollTo(0)}>
+          <i className='up-icon fas fa-angle-double-down' />
         </div>
       </div>
       <Footer />

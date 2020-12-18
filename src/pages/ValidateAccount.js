@@ -10,6 +10,7 @@ import RedirectTo from '../_utils/RedirectTo'
 import ButtonGroup from '../components/ButtonGroup'
 import Spinner from '../_utils/Spinner'
 
+
 const ValidateAccount = (props) => {
   const activationHash = GetUrlParameter('activation')
   const activationLoader = Loader()

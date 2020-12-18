@@ -9,7 +9,7 @@ import reducer from './_reducers'
 import './assets/styles/styles.css'
 import './assets/fontawesome-pro/all'
 
-import Dashboard from './pages/LogSign'
+import Dashboard from './pages/PasswordForgotten'
 
 const store = createStore(reducer, initialState)
 
