@@ -17,7 +17,7 @@ const container = document.getElementById('app')
 
 render(
   <Provider store={store}>
-    <Dashboard />
+    <App />
   </Provider>,
   container
 )
