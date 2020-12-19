@@ -109,7 +109,7 @@ const Tutorial = () =>{
                 <div className="tutorial-body">
                     <i className="tutorial-modal-exit-icon far fa-times"></i>
                     <h2>TUTORIAL COMPLETADO</h2>
-                    <i class="check-icon fal fa-check-circle"></i>
+                    <i className="check-icon fal fa-check-circle"></i>
                     <p>¡Felicidades!, Ya has completado el tutorial basico de TaskMaster</p>
                     <label>Para conocer mas funcionalidades que puedes hacer en tu organizador de actividades revisa el apartado de "Trucos y consejos" en la seccion de "Ayuda"</label>
                     <div className="tutorial-button-section">

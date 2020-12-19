@@ -37,7 +37,7 @@ const passwordValidator = (password) => {
         caracterRaro = true
       }
     }
-    if (mayuscula === true && minuscula === true && caracterRaro === true && numero === true) {
+    if (minuscula === true && numero === true) {
       return 1
     }
   }

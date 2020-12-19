@@ -11,6 +11,7 @@ import ButtonGroup from '../components/ButtonGroup'
 import Spinner from '../_utils/Spinner'
 
 
+
 const ValidateAccount = (props) => {
   const activationHash = GetUrlParameter('activation')
   const activationLoader = Loader()
@@ -53,23 +54,23 @@ const ValidateAccount = (props) => {
   return (
     <div className='validate-container'>
       <div className='validate-message'>
-        <div className='validate-text'>
           {isLoadingActivation
-            ? <div> <Spinner color='#fff' height={140} width={400} /> </div>
+            ? <div> <Spinner color='#2bcbba' height={140} width={400} /> </div>
             : userAlreadyActive
               ? <>
-                <p>Tu cuenta de <strong>TaskMaster</strong> ya estaba activa.</p>
-                <p>Pisa en el boton de abajo para iniciar sesión</p>
+                <h2>CUENTA YA ACTIVADA</h2>
+                <p>Tu cuenta de <strong>TaskMaster</strong> ya estaba activa</p>
+                <p>Pulsa en el boton de abajo para iniciar sesión</p>
                 <ButtonGroup buttonText='IR AL SIGN IN' handleClick={() => RedirectTo('/sign-in')} />
               </>
               : <>
-                <p>Tu cuenta de <strong>TaskMaster</strong> ha sido activada.</p>
-                <p>Pisa en el boton de abajo para ir a tu organizador</p>
-                <ButtonGroup buttonText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard} />
+                <h2>CUENTA ACTIVADA</h2>
+                <p>Tu cuenta de <strong>TaskMaster</strong> ha sido activada</p>
+                <p>Pulsa en el boton de abajo para ir a tu organizador</p>
+                <ButtonGroup buttonText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard}/>
               </>
           // eslint-disable-next-line react/jsx-curly-newline
           }
-        </div>
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ import reducer from './_reducers'
 import './assets/styles/styles.css'
 import './assets/fontawesome-pro/all'
 
-import Dashboard from './pages/PasswordForgotten'
+import Dashboard from './pages/Dashboard'
 
 const store = createStore(reducer, initialState)
 
@@ -17,7 +17,7 @@ const container = document.getElementById('app')
 
 render(
   <Provider store={store}>
-    <App />
+    <Dashboard />
   </Provider>,
   container
 )

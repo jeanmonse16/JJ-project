@@ -44,9 +44,9 @@ export default () => {
     <div className='password-forgotten-container'>
       <div className='password-forgotten-message'>
           <h2>¿OLVIDASTE TU CONTRASEÑA?</h2>
-          <p>Ingresa tu correo asociado a una cuenta de <strong>TaskMaster.</strong></p>
+          <p>Ingresa tu correo asociado a una cuenta de <strong>TaskMaster</strong></p>
           <InputGroup inputType='email' inputName='email' inputPlaceHolder='Ingresa aquí tu email' customStyles onChange={(e) => setUserEmail(e.target.value)} />
-          <p>Pisa en el boton de abajo para enviar el link de actualización de contraseña</p>
+          <p>Pulsa en el boton de abajo para enviar el link de actualización de contraseña</p>
           <ButtonGroup buttonText='ENVIAR' loading={passwordUpdateLoading} handleClick={sendEmailForPasswordUpdate} />
       </div>
     </div>

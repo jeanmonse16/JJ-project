@@ -5,6 +5,9 @@ import NewTaskModal from '../components/dashboard/NewTaskModal'
 import WelcomeModal from '../components/dashboard/welcomeModal'
 import Tutorial from '../components/dashboard/Tutorial'
 import ProfileModal from '../components/dashboard/ProfileModal'
+import Loader from '../components/Loader'
+
+const LoadingPage = true
 
 const Dashboard = () => {
   return (
@@ -78,15 +81,18 @@ const Dashboard = () => {
       </div>
       <div className='task-container'>
         <div className='task-center'>
-          <Column
-            columnNumber='1'
-          />
-          <div className='new-column-container'>
-            <div className='new-column-center'>
-              <i className='new-column-icon fal fa-plus' />
-              <p>Añadir nueva columna</p>
+          {LoadingPage ? <Loader LoadingBarText="HERMANA DE LUIS" color="#2bcbba"/> 
+          : <>
+            <Column
+              columnNumber='1'
+            />
+            <div className='new-column-container'>
+              <div className='new-column-center'>
+                <i className='new-column-icon fal fa-plus' />
+                <p>Añadir nueva columna</p>
+              </div>
             </div>
-          </div>
+          </>}
         </div>
       </div>
       <NewTaskModal />

@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard'
 import AboutUs from './pages/AboutOf'
 import { setUserSession } from './_actions'
 
+/*
 const App = (props) => {
   const [isAuth, setIsAuth] = useState(function () {
     return props.userSession
@@ -50,3 +51,4 @@ const mapDispatchToProps = {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
+*/

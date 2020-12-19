@@ -964,24 +964,30 @@
     align-items: center;
 }
 .validate-container .validate-message{
+    position: relative;
     width: 40%;
+    padding: 20px;
     min-width: 300px;
-    min-height: 200px;
     background-color: white;
     border-radius: 5px;
-    position: relative;
+    text-align: center;
+}
+.validate-container .validate-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
 }
 .validate-container .validate-message p{
-    color: white;
     font-size: 22px;
-}
-.validate-container .validate-message .validate-text{
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .validate-container .validate-message .btn{
-    width: 60%;
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -1005,35 +1011,35 @@
 .waiting-container .waiting-message{
     position: relative;
     width: 40%;
-    background-color: white;
+    padding: 20px;
     min-width: 300px;
-    min-height: 300px;
+    background-color: white;
     border-radius: 5px;
+    text-align: center;
 }
 .waiting-container .waiting-message h2{
-    padding-top: 45px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: center;
     color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
     font-weight: 800;
-    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
 }
-.waiting-container .waiting-message .waiting-text p{
-    color: white;
+.waiting-container .waiting-message p{
     font-size: 22px;
-}
-.waiting-container .waiting-message .waiting-text{
-    padding: 20px;
-    margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .waiting-container .waiting-message .resend{
     margin-top: 20px;
 }
 .waiting-container .waiting-message .resend p{
+    color: grey;
     font-size: 18px;
-}
-.waiting-container .waiting-message .resend .btn{
-    width: 60%;
+}   
+.waiting-container .waiting-message .btn{
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -1078,10 +1084,84 @@
 }
 .password-forgotten-container .password-forgotten-message p{
     font-size: 22px;
+    margin-bottom: 10px;
+}
+.password-forgotten-container .password-forgotten-message .input-group{
+    margin-bottom: 10px;
 }
 .password-forgotten-container .password-forgotten-message .btn{
-    margin-top: 20px;
+    width: 40%;
+}
+
+
+/*----------UPDATE PASSWORD PAGE STYLES----------*/
+
+
+.update-password-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/update-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.update-password-container .update-password-message{
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    min-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.update-password-container .update-password-message img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.update-password-container .update-password-message .username{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.update-password-container .update-password-message .input-group{
     width: 60%;
+}
+.update-password-container .update-password-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.update-password-container .update-password-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .input-group{
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .btn{
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -2071,6 +2151,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    display: none;
 }
 .dashboard-container .tutorial-modal .tutorial-start{
     position: fixed;
@@ -2252,6 +2333,7 @@
     padding: 20px 20px 20px 40px;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
+    display: none;
 }
 .dashboard-container .tutorial-modal .tutorial-step-two::before{
     position: absolute;
