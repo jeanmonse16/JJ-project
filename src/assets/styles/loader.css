@@ -17,15 +17,14 @@
 }
 .loader-container .mini-task-container{
     width: 200px;
-    height: 140px;
+    height: 130px;
     
     /*FLEX*/
     display: flex;
-    display: none;
 }
 .loader-container .mini-task-container .mini-column{
     width: 25%;
-    border-right: dashed 3px black;
+    border-right: dashed 3px gray;
 
     /*FLEX*/
     display: flex;
@@ -33,25 +32,86 @@
     align-items: center;
 }
 .loader-container .mini-task-container .mini-column:first-child{
-    border-left: dashed 3px black;
-}
-.loader-container .mini-task-container .mini-column .mini-card{
-    width: 80%;
-    height: 20%;
-    margin-top: 5px;
-    border-radius: 5px;
-    background-color: rgb(70, 70, 70);
+    border-left: dashed 3px gray;
 }
 .loader-container .mini-task-container .mini-column .mini-title{
+    position: relative;
+    top: -20px;
     width: 80%;
-    height: 7.5%;
-    margin-top: 2.5px;
+    height: 10px;
+    margin-top: 3px;
     border-radius: 2.5px;
-    background-color: grey;
-
+    background-color: rgb(90, 90, 90);
+    opacity: 0; 
+    animation: aparecer-titulo infinite 4s ease-out;
 }
+.loader-container .mini-task-container .mini-column .t1{
+    animation-delay: 0s;
+}
+.loader-container .mini-task-container .mini-column .t2{
+    animation-delay: 0.33s;
+}
+.loader-container .mini-task-container .mini-column .t3{
+    animation-delay: 0.66s;
+}
+.loader-container .mini-task-container .mini-column .t4{
+    animation-delay: 1s;
+}
+.loader-container .mini-task-container .mini-column .mini-card{
+    position: relative;
+    top: 20px;
+    width: 80%;
+    height: 30px;
+    margin-top: 7.5px;
+    border-radius: 5px;
+    background-color: gray;
+    opacity: 0;
+    animation: aparecer-carta infinite 4s ease-out;
+}
+
+.loader-container .mini-task-container .mini-column .c1{
+    animation-delay: 0s;
+}
+.loader-container .mini-task-container .mini-column .c2{
+    animation-delay: 0.33s;
+}
+.loader-container .mini-task-container .mini-column .c3{
+    animation-delay: 0.66s;
+}
+
+.loader-container .mini-task-container .mini-column .c4{
+    animation-delay: 0.33s;
+}
+.loader-container .mini-task-container .mini-column .c5{
+    animation-delay: 0.66s;
+}
+.loader-container .mini-task-container .mini-column .c6{
+    animation-delay: 1s;
+}
+
+.loader-container .mini-task-container .mini-column .c7{
+    animation-delay: 0.66s;
+}
+.loader-container .mini-task-container .mini-column .c8{
+    animation-delay: 1s;
+}
+.loader-container .mini-task-container .mini-column .c9{
+    animation-delay: 1.33s;
+}
+
+.loader-container .mini-task-container .mini-column .c10{
+    animation-delay: 1s;
+}
+.loader-container .mini-task-container .mini-column .c11{
+    animation-delay: 1.33s;
+}
+.loader-container .mini-task-container .mini-column .c12{
+    animation-delay: 1.66s;
+}
+
 .loader-container .loading-bar{
     height: 30px;
+    margin-top: 20px;
 
     /*FLEX*/
     display: flex;
@@ -65,7 +125,7 @@
     -webkit-text-stroke: 2px black;
     line-height: 30px;
     opacity: 0;
-    animation: cambiar-color 3s infinite ease-in;
+    animation: cambiar-color 4s infinite ease-in;
 }
 .loader-container .loading-bar div{
     width: 8px;
@@ -78,15 +138,53 @@
 }
 .loader-container .loading-bar div:nth-child(1),
 .loader-container .loading-bar div:nth-child(7){
-    animation: aparecer1 3s infinite ease-in;
+    animation: aparecer1 4s infinite ease-in;
 }
 .loader-container .loading-bar div:nth-child(2),
 .loader-container .loading-bar div:nth-child(6){
-    animation: aparecer2 3s infinite ease-in;
+    animation: aparecer2 4s infinite ease-in;
 }
 .loader-container .loading-bar div:nth-child(3),
 .loader-container .loading-bar div:nth-child(5){
-    animation: aparecer3 3s infinite ease-in;
+    animation: aparecer3 4s infinite ease-in;
+}
+
+@keyframes aparecer-carta{
+    0%{
+        top: 20px;
+        opacity: 0;
+    }
+    30%{
+        top: 0px;
+        opacity: 1;
+    }
+    70%{
+        top: 0px;
+        opacity: 1;
+    }
+    100%{
+        top: 10px;
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer-titulo{
+    0%{
+        top: -20px;
+        opacity: 0;
+    }
+    30%{
+        top: 0px;
+        opacity: 1;
+    }
+    70%{
+        top: 0px;
+        opacity: 1;
+    }
+    100%{
+        top: 10px;
+        opacity: 0;
+    }
 }
 
 @keyframes cambiar-color{

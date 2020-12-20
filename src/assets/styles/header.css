@@ -1,5 +1,7 @@
 .header-container{
-    position: relative;
+    position: absolute;
+    width: 100%;
+    top: 0;
 }
 .header-container .logo-container{
     float: left;

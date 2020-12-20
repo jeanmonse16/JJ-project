@@ -12,6 +12,8 @@ const LoadingPage = true
 const Dashboard = () => {
   return (
     <div className='dashboard-container'>
+      {LoadingPage ? <Loader LoadingBarText="CARGANDO" color="#2bcbba"/> 
+        : <>
       <Top
         username='DictadorMarico69'
         notificationAcount='9'
@@ -81,8 +83,6 @@ const Dashboard = () => {
       </div>
       <div className='task-container'>
         <div className='task-center'>
-          {LoadingPage ? <Loader LoadingBarText="HERMANA DE LUIS" color="#2bcbba"/> 
-          : <>
             <Column
               columnNumber='1'
             />
@@ -92,7 +92,7 @@ const Dashboard = () => {
                 <p>Añadir nueva columna</p>
               </div>
             </div>
-          </>}
+
         </div>
       </div>
       <NewTaskModal />
@@ -103,6 +103,7 @@ const Dashboard = () => {
         userEmail='hermanadeluis@gmail.com'
         userPassword='********'
       />
+      </>}
     </div>
   )
 }
