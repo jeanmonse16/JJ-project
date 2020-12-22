@@ -19,50 +19,51 @@
     width: 100%;
     background-image: url('../images/first-section-bg.jpg');
     background-size: cover;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.home-container .first-section .welcome{
-    position: absolute;
-    top: 175px;
-    width: 100%;
-    min-width: 550px;
-    text-align: center;
+.home-container .first-section .welcome-text{
     color: white;
+    text-align: center;
 }
-.home-container .first-section .welcome .welcome-text{
+.home-container .first-section .welcome-text p{
+    color: white;
+    text-align: center;
     font-size: 50px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
-.home-container .first-section .welcome .activities label{
-    padding: 15px;
+.home-container .first-section .welcome-text .more{
     font-size: 35px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
-.home-container .first-section .welcome .activities img{
-    height: 25px;
-}
-.home-container .first-section .welcome .more{
-    font-size: 35px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
-}
-.home-container .first-section .welcome .only-page{
+.home-container .first-section .welcome-text .only-page{
     font-size: 45px;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2.5px 2.5px 2.5px rgb(0, 0, 0);
 }
-.home-container .first-section .welcome .start-now{
-    width: 100%;
-    margin-top: 25px;
+.home-container .first-section .activities label{
+    margin: 0 15px;
+    font-size: 35px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
-.home-container .first-section .welcome .start-now button{
-    text-decoration: none;
+.home-container .first-section .activities img{
+    height: 25px;
+}
+.home-container .first-section button{
     color: white;
+    margin-top: 25px;
+    text-decoration: none;
     text-shadow: none;
     background-color: #2bcbba;
     font-size: 20px;
@@ -70,52 +71,32 @@
     border-radius: 20px;
     border: solid 2px black;
 }
-.home-container .first-section .welcome .start-now button:hover{
+.home-container .first-section button:hover{
     cursor: pointer;
     box-shadow: black 0 0 5px;
     transform: scale(1.05);
 }
-.home-container .first-section .welcome .start-now button:focus{
+.home-container .first-section button:focus{
     outline: 0;
     box-shadow: black 0 0 5px;
     transform: scale(1);
-}
-.down{
-    position: absolute;
-    bottom: 30px;
-    right: 40px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-size: 70px;
-    color: #2bcbba;
-    transform: scale(1);
-    animation: jump 1s infinite alternate;
-}
-@keyframes jump{
-    0%{bottom: 40px;}
-    100%{bottom: 30px;}
-}
-.down:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    color: rgb(0, 0, 0);
 }
 .home-container .second-section{
     position: relative;
     height: 630px;
     width: 100%;
     background-color: #f1f1f1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
 }
 .home-container .second-section .left-section{
-    float: left;
-    width: 48%;
+    /*FLEX*/
+    flex: 1 1;
 }
 .home-container .second-section .left-section .modes-container{
-    width: 80%;
-    height: 450px;
-    margin: auto;
-    margin-top: 14%;
+    width: 100%;
 }
 .home-container .second-section .left-section .modes-container .mode-box{
     float: left;
@@ -166,48 +147,46 @@
     padding-top: 5px;
 }
 .home-container .second-section .middle-section{
-    float: left;
-    margin-top: 3%;
-    border: solid 1px rgb(202, 202, 202);
     width: 1px;
     height: 550px;
+    border: solid 1px rgb(202, 202, 202);
     background-color: rgb(202, 202, 202);
 }
 .home-container .second-section .right-section{
-    float: left;
-    width: 48%;
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.home-container .second-section .right-section .right-section-text{
-    width: 85%;
-    margin-left: 15%;
-    margin-top: 32.5%;
+.home-container .second-section .right-section p{
+    margin-left: 30px;
     font-size: 50px;
     font-weight: 800;
     color: #2bcbba;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
-.home-container .second-section .right-section .right-section-text .vis{
-    color: #2bcbba;
-}
-.home-container .second-section .right-section .right-section-text .act{
-    color: #2bcbba;;
-}
-.home-container .second-section .right-section .right-section-text .mod{
-    color: #2bcbba;
-}
 .home-container .third-section{
-    overflow: hidden;
     position: relative;
     height: 630px;
     width: 100%;
     background-color: #f1f1f1;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .home-container .third-section ul{
-    display: flex;
     position: absolute;
     width: 200%;
     animation: slider 20s infinite linear;
+
+    /*FLEX*/
+    display: flex;
 }
 .home-container .third-section ul li{
     width: 100%;
@@ -221,27 +200,19 @@
     0% {margin-left: 0%;}
     100%{margin-left: -100%;}
 }
-.home-container .third-section .third-section-text{
-    position: absolute;
-    width: 100%;
-    margin-top: 225px;
+.home-container .third-section p{
+    position: relative;
     color: #2bcbba;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
     text-align: center;
 }
-.home-container .third-section .third-section-text .title{
-    width: 60%;
-    max-width: 800px;
-    margin: auto;
+.home-container .third-section .title{
     font-size: 50px;
     font-weight: 800;
     border-radius: 50px;
 }
-.home-container .third-section .third-section-text .subtitle{
-    width: 42.5%;
-    max-width: 575px;
-    margin: auto;
+.home-container .third-section .subtitle{
     font-size: 40px;
     font-weight: 800;
     border-radius: 40px;
@@ -251,38 +222,27 @@
     height: 630px;
     width: 100%;
     background-color: #f1f1f1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.home-container .four-section .characteristic-container{
-    float: left;
-    width: 100%;
-    height: 630px;
-}
-.home-container .four-section .characteristic-container .characteristic-box{
-    width: 80%;
-    margin: auto;
-    height: 504px;
-    margin-top: 63px;
-}.home-container .four-section .characteristic-container .characteristic-box .characteristic-section{
-    width: 33.33%;
-    float: left;
-    height: 504px;
-}
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic{
-    width: 85%;
-    margin: auto;
-    height: 453.6px;
-    margin-top: 15px;
+.home-container .four-section .characteristic{
+    width: 22.5%;
+    height: 450px;
+    margin: 0 20px;
+    background-color: rgb(255, 255, 255);
     border: solid 10px rgb(173, 173, 173);
     border-radius: 15px;
-    background-color: rgb(255, 255, 255);
     box-shadow: black 0 0 15px;
     transform: scale(1);
 }
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic:hover{
+.home-container .four-section .characteristic:hover{
     transform: scale(1.1);
     cursor: pointer;
 }
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic .characteristic-img{
+.home-container .four-section .characteristic .characteristic-img{
     width: 250px;
     height: 250px;
     text-align: center;
@@ -291,26 +251,63 @@
     border-radius: 99rem;
     border: solid 10px black;
 }
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic .characteristic-img img{
+.home-container .four-section .characteristic .characteristic-img img{
     width: 175px;
     margin-top: 50px;
 }
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic .characteristic-text{
+.home-container .four-section .characteristic h1{
+    margin-top: 10px;
     text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic .characteristic-text h1{
     color: #2bcbba;
     font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
-.home-container .four-section .characteristic-container .characteristic-box .characteristic-section .characteristic .characteristic-text p{
+.home-container .four-section .characteristic p{
+    margin: 0 10px;
+    text-align: center;
     font-size: 25px;
     font-weight: 500;
 }
-
+.home-container .down{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    color: #2bcbba;
+    transform: scale(1);
+    animation: jump 1s infinite alternate;
+}
+.home-container .up{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    color: #2bcbba;
+    transform: scale(1);
+    transform: rotate(180deg);
+    animation: jump 1s infinite alternate;
+}
+@keyframes jump{
+    0%{bottom: 40px;}
+    100%{bottom: 30px;}
+}
+.home-container .down:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+.home-container .up:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
+    color: rgb(0, 0, 0);
+    animation: jump 1s infinite alternate;
+}
 
 /*----------ABOUT OF PAGE STYLES----------*/
 
@@ -939,32 +936,37 @@
     height: 100%;
     position: fixed;
     opacity: 1;
-    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .validate-container .validate-message{
-    width: 40%;
-    margin: auto;
-    min-width: 300px;
-    min-height: 200px;
-    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/validate-bg-df.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    border: solid 5px white;
-    border-radius: 15px;
     position: relative;
-    margin-top: 5%;
+    width: 40%;
+    padding: 20px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.validate-container .validate-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
 }
 .validate-container .validate-message p{
-    color: white;
     font-size: 22px;
-}
-.validate-container .validate-message .validate-text{
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .validate-container .validate-message .btn{
-    width: 60%;
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -979,45 +981,44 @@
     height: 100%;
     position: fixed;
     opacity: 1;
-    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .waiting-container .waiting-message{
-    width: 40%;
-    margin: auto;
-    min-width: 300px;
-    min-height: 300px;
-    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/waiting-bg-df.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    border: solid 5px white;
-    border-radius: 15px;
     position: relative;
-    margin-top: 5%;
+    width: 40%;
+    padding: 20px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
 }
 .waiting-container .waiting-message h2{
-    padding-top: 45px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: center;
     color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
     font-weight: 800;
-    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
 }
-.waiting-container .waiting-message .waiting-text p{
-    color: white;
+.waiting-container .waiting-message p{
     font-size: 22px;
-}
-.waiting-container .waiting-message .waiting-text{
-    padding: 20px;
-    margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 .waiting-container .waiting-message .resend{
     margin-top: 20px;
 }
 .waiting-container .waiting-message .resend p{
+    color: grey;
     font-size: 18px;
-}
-.waiting-container .waiting-message .resend .btn{
-    width: 60%;
+}   
+.waiting-container .waiting-message .btn{
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -1026,52 +1027,120 @@
 
 
 .password-forgotten-container{
-    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/waiting-bg.jpg');
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/password-bg.jpg');
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
     height: 100%;
     position: fixed;
     opacity: 1;
-    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .password-forgotten-container .password-forgotten-message{
-    width: 40%;
-    margin: auto;
-    min-width: 300px;
-    min-height: 300px;
-    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/waiting-bg-df.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    border: solid 5px white;
-    border-radius: 15px;
     position: relative;
-    margin-top: 5%;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    min-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
+.password-forgotten-container .password-forgotten-message .input-group{
+    width: 60%;
 }
 .password-forgotten-container .password-forgotten-message h2{
-    padding-top: 45px;
-    padding-bottom: 25px;
+    margin-bottom: 20px;
+    text-align: center;
     color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
     font-weight: 800;
-    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
 }
-.password-forgotten-container .password-forgotten-message .password-forgotten-text p{
-    color: white;
+.password-forgotten-container .password-forgotten-message p{
     font-size: 22px;
+    margin-bottom: 10px;
 }
-.password-forgotten-container .password-forgotten-message .password-forgotten-text{
+.password-forgotten-container .password-forgotten-message .input-group{
+    margin-bottom: 10px;
+}
+.password-forgotten-container .password-forgotten-message .btn{
+    width: 40%;
+}
+
+
+/*----------UPDATE PASSWORD PAGE STYLES----------*/
+
+
+.update-password-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/update-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.update-password-container .update-password-message{
+    position: relative;
+    width: 40%;
     padding: 20px;
-    margin-top: 0px;
-    margin-bottom: 30px;
+    background-color: white;
+    min-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.password-forgotten-container .password-forgotten-message .resend{
-    margin-top: 20px;
+.update-password-container .update-password-message img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
 }
-.password-forgotten-container .password-forgotten-message .resend p{
-    font-size: 18px;
+.update-password-container .update-password-message .username{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
-.password-forgotten-container .password-forgotten-message .resend .btn{
+.update-password-container .update-password-message .input-group{
     width: 60%;
+}
+.update-password-container .update-password-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.update-password-container .update-password-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .input-group{
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .btn{
+    width: 40%;
+    margin-top: 10px;
 }
 
 
@@ -2271,6 +2340,10 @@
 }
 .dashboard-container .tutorial-modal .tutorial-step-two p{
     margin-bottom: 10px;
+}
+.dashboard-container .tutorial-modal .tutorial-step-two .example{
+    color: gray;
+    text-decoration: underline;
 }
 .dashboard-container .tutorial-modal .tutorial-step-two .btn{
     margin: 0 20px;

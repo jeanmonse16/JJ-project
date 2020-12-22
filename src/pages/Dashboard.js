@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
-import Loading from './Loading'
 import Top from '../components/dashboard/Top'
 import Column from '../components/dashboard/Column'
 import NewTaskModal from '../components/dashboard/NewTaskModal'
 import WelcomeModal from '../components/dashboard/welcomeModal'
 import Tutorial from '../components/dashboard/Tutorial'
 import ProfileModal from '../components/dashboard/ProfileModal'
+import Loading from '../components/Loader'
 import { Loader } from '../_utils/Loader'
 import { getUserProfile as getUserProfileRequest } from '../_services/user_service'
 import { logOutUser, setUserProfile } from '../_actions'
@@ -50,10 +50,11 @@ const Dashboard = (props) => {
   }, [])
 
   return (
-    <>
+
+    <div className='dashboard-container'>
       {isLoadingProfile
         ? <Loading />
-        : <div className='dashboard-container'>
+        : <>
           <Top
             username={props.userData.username || props.userData.alias}
             notificationAcount='9'
@@ -142,8 +143,9 @@ const Dashboard = (props) => {
             userEmail='hermanadeluis@gmail.com'
             userPassword='********'
           />
-          </div>}
-    </>
+          </>}
+    </div>
+
   )
 }
 

@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from '@reach/router'
 import '../assets/styles/footer.css'
 
+import SpainImage from '../assets/images/spain.png'
+import UsaImage from '../assets/images/usa.png'
+
 const Footer = () => {
   return (
     <div className='footer-section'>
@@ -15,20 +18,22 @@ const Footer = () => {
             <Link to='/'><i className='footer-icon fab fa-instagram' /></Link>
             <Link to='/'><i className='footer-icon fab fa-youtube' /></Link>
           </div>
-          <div className='options'>
-            <Link to='/'>Terminos y condiciones</Link>
-            <Link to='/'>Preguntas frecuentes</Link>
-            <Link to='/'>Privacidad</Link>
-            <Link to='/'>Contactenos</Link>
-          </div>
-          <div className='change-languages'>
-            <div className='language'>
-              <div className='languages-name'><p>English</p></div>
-              <div className='languages-img'><div className='usa' /></div>
+          <div className="page-options">
+            <div className='page-information'>
+              <Link to='/'>Terminos y condiciones</Link>
+              <Link to='/'>Preguntas frecuentes</Link>
+              <Link to='/'>Privacidad</Link>
+              <Link to='/'>Contactenos</Link>
             </div>
-            <div className='language'>
-              <div className='languages-name'><p>Español</p></div>
-              <div className='languages-img'><div className='spain' /></div>
+            <div className='change-languages'>
+              <div className='language'>
+                <p>English</p>
+                <img src={UsaImage} />
+              </div>
+              <div className='language'>
+                <p>Español</p>
+                <img src={SpainImage} />
+              </div>
             </div>
           </div>
         </div>

@@ -18,15 +18,15 @@ const Home = (props) => {
   }
 
   const scrollTo = yPosition => window.scrollTo(0, yPosition)
+ /*
 
+ */
   return (
     <div className='home-container'>
       <div className='first-section'>
         <Header />
-        <div className='welcome'>
-          <div className='welcome-text'>
-            <p>Organiza las actividades de tu vida</p>
-          </div>
+        <div className='welcome-text'>
+          <p>Organiza las actividades de tu vida</p>
           <div className='activities'>
             <img src={Arrow} />
             <label>Tareas</label>
@@ -35,15 +35,9 @@ const Home = (props) => {
             <img src={Arrow} />
             <label>Evaluaciones</label>
           </div>
-          <div className='more'>
-            <p>Y muchas más</p>
-          </div>
-          <div className='only-page'>
-            <p>En una sola pagina</p>
-          </div>
-          <div className='start-now'>
-            <button onClick={redirectToSignUp}>¡Comienza Ahora!</button>
-          </div>
+          <p className='more'>Y muchas más</p>
+          <p className='only-page'>En una sola pagina</p>
+          <button onClick={redirectToSignUp}>¡Comienza Ahora!</button>
         </div>
         <div className='down' onClick={() => scrollTo(630)}>
           <i className='down-icon fas fa-angle-double-down' />
@@ -97,9 +91,9 @@ const Home = (props) => {
         <hr className='middle-section' />
         <div className='right-section'>
           <div className='right-section-text'>
-            <p><label className='vis'>Visualiza</label> todas</p>
-            <p>tus <label className='act'>actividades</label> con</p>
-            <p>los diferentes <label className='mod'>modos</label></p>
+            <p>Visualiza todas</p>
+            <p>tus actividades con</p>
+            <p>los diferentes modos</p>
           </div>
         </div>
         <div className='down' onClick={() => scrollTo(1260)}>
@@ -111,54 +105,36 @@ const Home = (props) => {
           <li><img src={ThirdSectionBg} /></li>
           <li><img src={ThirdSectionBg} /></li>
         </ul>
-        <div className='third-section-text'>
           <p className='title'>Gestiona miles y miles de tareas</p>
           <p className='subtitle'>con tu cuenta de TaskMaster</p>
-        </div>
         <div className='down' onClick={() => scrollTo(1920)}>
           <i className='down-icon fas fa-angle-double-down' />
         </div>
       </div>
       <div className='four-section'>
-        <div className='characteristic-container'>
-          <div className='characteristic-box'>
-            <div className='characteristic-section'>
-              <div className='characteristic'>
-                <div className='characteristic-img'>
-                  <img src={Check} />
-                </div>
-                <div className='characteristic-text'>
-                  <h1>CONFIABLE</h1>
-                  <p>Disponible en cualquier momento que lo necesites</p>
-                </div>
-              </div>
-            </div>
-            <div className='characteristic-section'>
-              <div className='characteristic'>
-                <div className='characteristic-img'>
-                  <img src={Shield} />
-                </div>
-                <div className='characteristic-text'>
-                  <h1>SEGURO</h1>
-                  <p>toda tu información está asegurada y respaldada</p>
-                </div>
-              </div>
-            </div>
-            <div className='characteristic-section'>
-              <div className='characteristic'>
-                <div className='characteristic-img'>
-                  <img src={SecondArrow} />
-                </div>
-                <div className='characteristic-text'>
-                  <h1>FÁCIL DE USAR</h1>
-                  <p>Herramientas de gestion intuitivas que permiten un mayor control</p>
-                </div>
-              </div>
-            </div>
+        <div className='characteristic'>
+          <div className='characteristic-img'>
+            <img src={Check} />
           </div>
+            <h1>CONFIABLE</h1>
+            <p>Disponible en cualquier momento que lo necesites</p>
         </div>
-        <div className='down' onClick={() => scrollTo(0)}>
-          <i className='down-icon fas fa-angle-double-down' />
+        <div className='characteristic'>
+          <div className='characteristic-img'>
+            <img src={Shield} />
+          </div>
+            <h1>SEGURO</h1>
+            <p>Toda tu información está asegurada y respaldada</p>
+        </div>
+        <div className='characteristic'>
+          <div className='characteristic-img'>
+            <img src={SecondArrow} />
+          </div>
+            <h1>FÁCIL DE USAR</h1>
+            <p>Herramientas de gestion intuitivas que permiten un mayor control</p>
+        </div>
+        <div className='up' onClick={() => scrollTo(0)}>
+          <i className='up-icon fas fa-angle-double-down' />
         </div>
       </div>
       <Footer />
