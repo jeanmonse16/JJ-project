@@ -54,7 +54,7 @@ const ValidateAccount = (props) => {
   return (
     <div className='validate-container'>
       <div className='validate-message'>
-          {isLoadingActivation
+          {!isLoadingActivation
             ? <div> <Spinner color='#2bcbba' height={140} width={400} /> </div>
             : userAlreadyActive
               ? <>

@@ -7,9 +7,8 @@ export default () => {
     <div className='about-container'>
       <div className='about-top'>
         <Header />
-        <div className='about-top-text'>
           <p>Conoce mas acerca de TaskMaster</p>
-        </div>
+        <div className="wave"></div>
       </div>
       <div className='about-text-section'>
         <div className='about-content'>
