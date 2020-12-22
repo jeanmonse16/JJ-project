@@ -21,3 +21,5 @@ render(
   </Provider>,
   container
 )
+
+window.React = React

@@ -89,7 +89,7 @@ const LoginForm = (props) => {
   }, [])
 
   return (
-    /*
+  /*
     <div className='login-center'>
       <div className='section-left'>
         <div className='login-form'>
@@ -122,20 +122,19 @@ const LoginForm = (props) => {
       </div>
     </div>
     */
-    
 
-  <div className='login-form'>
-    <h2>INGRESA</h2>
-    <form>
-      <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-      <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
-      <div className='login-options'>
-        <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
-        <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
-      </div>
-      <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
-    </form>
-  </div>
+    <div className='login-form'>
+      <h2>INGRESA</h2>
+      <form>
+        <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+        <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+        <div className='login-options'>
+          <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
+          <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
+        </div>
+        <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
+      </form>
+    </div>
   )
 }
 

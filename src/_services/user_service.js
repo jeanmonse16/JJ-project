@@ -109,3 +109,15 @@ export function cookie () {
     }
   })
 }
+
+export function getUserProfile (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}profile`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
