@@ -67,6 +67,7 @@
     padding: 5px 20px 5px 20px;
     border-radius: 20px;
     border: solid 2px black;
+    transition: all 0.5s ease;
 }
 .home-container .first-section button:hover{
     cursor: pointer;
@@ -149,11 +150,32 @@
     box-shadow: black 0 0 15px;
     transform: scale(1);
     transition: all 0.5s ease;
+    animation: agrandar 4s infinite ease;
 }
-.home-container .second-section .left-section .modes:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.home-container .second-section .left-section .modes:nth-child(1){
+    animation-delay: 1s;
 }
+.home-container .second-section .left-section .modes:nth-child(2){
+    animation-delay: 2s;
+}
+.home-container .second-section .left-section .modes:nth-child(3){
+    animation-delay: 4s;
+}
+.home-container .second-section .left-section .modes:nth-child(4){
+    animation-delay: 3s;
+}
+@keyframes agrandar{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }    
+}
+
 .home-container .second-section .left-section .modes-icon-container{
     width: 100%;
     height: 80%;
@@ -364,7 +386,7 @@
     color: #2bcbba;
     transform: scale(1);
     z-index: 10;
-    animation: jump 1s infinite alternate;
+    animation: jump 1s infinite alternate ease;
 }
 .home-container .up{
     position: absolute;
@@ -377,7 +399,7 @@
     color: #2bcbba;
     transform: scale(1);
     transform: rotate(180deg);
-    animation: jump 1s infinite alternate;
+    animation: jump 1s infinite alternate ease;
 }
 @keyframes jump{
     0%{bottom: 40px;}
@@ -415,7 +437,6 @@
 .about-container .about-top p{
     color: white;
     font-size: 50px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
@@ -823,6 +844,7 @@
     font-size: 15px;
     font-weight: 500;
     border: solid 2px black;
+    transition: all 0.5s ease;
 }
 .logSign-container .logSign-box .section-left .center button:hover{
     cursor: pointer;
@@ -845,6 +867,7 @@
 }
 .logSign-container .logSign-box .section-left .center .google{
     background: white;
+    color:  black;
 }
 .logSign-container .logSign-box .section-left .center .google-icon{
     position: absolute;
@@ -889,6 +912,7 @@
     width: 100%;
     position: absolute;
     font-size: 20px;
+    z-index: 10;
 
     /*FLEX*/
     display: flex;
@@ -897,16 +921,47 @@
 .logSign-container .logSign-box .section-right .center .switch .arrow{
     font-size: 15px;
 }
+.logSign-container .logSign-box .section-right .center .switch .sw-btn{
+    position: relative;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: gray;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn:hover::before{
+    width: 100%;
+    background-color: gray;
+}
 .logSign-container .logSign-box .section-right .center .switch .sw-btn:hover{
     cursor: pointer;
-    border-bottom: solid 3px rgb(150, 150, 150);
     transform: scale(1.05);
 }
-.logSign-container .logSign-box .section-right .center .switch .activated{
-    border-bottom: solid 3px #2bcbba;
+.logSign-container .logSign-box .section-right .center .switch .activated::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .activated:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
 }
 .logSign-container .logSign-box .section-right .center .login-form{
     width: 100%;
+    animation: aparecer-form 1s forwards ease;
     
     /*FLEX*/
     flex: 1 1;
@@ -914,6 +969,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@keyframes aparecer-form{
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 .logSign-container .logSign-box .section-right .center .login-form h2{
     font-size: 25px;
@@ -934,20 +997,18 @@
 }
 .logSign-container .logSign-box .section-right .center .login-form form .input-group{
     width: 100%;
-    height: 44px;
     margin-bottom: 10px;
     text-align: center;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options{
-    position: relative;
     width: 100%;
     margin: auto;
     height: 20px;
     margin-bottom: 25px;
-}
-.logSign-container .logSign-box .section-right .center .login-form .login-options .remember{
-    position: absolute;
-    left: 0;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options .remember input{
     margin-right: 10px;
@@ -957,20 +1018,33 @@
     cursor: pointer;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options .forgot{
-    position: absolute;
-    right: 0;
+    position: relative;
     color: black;
     text-decoration: none;
-    border-bottom: solid 2px #2bcbba;
+    
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
 }
-.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot:hover{
-    border-bottom: solid 2px rgb(150, 150, 150);
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot::before{
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
 }
 .logSign-container .logSign-box .section-right .center .login-form .btn{
     width: 80%;
 }
 .logSign-container .logSign-box .section-right .center .register-form{
     width: 100%;
+    animation: aparecer-form 1s forwards ease;
     
     /*FLEX*/
     flex: 1 1;

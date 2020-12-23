@@ -88,18 +88,32 @@
 }
 .footer-section .footer-container .content .social-media .twitter:hover{
     color: #00acee;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 .footer-section .footer-container .content .social-media .facebook:hover{
     color: #3b5998;
-    transform: scale(1.1);
-}
-.footer-section .footer-container .content .social-media .instagram:hover{
-    color: #dd2a7b;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 .footer-section .footer-container .content .social-media .youtube:hover{
     color: #c4302b;
+    transform: scale(1.15);
+}
+.footer-section .footer-container .content .social-media a:nth-child(3){
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s ease;
+}
+.footer-section .footer-container .content .social-media a:nth-child(3) .footer-icon{
+    transition: none;
+    transition: color 0.4s ease;
+}
+.footer-section .footer-container .content .social-media a:nth-child(3):hover{
+    background: url('../images/instagram-logo.png');
+    background-size: 100%;
+    transform: scale(1.1);
+}
+.footer-section .footer-container .content .social-media a:nth-child(3):hover .footer-icon{
+    color: transparent;
     transform: scale(1.1);
 }
 .footer-section .footer-container .content .page-options{
@@ -122,6 +136,7 @@
     text-decoration: none;
     color: white;
     margin: 0 10px;
+    transition: color 0.5s ease;
 }
 .footer-section .footer-container .content .page-options .page-information a:hover{
     color: #2bcbba;
@@ -146,11 +161,14 @@
 }
 .footer-section .footer-container .content .page-options .change-languages .language{
     width: 140px;
-    margin-bottom: 10px;
 
     /*FLEX*/
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+.footer-section .footer-container .content .page-options .change-languages .language label:hover{
+    cursor: pointer;
 }
 .footer-section .footer-container .content .page-options .change-languages .language:last-child{
     margin-bottom: 0;
@@ -158,19 +176,21 @@
 .footer-section .footer-container .content .page-options .change-languages .language:hover{
     cursor: pointer;
 }
-.footer-section .footer-container .content .page-options .change-languages .language:hover > p{
+.footer-section .footer-container .content .page-options .change-languages .language:hover > label{
     color: #2bcbba;
 }
-.footer-section .footer-container .content .page-options .change-languages .language:hover > p .underline{
+.footer-section .footer-container .content .page-options .change-languages .language:hover > label .underline{
     transform: scaleX(1);
 }
 .footer-section .footer-container .content .page-options .change-languages .language:hover > img{
     border: solid 5px #2bcbba;
 }
-.footer-section .footer-container .content .page-options .change-languages .language p{
+.footer-section .footer-container .content .page-options .change-languages .language label{
     margin-top: 15px;
+    font-size: 25px;
+    transition: color 0.5s ease;
 }
-.footer-section .footer-container .content .page-options .change-languages .language p .underline{
+.footer-section .footer-container .content .page-options .change-languages .language label .underline{
     margin-top: 5px;
 }
 .footer-section .footer-container .content .page-options .change-languages .language img{

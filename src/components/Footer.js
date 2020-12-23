@@ -28,11 +28,11 @@ const Footer = () => {
             </div>
             <div className='change-languages'>
               <div className='language'>
-                <p>English<div className="underline"></div></p>
+                <label>English<div className="underline"></div></label>
                 <img src={UsaImage} />
               </div>
               <div className='language'>
-                <p>Español<div className="underline"></div></p>
+                <label>Español<div className="underline"></div></label>
                 <img src={SpainImage} />
               </div>
             </div>
