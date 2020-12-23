@@ -804,9 +804,20 @@
     height: 500px;
     border-radius: 5px;
     overflow: hidden;
+    animation: aparecer-box 1s forwards ease;
 
     /*FLEX*/
     display: flex;
+}
+@keyframes  aparecer-box{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .logSign-container .logSign-box .section-left{
     position: relative;
@@ -1136,6 +1147,7 @@
     background-color: white;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .validate-container .validate-message h2{
     margin-bottom: 20px;
@@ -1151,7 +1163,6 @@
     margin-bottom: 10px;
 }
 .validate-container .validate-message .btn{
-    width: 40%;
     margin-top: 10px;
 }
 
@@ -1181,6 +1192,7 @@
     background-color: white;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .waiting-container .waiting-message h2{
     margin-bottom: 20px;
@@ -1234,6 +1246,7 @@
     min-width: 300px;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .password-forgotten-container .password-forgotten-message .input-group{
     width: 60%;
@@ -1284,6 +1297,7 @@
     min-width: 300px;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 
     /*FLEX*/
     display: flex;
