@@ -1,4 +1,5 @@
 import React from 'react'
+import InputGroup from '../InputGroup'
 import ButtonGroup from '../ButtonGroup'
 import FileUploaded from './FileUploaded'
 
@@ -9,8 +10,8 @@ const NewTaskModal = () =>{
                 <i className="new-task-modal-exit-icon far fa-times"></i>
                 <h2>AÑADIR UNA ACTIVIDAD</h2>
                 <div className="new-task-modal-top">
-                    <input type="text" placeholder="TITULO"/>
-                    <input type="text" placeholder="DD/MM/AAAA"/>
+                    <InputGroup inputType="text" inputPlaceHolder="TITULO"/>
+                    <InputGroup inputType="date"/>
                 </div>
                 <div className="description-container">
                     <textarea className="description-area" placeholder="DESCRIPCION" />

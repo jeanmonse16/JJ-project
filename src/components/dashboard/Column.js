@@ -11,11 +11,7 @@ const Column = (props) =>{
                 titleId="title-column-1"
             />
             <label className="column-number">Columna #{columnNumber}</label>
-            <div className="new-task-btn-container">
-                <button>
-                    <i className="new-task-icon far fa-plus"></i>
-                </button>
-            </div>
+            <button><i className="new-task-icon far fa-plus"></i></button>
             <Card 
                 cardTitle="Tarea de matematica"
                 cardNumber="25055"
