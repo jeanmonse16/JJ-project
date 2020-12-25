@@ -1,14 +1,15 @@
 import React from 'react'
 import ButtonGroup from '../ButtonGroup'
+import InputGroup from '../InputGroup'
 
 import UploadImg from '../../assets/images/profile-image.png'
 
-const welcomeModal = () =>{
+const WelcomeModal = () =>{
     return(
         <div className="welcome-modal">
             <div className="welcome-modal-body">
                 <h2>BIENVENIDO A TASKMASTER</h2>
-                <p>Añade un nombre de usauario y una foto de perfil</p>
+                <p>Añade un nombre de usuario y una foto de perfil</p>
                 <div className="new-profile-image-container">
                     <div className="new-profile-image">
                         <div className="upload-image-icon-container">
@@ -17,11 +18,15 @@ const welcomeModal = () =>{
                         <input type="file"/>
                         <img src={UploadImg}/>
                     </div>
-                    <i className="random-image-icon far fa-dice"></i>
+                    <div className="random-image-container">
+                        <i className="random-image-icon far fa-dice"></i>
+                    </div>
                 </div>
                 <div className="new-username-container">
-                    <input className="new-username" type="text" placeholder="NOMBRE DE USUARIO"/>
-                    <i className="random-usename-icon far fa-dice"></i>
+                    <InputGroup inputType="text" inputPlaceHolder="NOMBRE DE USUARIO"/>
+                    <div className="random-username-container">
+                        <i className="random-image-icon far fa-dice"></i>
+                    </div>
                 </div>
                 <ButtonGroup 
                     buttonText="GUARDAR"
@@ -31,4 +36,4 @@ const welcomeModal = () =>{
     )
 }
 
-export default welcomeModal
+export default WelcomeModal

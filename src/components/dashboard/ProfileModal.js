@@ -54,11 +54,15 @@ const ProfileModal = (props) =>{
                             <input type="file"/>
                             <img src={UserImg}/>
                         </div>
-                        <i className="random-image-icon far fa-dice"></i>
+                        <div className="random-image-container">
+                            <i className="random-image-icon far fa-dice"></i>
+                        </div>
                     </div>
                     <div className="username-container">
                         <input type="text" defaultValue={userName} />
-                        <i className="random-username-icon far fa-dice"></i>
+                        <div className="random-username-container">
+                            <i className="random-image-icon far fa-dice"></i>
+                        </div>
                     </div>
                     <p>CAMBIAR CONTRASEÑA</p>
                     <div className="change-password-container">

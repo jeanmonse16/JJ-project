@@ -2,7 +2,7 @@ import React from 'react'
 import Menu from '../components/dashboard/Menu'
 import Column from '../components/dashboard/Column'
 import NewTaskModal from '../components/dashboard/NewTaskModal'
-import WelcomeModal from '../components/dashboard/welcomeModal'
+import WelcomeModal from '../components/dashboard/WelcomeModal'
 import Tutorial from '../components/dashboard/Tutorial'
 import ProfileModal from '../components/dashboard/ProfileModal'
 import Loader from '../components/Loader'
@@ -32,7 +32,6 @@ const Dashboard = () => {
                 <p>Añadir nueva columna</p>
               </div>
             </div>
-
         </div>
       </div>
       <NewTaskModal />
