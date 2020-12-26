@@ -108,9 +108,9 @@ const RegisterForm = (props) => {
     */
 
     <div className=' register-form'>
-      <h2>REGISTRATE</h2>
+      <h2>REGÍSTRATE</h2>
       <form>
-        <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+        <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electrónico' onChange={onChange} />
         <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
         <InputGroup inputType='password' inputName='confirmedPassword' inputPlaceHolder='Confirma tu contraseña' onChange={onChange} />
         <ButtonGroup buttonText='REGISTRARSE' handleClick={onSubmit} loading={signUpLoading} />

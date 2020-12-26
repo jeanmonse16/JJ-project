@@ -127,7 +127,7 @@ const LoginForm = (props) => {
   <div className='login-form'>
     <h2>INGRESA</h2>
     <form>
-      <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+      <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electrónico' onChange={onChange} />
       <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
       <div className='login-options'>
         <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>

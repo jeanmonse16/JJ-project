@@ -3,6 +3,8 @@ import InputGroup from '../InputGroup'
 import ButtonGroup from '../ButtonGroup'
 import FileUploaded from './FileUploaded'
 
+import TutorialStepFour from './tutorial-steps/TutorialStepFour'
+
 const NewTaskModal = () =>{
     return(
         <div className="new-task-modal">
@@ -67,8 +69,8 @@ const NewTaskModal = () =>{
                         buttonText="GUARDAR"
                     />
                 </div>
-
             </div>
+            <TutorialStepFour />
         </div>
     )
 }

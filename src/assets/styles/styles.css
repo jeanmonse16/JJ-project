@@ -435,6 +435,7 @@
     align-items: center;
 }
 .about-container .about-top p{
+    text-align: center;
     color: white;
     font-size: 50px;
     -webkit-text-stroke: 2px black;
@@ -1716,12 +1717,13 @@
     }
 }
 .dashboard-container .task-container .task-center{
+    position: relative;
     width: 100%;
     height: 100%;
+    white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
     margin: auto;
-    white-space: nowrap;
 }
 .dashboard-container .task-container .task-center::-webkit-scrollbar{
     width: 15px;
@@ -1963,7 +1965,7 @@
     width: 350px;
     height: 100%;
     border-right: dashed 2px gray;
-    overflow: hidden;
+    overflow: auto;
 }
 .dashboard-container .task-container .task-center .new-column-container .new-column-center{
     width: 100%;
@@ -2526,28 +2528,105 @@
 }
 .dashboard-container .tutorial-step-one{
     position: absolute;
-    top: calc(50% - 100px);
-    left: 372px;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
-    height: 170px;
     padding: 20px;
-    border-radius: 10px;
+    border: solid 1px black;
     background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
     animation: aparecer-box 1s forwards ease;
-    display: none;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-step-one::before{
+.dashboard-container .tutorial-step-one span:nth-of-type(1){
     position: absolute;
-    content: '';
-    display: block;
-    left: -40px;
-    top: calc(50% - 20px);
-    border-top: solid 20px transparent;
-    border-bottom: solid 20px transparent;
-    border-left: solid 20px transparent;
-    border-right: solid 20px white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+@keyframes border-bucle-1{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+@keyframes border-bucle-2{
+    0%{
+        transform: translateY(-100%);
+    }
+    50%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes border-bucle-3{
+    0%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes border-bucle-4{
+    0%{
+        transform: translateY(100%);
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
 }
 .dashboard-container .tutorial-step-one .number{
     position: absolute;
@@ -2570,24 +2649,61 @@
 }
 .dashboard-container .tutorial-step-two{
     position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
     padding: 20px;
-    border-radius: 10px;
+    border: solid 1px black;
     background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
     animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-step-two::before{
+.dashboard-container .tutorial-step-two span:nth-of-type(1){
     position: absolute;
-    content: '';
-    display: block;
-    left: -40px;
-    top: calc(50% - 20px);
-    border-top: solid 20px transparent;
-    border-bottom: solid 20px transparent;
-    border-left: solid 20px transparent;
-    border-right: solid 20px white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
 }
 .dashboard-container .tutorial-step-two .number{
     position: absolute;
@@ -2612,29 +2728,65 @@
 .dashboard-container .tutorial-step-two .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three{
-    position: relative;
+.dashboard-container .tutorial-step-three{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
     padding: 20px;
-    border-radius: 10px;
+    border: solid 1px black;
     background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
     animation: aparecer-box 1s forwards ease;
-    display: none;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three::before{
+.dashboard-container .tutorial-step-three span:nth-of-type(1){
     position: absolute;
-    content: '';
-    display: block;
-    left: -40px;
-    top: calc(50% - 20px);
-    border-top: solid 20px transparent;
-    border-bottom: solid 20px transparent;
-    border-left: solid 20px transparent;
-    border-right: solid 20px white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three .number{
+.dashboard-container .tutorial-step-three span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-three .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2642,40 +2794,77 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-three h3{
+.dashboard-container .tutorial-step-three h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three p{
+.dashboard-container .tutorial-step-three p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three .btn{
+.dashboard-container .tutorial-step-three .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four{
+.dashboard-container .tutorial-step-four{
     position: relative;
+    bottom: 0;
+    right: -20px;
     width: 350px;
     padding: 20px;
-    border-radius: 10px;
+    border: solid 1px black;
     background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
     animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
     display: none;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four::before{
+.dashboard-container .tutorial-step-four span:nth-of-type(1){
     position: absolute;
-    content: '';
-    display: block;
-    left: -40px;
-    top: calc(50% - 20px);
-    border-top: solid 20px transparent;
-    border-bottom: solid 20px transparent;
-    border-left: solid 20px transparent;
-    border-right: solid 20px white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four .number{
+.dashboard-container .tutorial-step-four span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-four .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2683,40 +2872,76 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-four h3{
+.dashboard-container .tutorial-step-four h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four p{
+.dashboard-container .tutorial-step-four p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four .btn{
+.dashboard-container .tutorial-step-four .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five{
-    position: relative;
+.dashboard-container .tutorial-step-five{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
     padding: 20px;
-    border-radius: 10px;
+    border: solid 1px black;
     background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
     animation: aparecer-box 1s forwards ease;
-    display: none;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five::before{
+.dashboard-container .tutorial-step-five span:nth-of-type(1){
     position: absolute;
-    content: '';
-    display: block;
-    left: -40px;
-    top: calc(50% - 20px);
-    border-top: solid 20px transparent;
-    border-bottom: solid 20px transparent;
-    border-left: solid 20px transparent;
-    border-right: solid 20px white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five .number{
+.dashboard-container .tutorial-step-five span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-five .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2724,15 +2949,15 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-five h3{
+.dashboard-container .tutorial-step-five h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five p{
+.dashboard-container .tutorial-step-five p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five .btn{
+.dashboard-container .tutorial-step-five .btn{
     margin: 0 20px;
 }
 .dashboard-container .profile-modal{

@@ -79,15 +79,15 @@ const Menu = (props) =>{
                     <label><i className="profile-option-icon far fa-user"></i>Perfil</label>
                     <label><i className="profile-option-icon fal fa-tools"></i>Soporte y Ayuda</label>
                     <label><i className="profile-option-icon far fa-moon-stars"></i>Modo oscuro</label>
-                    <label><i className="profile-option-icon fas fa-chart-bar"></i>Estadisticas</label>
-                    <label><i className="profile-option-icon far fa-sign-out"></i>Cerrar seccion</label>
+                    <label><i className="profile-option-icon fas fa-chart-bar"></i>Estadísticas</label>
+                    <label><i className="profile-option-icon far fa-sign-out"></i>Cerrar sesión</label>
                 </div>
             </div>
             <div className='bottom-container'>
                 <label id='add-btn'>Añadir
                 <div className='options'>
                     <label>Nueva tarea</label>
-                    <label>Nueva Columna</label>
+                    <label>Nueva columna</label>
                 </div>
                 </label>
                 <label id='edit-btn'>Edición
@@ -120,12 +120,12 @@ const Menu = (props) =>{
                 <label id='search-btn'>Buscar
                 <div className='options'>
                     <div className='search-container'>
-                    <input type='text' placeholder='Ingresa el titulo de la tarea' />
+                    <input type='text' placeholder='Ingresa el título de la tarea' />
                     <i className='search-icon far fa-search' />
                     </div>
                     <hr />
                     <div className='search-container'>
-                    <input type='text' placeholder='Ingresa el titulo de la columna' />
+                    <input type='text' placeholder='Ingresa el título de la columna' />
                     <i className='search-icon far fa-search' />
                     </div>
                 </div>
@@ -136,9 +136,9 @@ const Menu = (props) =>{
                     <label>Documentacion</label>
                     <label>Trucos y consejos</label>
                     <hr />
-                    <label>Siguenos en Instagram</label>
-                    <label>Siguenos en Youtube</label>
-                    <label>Siguenos en Twitter</label>
+                    <label>Síguenos en Instagram</label>
+                    <label>Síguenos en YouTube</label>
+                    <label>Síguenos en Twitter</label>
                     <hr />
                     <label>Reportar problema</label>
                     <hr />
