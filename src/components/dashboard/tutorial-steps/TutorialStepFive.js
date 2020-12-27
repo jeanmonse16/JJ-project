@@ -12,8 +12,8 @@ const TutorialStepFive = () => {
                 <label>#5</label>
             </div>
             <h3>¡Listo! Ya creaste tu primera actividad</h3>
-            <p>Las actividades que vayas creando apareceran como pequeñas tarjetas en las columnas donde las coloques.</p>
-            <p>Podras echar un vistazo de toda la informacion que tiene la actividad, incluyedo su archivos subidos.</p>
+            <p>Las actividades que vayas creando aparecerán como pequeñas tarjetas en las columnas donde las coloques.</p>
+            <p>Podrás echar un vistazo de toda la información que tiene la actividad, incluyendo sus archivos subidos.</p>
             <div className="step-one-button-section">
                 <ButtonGroup 
                     buttonText = "SALTAR"

@@ -25,7 +25,7 @@ const Menu = (props) =>{
                 <div className="hamburger-menu-container">
                     <ul className="hamburger-box">
                         <li>
-                            <label><i className="hamburger-option-icon izquierda fal fa-sync-alt"></i>Modos<i className=" derecha fas fa-chevron-down"></i></label>
+                            <label className="disable"><i className="hamburger-option-icon izquierda fal fa-sync-alt"></i>Modos<i className=" derecha fas fa-chevron-down"></i></label>
                             <ul>
                                 <li><label>Por defecto</label></li>
                                 <li><label>Calendario</label></li>
@@ -34,7 +34,7 @@ const Menu = (props) =>{
                             </ul>    
                         </li>
                         <li>
-                            <label><i className="hamburger-option-icon izquierda fal fa-pencil-paintbrush"></i>Temas<i className="derecha fas fa-chevron-down"></i></label>
+                            <label className="disable"><i className="hamburger-option-icon izquierda fal fa-pencil-paintbrush"></i>Temas<i className="derecha fas fa-chevron-down"></i></label>
                             <ul>
                                 <li><label>Pre-establecidos</label></li>
                                 <li><label>Populares</label></li>
@@ -78,8 +78,8 @@ const Menu = (props) =>{
                 <div className="profile-menu-container">
                     <label><i className="profile-option-icon far fa-user"></i>Perfil</label>
                     <label><i className="profile-option-icon fal fa-tools"></i>Soporte y Ayuda</label>
-                    <label><i className="profile-option-icon far fa-moon-stars"></i>Modo oscuro</label>
-                    <label><i className="profile-option-icon fas fa-chart-bar"></i>Estadísticas</label>
+                    <label className="disable"><i className="profile-option-icon far fa-moon-stars"></i>Modo oscuro</label>
+                    <label className="disable"><i className="profile-option-icon fas fa-chart-bar"></i>Estadísticas</label>
                     <label><i className="profile-option-icon far fa-sign-out"></i>Cerrar sesión</label>
                 </div>
             </div>
@@ -92,8 +92,8 @@ const Menu = (props) =>{
                 </label>
                 <label id='edit-btn'>Edición
                 <div className='options'>
-                    <label>Paso adelante</label>
-                    <label>Paso atrás</label>
+                    <label className="disable">Paso adelante</label>
+                    <label className="disable">Paso atrás</label>
                     <hr />
                     <label>Editar actividad</label>
                     <hr />
@@ -114,7 +114,7 @@ const Menu = (props) =>{
                 </label>
                 <label id='view-btn'>Vista
                 <div className='options'>
-                    <label>Cambiar color</label>
+                    <label className="disable">Cambiar color</label>
                 </div>
                 </label>
                 <label id='search-btn'>Buscar

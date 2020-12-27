@@ -12,11 +12,11 @@ const NewTaskModal = () =>{
                 <i className="new-task-modal-exit-icon far fa-times"></i>
                 <h2>AÑADIR UNA ACTIVIDAD</h2>
                 <div className="new-task-modal-top">
-                    <InputGroup inputType="text" inputPlaceHolder="TITULO"/>
+                    <InputGroup inputType="text" inputPlaceHolder="TÍTULO"/>
                     <InputGroup inputType="date"/>
                 </div>
                 <div className="description-container">
-                    <textarea className="description-area" placeholder="DESCRIPCION" />
+                    <textarea className="description-area" placeholder="DESCRIPCIÓN" />
                 </div>
                 <div className="select-column-container">
                     <select className="select-column">
@@ -32,13 +32,13 @@ const NewTaskModal = () =>{
                                 <i className="upload-file-icon fal fa-upload"></i>
                                 <input type="file"/>
                             </div>
-                            <p>Click en el boton de arriba para subir un archivo</p>
+                            <p>Click en el botón de arriba para subir un archivo</p>
                             <p>Arrastra y suelta archivos para subirlos</p>
                         </div>
                     </div>
                     <div className="file-box">
                         <div className="file-slot">
-                            <label className="empty">- VACIO -</label>
+                            <label className="empty">- VACÍO -</label>
                             <FileUploaded 
                                 fileColor = "#26c6da" 
                                 fileUpIcon = "file-up-icon far fa-file-word"
@@ -46,7 +46,7 @@ const NewTaskModal = () =>{
                             />
                         </div>
                         <div className="file-slot">
-                            <label className="empty">- VACIO -</label>
+                            <label className="empty">- VACÍO -</label>
                             <FileUploaded 
                                 fileColor = "#26c6da" 
                                 fileUpIcon = "file-up-icon far fa-file-word"
@@ -54,10 +54,10 @@ const NewTaskModal = () =>{
                             />
                         </div>
                         <div className="file-slot">
-                            <label className="empty">- VACIO -</label>
+                            <label className="empty">- VACÍO -</label>
                         </div>
                         <div className="file-slot">
-                            <label className="empty">- VACIO -</label>
+                            <label className="empty">- VACÍO -</label>
                         </div>
                     </div>
                 </div>

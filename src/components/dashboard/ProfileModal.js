@@ -14,7 +14,7 @@ const ProfileModal = (props) =>{
                     <img src={UserImg}/>
                     <label className="username">{userName}</label>
                     <div className="acount-information">
-                        <p>CORREO ELECTRONICO:</p>
+                        <p>CORREO ELECTRÓNICO:</p>
                         <div className="profile-section">
                             <label>{userEmail}</label>
                             <div className="verify-email">
