@@ -26,10 +26,7 @@ const Dashboard = () => {
       />
       <div className='task-container'>
         <div className='task-center'>
-          <TutorialStepOne />
-          <Column
-            columnNumber='1'
-          />
+          <TutorialStepFive />
           <Column
             columnNumber='1'
           />

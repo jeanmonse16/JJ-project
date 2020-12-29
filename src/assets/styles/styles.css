@@ -2137,7 +2137,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .new-task-modal .new-task-modal-body{
     position: relative;
