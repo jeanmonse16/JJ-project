@@ -2,7 +2,6 @@
     position: relative;
     margin: auto;
     min-width: 250px;
-    min-height: 30px;
 }
 .input-group input{
     height: 40px;
@@ -13,6 +12,7 @@
     font-size: 15px;
     font-weight: 500;
     border: solid 2px black;
+    transition: all 0.5s ease;
 }
 .input-group input:focus{
     outline: 0;

@@ -1,9 +1,10 @@
 /*----------GENERAL STYLES----------*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 *{
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Righteous', cursive;
 }
 
 
@@ -34,26 +35,22 @@
     color: white;
     text-align: center;
     font-size: 50px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 3px rgb(0, 0, 0);
 }
 .home-container .first-section .welcome-text .more{
     font-size: 35px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
 .home-container .first-section .welcome-text .only-page{
     font-size: 45px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2.5px 2.5px 2.5px rgb(0, 0, 0);
 }
 .home-container .first-section .activities label{
     margin: 0 15px;
     font-size: 35px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 2px rgb(0, 0, 0);
 }
@@ -63,13 +60,14 @@
 .home-container .first-section button{
     color: white;
     margin-top: 25px;
-    text-decoration: none;
-    text-shadow: none;
     background-color: #2bcbba;
     font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 0 3px black;
     padding: 5px 20px 5px 20px;
     border-radius: 20px;
     border: solid 2px black;
+    transition: all 0.5s ease;
 }
 .home-container .first-section button:hover{
     cursor: pointer;
@@ -80,6 +78,51 @@
     outline: 0;
     box-shadow: black 0 0 5px;
     transform: scale(1);
+}
+.home-container .first-section .wave{
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    background: url('../images/wave.png');
+    animation: deplazar-wave 10s infinite linear;
+}
+.home-container .first-section .wave::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 10s infinite linear;
+}
+.home-container .first-section .wave::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 20s infinite linear;
+    animation-delay: -5s;
+}
+@keyframes deplazar-wave{
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: 1360px;
+    }
+}
+@keyframes deplazar-reverse-wave{
+    from{
+        background-position: 1360px;
+    }
+    to{
+        background-position: 0;
+    }
 }
 .home-container .second-section{
     position: relative;
@@ -94,47 +137,60 @@
 .home-container .second-section .left-section{
     /*FLEX*/
     flex: 1 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.home-container .second-section .left-section .modes-container{
-    width: 100%;
-}
-.home-container .second-section .left-section .modes-container .mode-box{
-    float: left;
-    width: 50%;
-    height: 225px;
-}
-.home-container .second-section .left-section .modes-container .mode-box .modes{
-    width: 70%;
-    height: 175px;
-    margin: auto;
-    border: solid 10px rgb(173, 173, 173);
+.home-container .second-section .left-section .modes{
+    width: 30%;
+    height: 200px;
+    margin: 20px;
     border-radius: 15px;
     background-color: white;
     box-shadow: black 0 0 15px;
     transform: scale(1);
+    transition: all 0.5s ease;
+    animation: agrandar 4s infinite ease;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes:hover{
-    cursor: pointer;
-    transform: scale(1.1);
+.home-container .second-section .left-section .modes:nth-child(1){
+    animation-delay: 1s;
 }
-.home-container .second-section .left-section .modes-container .mode-box .bottom{
-    margin-top: 30px;
+.home-container .second-section .left-section .modes:nth-child(2){
+    animation-delay: 2s;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes-icon-container{
+.home-container .second-section .left-section .modes:nth-child(3){
+    animation-delay: 4s;
+}
+.home-container .second-section .left-section .modes:nth-child(4){
+    animation-delay: 3s;
+}
+@keyframes agrandar{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }    
+}
+
+.home-container .second-section .left-section .modes-icon-container{
     width: 100%;
     height: 80%;
     text-align: center;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes-icon-container img{
+.home-container .second-section .left-section .modes-icon-container img{
     width: 130px;
     margin-top: 30px;
     text-align: center;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes-icon-container .modes-icon{
+.home-container .second-section .left-section .modes-icon-container .modes-icon{
     font-size: 100px;
     margin-top: 25px;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes-text{
+.home-container .second-section .left-section .modes-text{
     width: 90%;
     height: 20%;
     margin-left: 5%;
@@ -143,7 +199,7 @@
     font-size: 12px;
     font-weight: 700;
 }
-.home-container .second-section .left-section .modes-container .mode-box .modes-text p{
+.home-container .second-section .left-section .modes-text p{
     padding-top: 5px;
 }
 .home-container .second-section .middle-section{
@@ -162,7 +218,6 @@
 .home-container .second-section .right-section p{
     margin-left: 30px;
     font-size: 50px;
-    font-weight: 800;
     color: #2bcbba;
     -webkit-text-stroke: 2px black;
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
@@ -172,7 +227,8 @@
     height: 630px;
     width: 100%;
     background-color: #f1f1f1;
-    overflow: hidden;
+    background: url('../images/third-section-bg.jpg');
+    animation: slider 20s infinite linear;
 
     /*FLEX*/
     display: flex;
@@ -180,25 +236,13 @@
     align-items: center;
     justify-content: center;
 }
-.home-container .third-section ul{
-    position: absolute;
-    width: 200%;
-    animation: slider 20s infinite linear;
-
-    /*FLEX*/
-    display: flex;
-}
-.home-container .third-section ul li{
-    width: 100%;
-    list-style: none;
-}
-.home-container .third-section ul li img{
-    width: 100%;
-    background-size: cover;
-}
-@keyframes slider {
-    0% {margin-left: 0%;}
-    100%{margin-left: -100%;}
+@keyframes slider{
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -1412px;
+    }
 }
 .home-container .third-section p{
     position: relative;
@@ -209,12 +253,10 @@
 }
 .home-container .third-section .title{
     font-size: 50px;
-    font-weight: 800;
     border-radius: 50px;
 }
 .home-container .third-section .subtitle{
     font-size: 40px;
-    font-weight: 800;
     border-radius: 40px;
 }
 .home-container .four-section{
@@ -228,46 +270,110 @@
     align-items: center;
     justify-content: center;
 }
-.home-container .four-section .characteristic{
+.home-container .four-section .card-container{
     width: 22.5%;
-    height: 450px;
-    margin: 0 20px;
+    height: 400px;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+    
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.home-container .four-section .card-container:hover{
+    transform: scale(1.1);
+}
+.home-container .four-section .card-container:hover > .card-body{
+    transform: rotateY(180deg);
+}
+.home-container .four-section .card-container:hover > .bar::before{
+    transform: scaleX(1);
+}
+.home-container .four-section .card-container .card-body{
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-color: rgb(255, 255, 255);
-    border: solid 10px rgb(173, 173, 173);
     border-radius: 15px;
     box-shadow: black 0 0 15px;
-    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
 }
-.home-container .four-section .characteristic:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.home-container .four-section .card-container .card-body .card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
-.home-container .four-section .characteristic .characteristic-img{
+.home-container .four-section .card-container .card-body .card-front .card-img{
     width: 250px;
     height: 250px;
     text-align: center;
-    margin: auto;
-    margin-top: 20px;
     border-radius: 99rem;
     border: solid 10px black;
 }
-.home-container .four-section .characteristic .characteristic-img img{
+.home-container .four-section .card-container .card-body .card-front .card-img img{
     width: 175px;
     margin-top: 50px;
 }
-.home-container .four-section .characteristic h1{
-    margin-top: 10px;
+.home-container .four-section .card-container .card-body .card-front  h1{
     text-align: center;
     color: #2bcbba;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
-.home-container .four-section .characteristic p{
-    margin: 0 10px;
+.home-container .four-section .card-container .card-body .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.home-container .four-section .card-container .card-body .card-back  p{
+    margin: 0 20px;
     text-align: center;
     font-size: 25px;
     font-weight: 500;
+}
+.home-container .four-section .bar{
+    position: relative;
+    width: 80%;
+    margin-top: 20px;
+    height: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: black 0 0 5px;
+    background-color: #2bcbba;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.home-container .four-section .bar::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    background-color: rgb(26, 26, 26);
+    transition: all 0.5s ease;
 }
 .home-container .down{
     position: absolute;
@@ -279,7 +385,8 @@
     font-size: 70px;
     color: #2bcbba;
     transform: scale(1);
-    animation: jump 1s infinite alternate;
+    z-index: 10;
+    animation: jump 1s infinite alternate ease;
 }
 .home-container .up{
     position: absolute;
@@ -292,7 +399,7 @@
     color: #2bcbba;
     transform: scale(1);
     transform: rotate(180deg);
-    animation: jump 1s infinite alternate;
+    animation: jump 1s infinite alternate ease;
 }
 @keyframes jump{
     0%{bottom: 40px;}
@@ -321,19 +428,47 @@
     width: 100%;
     background-image: url('../images/about-bg.jpg');
     background-size: cover;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.about-container .about-top .about-top-text{
-    position: absolute;
-    top: 275px;
-    width: 100%;
+.about-container .about-top p{
     text-align: center;
-}
-.about-container .about-top .about-top-text p{
     color: white;
     font-size: 50px;
-    font-weight: 800;
     -webkit-text-stroke: 2px black;
     text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+.about-container .about-top .wave{
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    background: url('../images/wave.png');
+    animation: deplazar-wave 10s infinite linear;
+}
+.about-container .about-top .wave::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 10s infinite linear;
+}
+.about-container .about-top .wave::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 20s infinite linear;
+    animation-delay: -5s;
 }
 .about-container .about-text-section{
     position: relative;
@@ -347,10 +482,9 @@
 }
 .about-container .about-text-section .about-content h1{
     text-align: center;
-    font-weight: 800;
     line-height: 70px;
     color: #2bcbba;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 .about-container .about-text-section .about-content p{
@@ -358,14 +492,117 @@
 }
 .about-container .about-text-section .about-content h2{
     text-align: center;
-    font-weight: 800;
+    font-size: 30px;
     line-height: 70px;
     color: #2bcbba;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     text-shadow: 1px 1px 5px rgb(0, 0, 0);
 }
+.about-container .about-text-section .about-content h3{
+    text-align: center;
+    font-size: 25px;
+    line-height: 70px;
+    color: #2bcbba;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+.about-container .about-text-section .about-content .developers-section{
+    width: 100%;
+    height: 400px;
 
+    /*FLEX*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: black 0 0 15px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
 
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    z-index: 10;
+    background-color: rgb(26, 26, 26);
+    filter: drop-shadow(0 0 5px black);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container p{
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: calc(50% - 60px);
+    bottom: -50px;
+    border-radius: 50%;
+    border: solid 10px rgb(26, 26, 26);
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container{
+    position: relative;
+    z-index: 5;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container p:nth-of-type(1){
+    position: absolute;
+    top: 65px;
+    text-decoration: underline;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social{
+    width: 100%;
+    margin-top: 80px;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a{
+    position: relative;
+    width: 50%;
+    margin: 15px 0;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a:hover{
+    color: #2bcbba;
+    transform: scale(1.05);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a .social-icon{
+    margin-right: 10px;
+    font-size: 20px;
+}
 /*----------LOGIN PAGE STYLES----------*/
 
 
@@ -671,9 +908,20 @@
     height: 500px;
     border-radius: 5px;
     overflow: hidden;
+    animation: aparecer-box 1s forwards ease;
 
     /*FLEX*/
     display: flex;
+}
+@keyframes  aparecer-box{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 .logSign-container .logSign-box .section-left{
     position: relative;
@@ -711,6 +959,7 @@
     font-size: 15px;
     font-weight: 500;
     border: solid 2px black;
+    transition: all 0.5s ease;
 }
 .logSign-container .logSign-box .section-left .center button:hover{
     cursor: pointer;
@@ -733,6 +982,7 @@
 }
 .logSign-container .logSign-box .section-left .center .google{
     background: white;
+    color:  black;
 }
 .logSign-container .logSign-box .section-left .center .google-icon{
     position: absolute;
@@ -777,6 +1027,7 @@
     width: 100%;
     position: absolute;
     font-size: 20px;
+    z-index: 10;
 
     /*FLEX*/
     display: flex;
@@ -785,16 +1036,47 @@
 .logSign-container .logSign-box .section-right .center .switch .arrow{
     font-size: 15px;
 }
+.logSign-container .logSign-box .section-right .center .switch .sw-btn{
+    position: relative;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: gray;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn:hover::before{
+    width: 100%;
+    background-color: gray;
+}
 .logSign-container .logSign-box .section-right .center .switch .sw-btn:hover{
     cursor: pointer;
-    border-bottom: solid 3px rgb(150, 150, 150);
     transform: scale(1.05);
 }
-.logSign-container .logSign-box .section-right .center .switch .activated{
-    border-bottom: solid 3px #2bcbba;
+.logSign-container .logSign-box .section-right .center .switch .activated::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .activated:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
 }
 .logSign-container .logSign-box .section-right .center .login-form{
     width: 100%;
+    animation: aparecer-form 1s forwards ease;
     
     /*FLEX*/
     flex: 1 1;
@@ -802,6 +1084,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+@keyframes aparecer-form{
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 .logSign-container .logSign-box .section-right .center .login-form h2{
     font-size: 25px;
@@ -822,20 +1112,18 @@
 }
 .logSign-container .logSign-box .section-right .center .login-form form .input-group{
     width: 100%;
-    height: 44px;
     margin-bottom: 10px;
     text-align: center;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options{
-    position: relative;
     width: 100%;
     margin: auto;
     height: 20px;
     margin-bottom: 25px;
-}
-.logSign-container .logSign-box .section-right .center .login-form .login-options .remember{
-    position: absolute;
-    left: 0;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options .remember input{
     margin-right: 10px;
@@ -845,20 +1133,33 @@
     cursor: pointer;
 }
 .logSign-container .logSign-box .section-right .center .login-form .login-options .forgot{
-    position: absolute;
-    right: 0;
+    position: relative;
     color: black;
     text-decoration: none;
-    border-bottom: solid 2px #2bcbba;
+    
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
 }
-.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot:hover{
-    border-bottom: solid 2px rgb(150, 150, 150);
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot::before{
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
 }
 .logSign-container .logSign-box .section-right .center .login-form .btn{
     width: 80%;
 }
 .logSign-container .logSign-box .section-right .center .register-form{
     width: 100%;
+    animation: aparecer-form 1s forwards ease;
     
     /*FLEX*/
     flex: 1 1;
@@ -950,6 +1251,7 @@
     background-color: white;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .validate-container .validate-message h2{
     margin-bottom: 20px;
@@ -965,7 +1267,6 @@
     margin-bottom: 10px;
 }
 .validate-container .validate-message .btn{
-    width: 40%;
     margin-top: 10px;
 }
 
@@ -995,6 +1296,7 @@
     background-color: white;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .waiting-container .waiting-message h2{
     margin-bottom: 20px;
@@ -1048,6 +1350,7 @@
     min-width: 300px;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 }
 .password-forgotten-container .password-forgotten-message .input-group{
     width: 60%;
@@ -1098,6 +1401,7 @@
     min-width: 300px;
     border-radius: 5px;
     text-align: center;
+    animation: aparecer-box 1s forwards ease;
 
     /*FLEX*/
     display: flex;
@@ -1156,33 +1460,50 @@
     display: flex;
     flex-direction: column;
 }
-.dashboard-container .dashboard-top-container{
+.dashboard-container .dashbord-menu{
+    position: relative;
+    width: 100%;
+    z-index: 200;
+    animation: desplazar-menu 1s forwards ease;
+}
+.dashboard-container .dashbord-menu .top-container{
+    position: relative;
     width: 100%;
     height: 50px;
     border-bottom: solid 1px black;
     background-color: #2bcbba;
-    z-index: 200;
 
     /*FLEX*/
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.dashboard-container .dashboard-top-container .hamburger-button{
+@keyframes desplazar-menu{
+    from{
+        opacity: 0;
+        top: -100px;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-button{
     font-size: 30px;
     margin-left: 20px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .dashboard-top-container .hamburger-button:hover{
+.dashboard-container .dashbord-menu .top-container .hamburger-button:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-.dashboard-container .dashboard-top-container .section{
+.dashboard-container .dashbord-menu .top-container .section{
     height: 100%;
 
     /*FLEX*/
     display: flex;
 }
-.dashboard-container .dashboard-top-container .section .notification-button{
+.dashboard-container .dashbord-menu .top-container .section .notification-button{
     position: relative;
     width: 30px;
     height: 100%;
@@ -1192,14 +1513,15 @@
     display: flex;
     align-items: center;
 }
-.dashboard-container .dashboard-top-container .section .notification-button .notification-icon{
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-icon{
     font-size: 30px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .dashboard-top-container .section .notification-button .notification-icon:hover{
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-icon:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-.dashboard-container .dashboard-top-container .section .notification-button .notification-number{
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-number{
     position: absolute;
     top: 10px;
     right: 0;
@@ -1218,26 +1540,30 @@
     align-items: center;
     justify-content: center;
 }
-.dashboard-container .dashboard-top-container .section .notification-button .notification-number:hover{
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-number:hover{
     cursor: pointer;
 }
-.dashboard-container .dashboard-top-container .section .profile-box{
+.dashboard-container .dashbord-menu .top-container .section .profile-box{
     margin-right: 20px;
     height: 100%;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
     align-items: center;
 }
-.dashboard-container .dashboard-top-container .section .profile-box label{
-    font-size: 15px;
-    margin-right: 10px;
-}
-.dashboard-container .dashboard-top-container .section .profile-box label:hover{
+.dashboard-container .dashbord-menu .top-container .section .profile-box:hover{
     cursor: pointer;
     transform: scale(1.05);
 }
-.dashboard-container .dashboard-top-container .section .profile-box img{
+.dashboard-container .dashbord-menu .top-container .section .profile-box label{
+    font-size: 15px;
+    margin-right: 10px;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box label:hover{
+    cursor: pointer;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box img{
     width: 40px;
     height: 40px;
     border: solid 1px black;
@@ -1247,53 +1573,57 @@
     box-shadow: 0 0 3px black;
     background-color: white;
 }
-.dashboard-container .dashboard-top-container .section .profile-box img:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-}
-.dashboard-container .dashboard-top-container .hamburger-menu-container{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container{
     position: absolute;
     left: 0; 
     top: 51px;
     width: 300px;
     background-color: white;
-    box-shadow: 0 1px 5px black
+    box-shadow: 0 1px 5px black;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
+    display: none;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box{
     list-style: none;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label{
     position: relative;
     padding: 10px 10px 10px 40px;
     font-size: 15px;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
     align-items: center;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label:hover{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label:hover{
     background-color: rgb(230, 230, 230);
     cursor: pointer;
     text-decoration: underline;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .hamburger-option-icon{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .hamburger-option-icon{
     font-size: 15px;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .derecha{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .derecha{
     position: absolute;
     right: 15px;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box li label .izquierda{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .izquierda{
     position: absolute;
     left: 15px;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box ul{
-    display: block;
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box ul{
+    display: none;
 }
-.dashboard-container .dashboard-top-container .hamburger-menu-container .hamburger-box ul li label{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box ul li label{
     padding: 10px 10px 10px 60px;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container{
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li .disable::before{
+    top: calc(50% - 4.5px);
+    right: 35px;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container{
     position: absolute;
     right: 5px; 
     top: 56px;
@@ -1303,23 +1633,33 @@
     filter: drop-shadow(0 1px 2px black);
     background-color: white;
     overflow: auto;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
 
     /*FLEX*/
     display: flex;
     flex-direction: column;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container::-webkit-scrollbar{
+@keyframes deplegar-menu{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container::-webkit-scrollbar{
     width: 15px;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container::-webkit-scrollbar-thumb{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container::-webkit-scrollbar-thumb{
     background-color: #2bcbba;
     border-radius: 10px;
     border: solid 5px white;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container:hover::-webkit-scrollbar-thumb{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container:hover::-webkit-scrollbar-thumb{
     display: block;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section{
     width: 100%;
     height: 70px;
     margin-bottom: 5px;
@@ -1327,34 +1667,34 @@
     /*FLEX*/
     display: flex;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section:last-child{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:last-child{
     margin-bottom: 0;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section:hover > .notification-description .title{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover > .notification-description .title{
     text-decoration: underline;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section:hover > .notification-view .notification-view-icon{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover > .notification-view .notification-view-icon{
     color: #fc5c65;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section:hover{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover{
     background-color: rgb(230, 230, 230);
     cursor: pointer;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description{
     width: 80%;
     margin: 0 5px;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description .title{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description .title{
     font-size: 15px;
     font-weight: 500;
     text-align: left;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-description .description-text{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description .description-text{
     font-size: 12px;
     text-align: justify;
     overflow: hidden;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-view{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-view{
     width: 20%;
     border-right: solid 1px rgb(175, 175, 175);
 
@@ -1363,11 +1703,12 @@
     align-items: center;
     justify-content: center;
 }
-.dashboard-container .dashboard-top-container .notification-menu-container .notification-section .notification-view .notification-view-icon{
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-view .notification-view-icon{
     font-size: 45px;
     color: gray;
+    transition: all 0.5s ease;
 }
-.dashboard-container .dashboard-top-container .profile-menu-container{
+.dashboard-container .dashbord-menu .top-container .profile-menu-container{
     position: absolute;
     right: 5px; 
     top: 56px;
@@ -1376,26 +1717,51 @@
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
+    display: none;
 }
-.dashboard-container .dashboard-top-container .profile-menu-container label{
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label{
     position: relative;
     padding: 10px 10px 10px 35px;
     font-size: 15px;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
     align-items: center;
 }
-.dashboard-container .dashboard-top-container .profile-menu-container label:hover{
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label:hover{
     background-color: rgb(230, 230, 230);
     cursor: pointer;
     text-decoration: underline;
 }
-.dashboard-container .dashboard-top-container .profile-menu-container label .profile-option-icon{
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label .profile-option-icon{
     position: absolute;
     left: 10px;
 }
-.dashboard-container .principal-menu-container{
+.dashboard-container .dashbord-menu .disable{
+    position: relative;
+    color: gray;
+}
+.dashboard-container .dashbord-menu .disable:hover{
+    cursor: default;
+    text-decoration: none;
+}
+.dashboard-container .dashbord-menu .disable:hover::before{
+    opacity: 1;
+}
+.dashboard-container .dashbord-menu .disable::before{
+    position: absolute;
+    content: '(En desarrollo)';
+    opacity: 0;
+    top: 5px;
+    right: 5px;
+    font-size: 9px;
+    color: rgb(170, 79, 46);
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .bottom-container{
     position: sticky;
     width: 100%;
     height: 30px;
@@ -1408,18 +1774,19 @@
     align-items: center;
     justify-content: flex-start;
 }
-.dashboard-container .principal-menu-container label{
+.dashboard-container .dashbord-menu .bottom-container label{
     position: relative;
     font-size: 15px;
     line-height: 30px;
     padding: 0 12.5px 0 12.5px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .principal-menu-container label:hover{
+.dashboard-container .dashbord-menu .bottom-container label:hover{
     background-color: rgb(230, 230, 230);
     cursor: pointer;
     text-decoration: underline;
 }
-.dashboard-container .principal-menu-container label .options{
+.dashboard-container .dashbord-menu .bottom-container label .options{
     position: absolute;
     top: 30px;
     left: 0;
@@ -1431,14 +1798,14 @@
     display: none;
     flex-direction: column;
 }
-.dashboard-container .principal-menu-container label:hover > .options{
+.dashboard-container .dashbord-menu .bottom-container label:hover > .options{
     display: flex;
 }
-.dashboard-container .principal-menu-container label .options label{
+.dashboard-container .dashbord-menu .bottom-container label .options label{
     padding: 5px 0 5px 10px;
     font-size: 15px;
 }
-.dashboard-container .principal-menu-container label .options .search-container{
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container{
     position: relative;
 
     /*FLEX*/
@@ -1446,35 +1813,45 @@
     flex-direction: column;
     justify-content: center;
 }
-.dashboard-container .principal-menu-container label .options .search-container input{
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container input{
     border: none;
     font-size: 15px;
     padding: 10px 30px 10px 10px;
 }
-.dashboard-container .principal-menu-container label .options .search-container .search-icon{
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container .search-icon{
     position: absolute;
     right: 10px;
     font-size: 15px;
 }
-.dashboard-container .principal-menu-container label .options .search-container .search-icon:hover{
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container .search-icon:hover{
     cursor: pointer;
 }
-.dashboard-container .principal-menu-container label .options hr{
+.dashboard-container .dashbord-menu .bottom-container label .options hr{
     margin-top: 5px;
     margin-bottom: 5px;
 }
 .dashboard-container .task-container{
+    animation: aparecer-task 2s forwards ease;
     overflow: hidden;
     /*FLEX*/
     flex: 1 1;
 }
+@keyframes aparecer-task{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 .dashboard-container .task-container .task-center{
+    position: relative;
     width: 100%;
     height: 100%;
+    white-space: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
     margin: auto;
-    white-space: nowrap;
 }
 .dashboard-container .task-container .task-center::-webkit-scrollbar{
     width: 15px;
@@ -1519,27 +1896,35 @@
     /*FLEX*/
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer:hover > .edit-title-icon{
+    opacity: 1;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input{
-    position: absolute;
-    left: 20px;
+    position: relative;
+    display: inline-block;
     width: 265px;
+    margin-left: 15px;
     font-size: 20px;
     padding-bottom: 5px;
     padding-right: 35px;
     border: none;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input:hover{
-    border-bottom: dashed 1px black;
+    border-bottom: dashed 3px gray;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer input:focus{
     outline: none;
-    border-bottom: dashed 1px black;
+    border-bottom: dashed 3px #2bcbba;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon{
     position: absolute;
-    right: 25px;
+    right: 20px;
+    top: 5px;
     font-size: 20px;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon:hover{
     cursor: pointer;
@@ -1548,7 +1933,7 @@
     font-size: 15px;
     font-weight: 500;
     color: gray;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 .dashboard-container .task-container .task-center .column-container .new-task-btn-container{
     width: 100%;
@@ -1559,30 +1944,36 @@
     display: flex;
     justify-content: center;
 }
-    .dashboard-container .task-container .task-center .column-container .new-task-btn-container button{
+    .dashboard-container .task-container .task-center .column-container button{
     width: 300px;
     height: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
     background-color: white;
     border: solid 1px gray;
     border-radius: 10px;
     box-shadow: 0 0 5px black;
+    transition: all 0.5s ease;
 }
-.dashboard-container .task-container .task-center .column-container .new-task-btn-container button .new-task-icon{
+.dashboard-container .task-container .task-center .column-container button .new-task-icon{
     font-size: 20px;
+    transition: all 1s ease;
 }
-.dashboard-container .task-container .task-center .column-container .new-task-btn-container button:focus{
-    outline: 0;
-    transform: scale(1);
-}
-.dashboard-container .task-container .task-center .column-container .new-task-btn-container button:hover{
+.dashboard-container .task-container .task-center .column-container button:hover{
     cursor: pointer;
-    transform: scale(1.01);
+    background-color: rgb(215, 215, 215);
+    transform: scale(1.05);
+}
+.dashboard-container .task-container .task-center .column-container button:focus{
+    outline: 0;
+    background-color: rgb(215, 215, 215);
+    transform: scale(1);
 }
 .dashboard-container .task-container .task-center .column-container .card-container{
     position: relative;
     width: 300px;
     height: 200px;
-    margin: 20px auto 20px auto ;
+    margin: 20px auto 20px 25px ;
     background-color: white;
     box-shadow: 0 0 5px black;
     border-radius: 10px;
@@ -1608,12 +1999,18 @@
     margin-left: -200px;
     width: 250px;
     height: 40px;
+    box-shadow: 0 1px 3px black;
     z-index: 50;
+    transition: all 1s ease;
 
     /*FLEX*/
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach:hover{
+    cursor: pointer;
+    margin-left: 0px;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-name{
     width: 200px;
@@ -1638,15 +2035,6 @@
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-attach-preview .file-attach-icon{
     font-size: 25px;
-}
-.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach:hover{
-    cursor: pointer;
-    box-shadow: 0 1px 3px black;
-    animation: deploy 1s forwards;
-}
-@keyframes deploy{
-    0%{margin-left: -200px;}
-    100%{margin-left: 0px;}
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-information{
     position: relative;
@@ -1710,6 +2098,7 @@
 .dashboard-container .task-container .task-center .new-column-container .new-column-center{
     width: 100%;
     height: 100%;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
@@ -1729,10 +2118,12 @@
     font-size: 50px;
     color: rgb(73, 73, 73);
     margin-bottom: 20px;
+    transition: all 0.5s ease;
 }
 .dashboard-container .task-container .task-center .new-column-container .new-column-center p{
     font-size: 15px;
     color: rgb(73, 73, 73);
+    transition: all 0.5s ease;
 }
 .dashboard-container .new-task-modal{
     position: fixed;
@@ -1745,7 +2136,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .new-task-modal .new-task-modal-body{
     position: relative;
@@ -1755,6 +2145,7 @@
     background-color: white;
     border-radius: 5px;
     padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-exit-icon{
     position: absolute;
@@ -1774,8 +2165,7 @@
     color: #2bcbba;
     font-size: 30px;
     line-height: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-top{
     width: 100%;
@@ -1785,19 +2175,7 @@
     display: flex;
     justify-content: space-between;
 }
-.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-top input{
-    height: 40px;
-    width: 45%;
-    background: white;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 15px;
-    font-weight: 500;
-    border: solid 2px black;
-}
 .dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-top input:focus{
-    outline: 0;
-    border: solid 2px #2bcbba;
     box-shadow: black 0px 0px 5px;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .description-container{
@@ -1817,6 +2195,7 @@
     font-weight: 500;
     border: solid 2px black;
     border-radius: 10px;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     flex:  1 1;
@@ -1837,6 +2216,7 @@
     border-radius: 10px;
     font-size: 15px;
     font-weight: 500;
+    transition: all 0.5s ease;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .select-column-container .select-column:hover{
     cursor: pointer;
@@ -1869,6 +2249,7 @@
     margin: 4px;
     border-radius: 5px;
     text-align: center;
+    color: black;
     border: dashed 3px grey;
 
     /*FLEX*/
@@ -1884,8 +2265,10 @@
     height: 50px;
     margin: 5px;
     overflow: hidden;
+    transition: all 0.5s ease;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button:hover{
+    transform: scale(1.1);
     color: #2bcbba;
 }
 .dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button .upload-file-icon{
@@ -1994,6 +2377,8 @@
     background-color: white;
     border-radius: 5px;
     padding: 20px 50px 20px 50px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
     
     /*FLEX*/
     display: flex;
@@ -2004,8 +2389,7 @@
 .dashboard-container .welcome-modal .welcome-modal-body h2{
     color: #2bcbba;
     font-size: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     margin-bottom: 20px;
 }
 .dashboard-container .welcome-modal .welcome-modal-body p{
@@ -2040,21 +2424,21 @@
     height: 105px;
     border-radius: 99rem;
     background-color: grey;
-    opacity: 0.5;
+    opacity: 0;
     overflow: hidden;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 .dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image .upload-image-icon-container .upload-image-icon{
     font-size: 50px;
 }
 .dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image input{
     position: absolute;
-    border-radius: 99rem;
+    border-radius: 50%;
     width: 105px;
     height: 105px;
     top: 0;
@@ -2066,68 +2450,92 @@
 .dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image input:hover{
     cursor: pointer;
 }
-.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image:hover > .upload-image-icon-container{
-    display: flex;
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image:hover .upload-image-icon-container{
+    opacity: 0.4;
 }
 .dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image img{
     width: 100px;
     height: 100px;
     border: solid 1px black;
-    border-radius: 99rem;
+    border-radius: 50%;
     object-fit: cover;
     object-position: 50% 50%;
     box-shadow: 0 0 3px black;
     background-color: white;
 }
-.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-icon{
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container{
     position: absolute;
-    font-size: 25px;
     bottom: 0;
     right: -30px;
+    font-size: 25px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-icon:hover{
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar una avatar al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container:hover::before{
+    opacity: 1;
+    color: black;
 }
 .dashboard-container .welcome-modal .welcome-modal-body .new-username-container{
     position: relative;
     width: 60%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     /*FLEX*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .new-username{
-    width: 100%;
-    height: 40px;
-    background: white;
-    text-align: center;
-    border-radius: 20px;
-    font-size: 15px;
-    font-weight: 500;
-    border: solid 2px black;
-}
-.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .new-username:focus{
-    outline: 0;
-    border: solid 2px #2bcbba;
-    box-shadow: black 0px 0px 5px;
-}
-.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-usename-icon{
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container{
     position: absolute;
     font-size: 25px;
     bottom: 0;
-    right: -40px;
+    right: -30px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-usename-icon{
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar un nombre al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container:hover::before{
+    opacity: 1;
+    color: black;
 }
 .dashboard-container .tutorial-modal{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-.dashboard-container .tutorial-modal .tutorial-start{
     position: fixed;
     z-index: 250;
     width: 100%;
@@ -2139,145 +2547,215 @@
     align-items: center;
     justify-content: center;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body{
+.dashboard-container .tutorial-modal .tutorial-start-body{
     position: relative;
     max-width: 650px;
     min-width: 500px;
     background-color: white;
     border-radius: 5px;
     padding: 20px 50px 20px 50px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
 
     /*FLEX*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    display: none;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body .tutorial-modal-exit-icon{
+.dashboard-container .tutorial-modal .tutorial-start-body .tutorial-modal-exit-icon{
     position: absolute;
     right: 15px;
     top: 15px;
     font-size: 20px;
     color: gray;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body .tutorial-modal-exit-icon:hover{
+.dashboard-container .tutorial-modal .tutorial-start-body .tutorial-modal-exit-icon:hover{
     cursor: pointer;
     color: black;
     transform: scale(1.1);
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body h2{
+.dashboard-container .tutorial-modal .tutorial-start-body h2{
     color: #2bcbba;
     font-size: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     margin-bottom: 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body .scroll-icon{
+.dashboard-container .tutorial-modal .tutorial-start-body .scroll-icon{
     font-size: 150px;
     margin-bottom: 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body p{
+.dashboard-container .tutorial-modal .tutorial-start-body p{
     font-size: 15px;
     font-weight: 500;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body label{
+.dashboard-container .tutorial-modal .tutorial-start-body label{
     font-size: 15px;
     font-weight: 500;
     color: gray;
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-start .tutorial-body .btn{
+.dashboard-container .tutorial-modal .tutorial-start-body .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-end{
-    position: fixed;
-    z-index: 250;
+.dashboard-container .tutorial-modal .tutorial-end-body{
+    position: relative;
+    max-width: 650px;
+    min-width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .tutorial-modal-exit-icon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: gray;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .tutorial-modal-exit-icon:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+.dashboard-container .tutorial-modal .tutorial-end-body h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .check-icon{
+    font-size: 150px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body label{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-one{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-
-    /*FLEX*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
 }
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body{
-    position: relative;
-    max-width: 650px;
-    min-width: 500px;
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px 50px 20px 50px;
-
-    /*FLEX*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body .tutorial-modal-exit-icon{
+.dashboard-container .tutorial-step-one span:nth-of-type(3){
     position: absolute;
-    right: 15px;
-    top: 15px;
-    font-size: 20px;
-    color: gray;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body .tutorial-modal-exit-icon:hover{
-    cursor: pointer;
-    color: black;
-    transform: scale(1.1);
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body h2{
-    color: #2bcbba;
-    font-size: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
-    margin-bottom: 20px;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body .check-icon{
-    font-size: 150px;
-    margin-bottom: 20px;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body p{
-    font-size: 15px;
-    font-weight: 500;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body label{
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
-    color: gray;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.dashboard-container .tutorial-modal .tutorial-end .tutorial-body .btn{
-    margin: 0 20px;
-}
-
-
-
-.dashboard-container .tutorial-modal .tutorial-step-one{
-    position: relative;
-    left: 250px; 
-    top: 300px;
-    width: 350px;
-    padding: 20px 20px 20px 40px;
-    text-align: center;
-    filter: drop-shadow(0 0 3px black);
-}
-.dashboard-container .tutorial-modal .tutorial-step-one::before{
-    position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: white;
-    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 30px 57.5%, 0 50%, 30px 42.5%);
-    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
 }
-.dashboard-container .tutorial-modal .tutorial-step-one .number{
+.dashboard-container .tutorial-step-one span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+@keyframes border-bucle-1{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+@keyframes border-bucle-2{
+    0%{
+        transform: translateY(-100%);
+    }
+    50%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes border-bucle-3{
+    0%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes border-bucle-4{
+    0%{
+        transform: translateY(100%);
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+.dashboard-container .tutorial-step-one .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2285,38 +2763,76 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-one h3{
+.dashboard-container .tutorial-step-one h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-one p{
+.dashboard-container .tutorial-step-one p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-one .btn{
+.dashboard-container .tutorial-step-one .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two{
-    position: relative;
-    left: 250px; 
-    top: 250px;
+.dashboard-container .tutorial-step-two{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two::before{
+.dashboard-container .tutorial-step-two span:nth-of-type(1){
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(3){
+    position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: white;
-    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 30px 57.5%, 0 50%, 30px 42.5%);
-    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two .number{
+.dashboard-container .tutorial-step-two span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-two .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2324,42 +2840,80 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-two h3{
+.dashboard-container .tutorial-step-two h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two p{
+.dashboard-container .tutorial-step-two p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two .example{
+.dashboard-container .tutorial-step-two .example{
     color: gray;
     text-decoration: underline;
 }
-.dashboard-container .tutorial-modal .tutorial-step-two .btn{
+.dashboard-container .tutorial-step-two .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three{
-    position: relative;
-    left: 250px; 
-    top: 250px;
+.dashboard-container .tutorial-step-three{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three::before{
+.dashboard-container .tutorial-step-three span:nth-of-type(1){
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(3){
+    position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: white;
-    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 30px 57.5%, 0 50%, 30px 42.5%);
-    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three .number{
+.dashboard-container .tutorial-step-three span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-three .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2367,38 +2921,77 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-three h3{
+.dashboard-container .tutorial-step-three h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three p{
+.dashboard-container .tutorial-step-three p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-three .btn{
+.dashboard-container .tutorial-step-three .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four{
+.dashboard-container .tutorial-step-four{
     position: relative;
-    left: 250px; 
-    top: 250px;
+    bottom: 0;
+    right: -20px;
     width: 350px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+    display: none;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four::before{
+.dashboard-container .tutorial-step-four span:nth-of-type(1){
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(3){
+    position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: white;
-    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 30px 57.5%, 0 50%, 30px 42.5%);
-    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four .number{
+.dashboard-container .tutorial-step-four span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-four .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2406,38 +2999,76 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-four h3{
+.dashboard-container .tutorial-step-four h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four p{
+.dashboard-container .tutorial-step-four p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-four .btn{
+.dashboard-container .tutorial-step-four .btn{
     margin: 0 20px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five{
-    position: relative;
-    left: 250px; 
-    top: 250px;
+.dashboard-container .tutorial-step-five{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     width: 350px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
     text-align: center;
     filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five::before{
+.dashboard-container .tutorial-step-five span:nth-of-type(1){
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(3){
+    position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    z-index: -1;
-    background-color: white;
-    clip-path: polygon(30px 0, 100% 0, 100% 100%, 30px 100%, 30px 57.5%, 0 50%, 30px 42.5%);
-    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five .number{
+.dashboard-container .tutorial-step-five span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-five .number{
     position: absolute;
     top: 0px;
     right: 5px;
@@ -2445,19 +3076,17 @@
     font-weight: 800;
     color: rgba(128, 128, 128, 0.7);
 }
-.dashboard-container .tutorial-modal .tutorial-step-five h3{
+.dashboard-container .tutorial-step-five h3{
     font-size: 20px;
     text-decoration: underline 3px #2bcbba;
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five p{
+.dashboard-container .tutorial-step-five p{
     margin-bottom: 10px;
 }
-.dashboard-container .tutorial-modal .tutorial-step-five .btn{
+.dashboard-container .tutorial-step-five .btn{
     margin: 0 20px;
 }
-
-
 .dashboard-container .profile-modal{
     position: fixed;
     z-index: 250;
@@ -2478,6 +3107,7 @@
     background-color: white;
     border-radius: 5px;
     padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
 }
 .dashboard-container .profile-modal .profile-modal-body .profile-modal-exit-icon{
     position: absolute;
@@ -2492,18 +3122,18 @@
     transform: scale(1.1);
 }
 .dashboard-container .profile-modal .profile-modal-body .view-profile{
+    animation: aparecer-form 1s forwards ease;
+
     /*FLEX*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .profile-modal .profile-modal-body .view-profile h2{
     color: #2bcbba;
     font-size: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     margin-bottom: 20px;
 }
 .dashboard-container .profile-modal .profile-modal-body .view-profile img{
@@ -2601,17 +3231,19 @@
     border-bottom-right-radius: 10px;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile{
+    animation: aparecer-form 1s forwards ease;
+
     /*FLEX*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile h2{
     color: #2bcbba;
     font-size: 30px;
-    font-weight: 800;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 1px black;
     margin-bottom: 20px;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile p{
@@ -2621,7 +3253,7 @@
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container{
     position: relative;
     width: 105px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     
     /*FLEX*/
     display: flex;
@@ -2639,27 +3271,30 @@
     justify-content: center;
     align-items: center;
 }
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image:hover .upload-image-icon-container{
+    opacity: 0.4;
+}
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image .upload-image-icon-container{
     position: absolute;
     width: 105px;
     height: 105px;
-    border-radius: 99rem;
+    border-radius: 50%;
     background-color: grey;
-    opacity: 0.5;
+    opacity: 0;
     overflow: hidden;
+    transition: all 0.5s ease;
 
     /*FLEX*/
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image .upload-image-icon-container .upload-image-icon{
     font-size: 50px;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image input{
     position: absolute;
-    border-radius: 99rem;
+    border-radius: 50%;
     width: 105px;
     height: 105px;
     top: 0;
@@ -2684,18 +3319,41 @@
     box-shadow: 0 0 3px black;
     background-color: white;
 }
-.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-icon{
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container{
     position: absolute;
-    font-size: 25px;
     bottom: 0;
     right: -30px;
+    font-size: 25px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-icon:hover{
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar una avatar al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container:hover::before{
+    opacity: 1;
+    color: black;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container{
     position: relative;
-    min-width:  225px;
+    width:  225px;
+    height: 30px;
     margin-bottom: 35px;
 
     /*FLEX*/
@@ -2706,6 +3364,7 @@
     position: absolute;
     text-align: center;
     width: 100%;
+    height: 30px;
     font-size: 20px;
     border: none;
     border-bottom: solid 1px black;
@@ -2719,13 +3378,36 @@
     outline: none;
     border-bottom: solid 1px #2bcbba;
 }
-.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-icon{
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container{
     position: absolute;
     font-size: 25px;
+    bottom: 0;
     right: -30px;
+    transition: all 0.5s ease;
 }
-.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-icon:hover{
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar un nombre al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container:hover{
     cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container:hover::before{
+    opacity: 1;
+    color: black;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container{
     width: 100%;

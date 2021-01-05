@@ -9,7 +9,7 @@ import reducer from './_reducers'
 import './assets/styles/styles.css'
 import './assets/fontawesome-pro/all'
 
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Home'
 
 window.React = React
 

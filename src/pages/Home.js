@@ -9,7 +9,6 @@ import SecondArrow from '../assets/images/arrow-2.png'
 import Check from '../assets/images/check.png'
 import Shield from '../assets/images/shield.png'
 import TaskMasterModeIcon from '../assets/images/taskmaster-mode-icon.png'
-import ThirdSectionBg from '../assets/images/third-section-bg.jpg'
 
 const Home = (props) => {
   const redirectToSignUp = event => {
@@ -18,9 +17,7 @@ const Home = (props) => {
   }
 
   const scrollTo = yPosition => window.scrollTo(0, yPosition)
- /*
 
- */
   return (
     <div className='home-container'>
       <div className='first-section'>
@@ -42,49 +39,40 @@ const Home = (props) => {
         <div className='down' onClick={() => scrollTo(630)}>
           <i className='down-icon fas fa-angle-double-down' />
         </div>
+        <div className='wave' />
       </div>
-      <div className='second-section' id='secondSection'>
+      <div className='second-section'>
         <div className='left-section'>
-          <div className='modes-container'>
-            <div className='mode-box'>
-              <div className='modes'>
-                <div className='modes-icon-container'>
-                  <img src={TaskMasterModeIcon} />
-                </div>
-                <div className='modes-text'>
-                  <p>MODO TASKMASTER</p>
-                </div>
-              </div>
+          <div className='modes'>
+            <div className='modes-icon-container'>
+              <img src={TaskMasterModeIcon} />
             </div>
-            <div className='mode-box'>
-              <div className='modes'>
-                <div className='modes-icon-container'>
-                  <i className='modes-icon fas fa-calendar-alt' />
-                </div>
-                <div className='modes-text'>
-                  <p>MODO CALENDARIO</p>
-                </div>
-              </div>
+            <div className='modes-text'>
+              <p>MODO TASKMASTER</p>
             </div>
-            <div className='mode-box'>
-              <div className='modes bottom'>
-                <div className='modes-icon-container'>
-                  <i className='modes-icon fas fa-list-ol' />
-                </div>
-                <div className='modes-text'>
-                  <p>MODO LISTA</p>
-                </div>
-              </div>
+          </div>
+          <div className='modes'>
+            <div className='modes-icon-container'>
+              <i className='modes-icon fas fa-calendar-alt' />
             </div>
-            <div className='mode-box'>
-              <div className='modes bottom'>
-                <div className='modes-icon-container'>
-                  <i className='modes-icon fas fa-chalkboard' />
-                </div>
-                <div className='modes-text'>
-                  <p>MODO CARTELERA</p>
-                </div>
-              </div>
+            <div className='modes-text'>
+              <p>MODO CALENDARIO</p>
+            </div>
+          </div>
+          <div className='modes'>
+            <div className='modes-icon-container'>
+              <i className='modes-icon fas fa-list-ol' />
+            </div>
+            <div className='modes-text'>
+              <p>MODO LISTA</p>
+            </div>
+          </div>
+          <div className='modes'>
+            <div className='modes-icon-container'>
+              <i className='modes-icon fas fa-chalkboard' />
+            </div>
+            <div className='modes-text'>
+              <p>MODO CARTELERA</p>
             </div>
           </div>
         </div>
@@ -101,37 +89,54 @@ const Home = (props) => {
         </div>
       </div>
       <div className='third-section'>
-        <ul>
-          <li><img src={ThirdSectionBg} /></li>
-          <li><img src={ThirdSectionBg} /></li>
-        </ul>
-          <p className='title'>Gestiona miles y miles de tareas</p>
-          <p className='subtitle'>con tu cuenta de TaskMaster</p>
-        <div className='down' onClick={() => scrollTo(1920)}>
+        <p className='title'>Gestiona miles y miles de tareas</p>
+        <p className='subtitle'>con tu cuenta de TaskMaster</p>
+        <div className='down' onClick={() => scrollTo(1890)}>
           <i className='down-icon fas fa-angle-double-down' />
         </div>
       </div>
       <div className='four-section'>
-        <div className='characteristic'>
-          <div className='characteristic-img'>
-            <img src={Check} />
+        <div className='card-container'>
+          <div className='card-body'>
+            <div className='card-front'>
+              <div className='card-img'>
+                <img src={Check} />
+              </div>
+              <h1>CONFIABLE</h1>
+            </div>
+            <div className='card-back'>
+              <p>Disponible en cualquier momento que lo necesites</p>
+            </div>
           </div>
-            <h1>CONFIABLE</h1>
-            <p>Disponible en cualquier momento que lo necesites</p>
+          <div className='bar' />
         </div>
-        <div className='characteristic'>
-          <div className='characteristic-img'>
-            <img src={Shield} />
+        <div className='card-container'>
+          <div className='card-body'>
+            <div className='card-front'>
+              <div className='card-img'>
+                <img src={Shield} />
+              </div>
+              <h1>SEGURO</h1>
+            </div>
+            <div className='card-back'>
+              <p>Toda tu información esta asegurada y respaldada</p>
+            </div>
           </div>
-            <h1>SEGURO</h1>
-            <p>Toda tu información está asegurada y respaldada</p>
+          <div className='bar' />
         </div>
-        <div className='characteristic'>
-          <div className='characteristic-img'>
-            <img src={SecondArrow} />
+        <div className='card-container'>
+          <div className='card-body'>
+            <div className='card-front'>
+              <div className='card-img'>
+                <img src={SecondArrow} />
+              </div>
+              <h1>FÁCIL DE USAR</h1>
+            </div>
+            <div className='card-back'>
+              <p>Herramientas de gestión intuitivas que permiten un mayor control</p>
+            </div>
           </div>
-            <h1>FÁCIL DE USAR</h1>
-            <p>Herramientas de gestion intuitivas que permiten un mayor control</p>
+          <div className='bar' />
         </div>
         <div className='up' onClick={() => scrollTo(0)}>
           <i className='up-icon fas fa-angle-double-down' />

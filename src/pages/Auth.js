@@ -40,7 +40,7 @@ const Auth = ({ path, setUserSession }) => {
             <p>Utiliza tu cuenta de Facebook o Google para ingresar</p>
             <FacebookSignIn customClass='facebook' authAction={authAction} />
             <GoogleSignIn customClass='google' authAction={authAction} />
-            <p>Tu informacion personal esta protegida y resguardada en todo momento con nosotros</p>
+            <p>Tu información personal está protegida y resguardada en todo momento con nosotros</p>
           </div>
           <div className='or-ball'><i className='fas fa-chevron-circle-right' /></div>
         </div>

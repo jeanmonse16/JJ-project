@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 import Top from '../components/dashboard/Top'
+import Menu from '../components/dashboard/Menu'
 import Column from '../components/dashboard/Column'
 
 import NewTaskModal from '../components/dashboard/NewTaskModal'
-import WelcomeModal from '../components/dashboard/welcomeModal'
-import Tutorial from '../components/dashboard/Tutorial'
+import WelcomeModal from '../components/dashboard/WelcomeModal'
+import TutorialModal from '../components/dashboard/TutorialModal'
 import ProfileModal from '../components/dashboard/ProfileModal'
 import Loading from '../components/Loader'
 import { Loader } from '../_utils/Loader'
@@ -64,6 +65,12 @@ const Dashboard = (props) => {
   useEffect(() => {
     getUserProfile()
   }, [])
+  /* import TutorialStepOne from '../components/dashboard/tutorial-steps/TutorialStepOne'
+import TutorialStepTwo from '../components/dashboard/tutorial-steps/TutorialStepTwo'
+import TutorialStepThree from '../components/dashboard/tutorial-steps/TutorialStepThree'
+import TutorialStepFive from '../components/dashboard/tutorial-steps/TutorialStepFive'
+
+const LoadingPage = false */
 
   return (
 
@@ -140,7 +147,9 @@ const Dashboard = (props) => {
           </div>
           <div className='task-container'>
             <div className='task-center'>
-              {/* <Column
+              {/*
+              <TutorialStepFive />
+              <Column
                 columnNumber='1'
               /> */}
               <div className='new-column-container'>
@@ -159,7 +168,7 @@ const Dashboard = (props) => {
             userEmail='hermanadeluis@gmail.com'
             userPassword='********'
           />
-          </>}
+        </>}
     </div>
 
   )

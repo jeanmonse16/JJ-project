@@ -14,7 +14,7 @@ const ProfileModal = (props) => {
           <img src={UserImg} />
           <label className='username'>{userName}</label>
           <div className='acount-information'>
-            <p>CORREO ELECTRONICO:</p>
+            <p>CORREO ELECTRÓNICO:</p>
             <div className='profile-section'>
               <label>{userEmail}</label>
               <div className='verify-email'>
@@ -54,11 +54,15 @@ const ProfileModal = (props) => {
               <input type='file' />
               <img src={UserImg} />
             </div>
-            <i className='random-image-icon far fa-dice' />
+            <div className='random-image-container'>
+              <i className='random-image-icon far fa-dice' />
+            </div>
           </div>
           <div className='username-container'>
             <input type='text' defaultValue={userName} />
-            <i className='random-username-icon far fa-dice' />
+            <div className='random-username-container'>
+              <i className='random-image-icon far fa-dice' />
+            </div>
           </div>
           <p>CAMBIAR CONTRASEÑA</p>
           <div className='change-password-container'>
@@ -91,7 +95,28 @@ const ProfileModal = (props) => {
           </div>
         </div>
       </div>
+      <hr />
+      <p>ACTIVIDADES AGENDADAS:</p>
+      <label>12</label>
+      <hr />
+      <p>ACTIVIDADES COMPLETADAS:</p>
+      <label>45</label>
+      <hr />
+      <p>CONTRASEÑA:</p>
+      <div className='profile-section'>
+        <label>{userPassword}</label>
+        <div className='password-security-level'>
+          <label className='low-level'>baja</label>
+          <label className='medium-level'>media</label>
+          <label className='high-level'>alta</label>
+        </div>
+      </div>
+      <hr />
+      <ButtonGroup
+        buttonText='EDITAR'
+      />
     </div>
+
   )
 }
 

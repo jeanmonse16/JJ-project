@@ -8,30 +8,31 @@ import UsaImage from '../assets/images/usa.png'
 const Footer = () => {
   return (
     <div className='footer-section'>
+      <div className="wave"></div>
       <div className='footer-container'>
         <div className='content'>
           <h1>TaskMaster</h1>
-          <p>Siguenos en nuestras redes:</p>
+          <p>Síguenos en nuestras redes:</p>
           <div className='social-media'>
-            <Link to='/'><i className='footer-icon fab fa-twitter' /></Link>
-            <Link to='/'><i className='footer-icon fab fa-facebook-f' /></Link>
-            <Link to='/'><i className='footer-icon fab fa-instagram' /></Link>
-            <Link to='/'><i className='footer-icon fab fa-youtube' /></Link>
+            <Link to='/'><i className='footer-icon twitter fab fa-twitter' /></Link>
+            <Link to='/'><i className='footer-icon facebook fab fa-facebook-f' /></Link>
+            <Link to='/'><i className='footer-icon instagram fab fa-instagram' /></Link>
+            <Link to='/'><i className='footer-icon youtube fab fa-youtube' /></Link>
           </div>
           <div className="page-options">
             <div className='page-information'>
-              <Link to='/'>Terminos y condiciones</Link>
-              <Link to='/'>Preguntas frecuentes</Link>
-              <Link to='/'>Privacidad</Link>
-              <Link to='/'>Contactenos</Link>
+              <Link to='/'>Términos y condiciones<div className="underline"></div></Link>
+              <Link to='/'>Preguntas frecuentes<div className="underline"></div></Link>
+              <Link to='/'>Privacidad<div className="underline"></div></Link>
+              <Link to='/'>Contáctenos<div className="underline"></div></Link>
             </div>
             <div className='change-languages'>
               <div className='language'>
-                <p>English</p>
+                <label>English<div className="underline"></div></label>
                 <img src={UsaImage} />
               </div>
               <div className='language'>
-                <p>Español</p>
+                <label>Español<div className="underline"></div></label>
                 <img src={SpainImage} />
               </div>
             </div>

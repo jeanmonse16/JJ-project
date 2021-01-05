@@ -1,6 +1,9 @@
 import React from 'react'
+import InputGroup from '../InputGroup'
 import ButtonGroup from '../ButtonGroup'
 import FileUploaded from './FileUploaded'
+
+import TutorialStepFour from './tutorial-steps/TutorialStepFour'
 
 const NewTaskModal = () => {
   return (
@@ -9,11 +12,11 @@ const NewTaskModal = () => {
         <i className='new-task-modal-exit-icon far fa-times' />
         <h2>AÑADIR UNA ACTIVIDAD</h2>
         <div className='new-task-modal-top'>
-          <input type='text' placeholder='TITULO' />
-          <input type='text' placeholder='DD/MM/AAAA' />
+          <InputGroup inputType='text' inputPlaceHolder='TÍTULO' />
+          <InputGroup inputType='date' />
         </div>
         <div className='description-container'>
-          <textarea className='description-area' placeholder='DESCRIPCION' />
+          <textarea className='description-area' placeholder='DESCRIPCIÓN' />
         </div>
         <div className='select-column-container'>
           <select className='select-column'>
@@ -29,13 +32,13 @@ const NewTaskModal = () => {
                 <i className='upload-file-icon fal fa-upload' />
                 <input type='file' />
               </div>
-              <p>Click en el boton de arriba para subir un archivo</p>
+              <p>Click en el botón de arriba para subir un archivo</p>
               <p>Arrastra y suelta archivos para subirlos</p>
             </div>
           </div>
           <div className='file-box'>
             <div className='file-slot'>
-              <label className='empty'>- VACIO -</label>
+              <label className='empty'>- VACÍO -</label>
               <FileUploaded
                 fileColor='#26c6da'
                 fileUpIcon='file-up-icon far fa-file-word'
@@ -43,7 +46,7 @@ const NewTaskModal = () => {
               />
             </div>
             <div className='file-slot'>
-              <label className='empty'>- VACIO -</label>
+              <label className='empty'>- VACÍO -</label>
               <FileUploaded
                 fileColor='#26c6da'
                 fileUpIcon='file-up-icon far fa-file-word'
@@ -51,10 +54,10 @@ const NewTaskModal = () => {
               />
             </div>
             <div className='file-slot'>
-              <label className='empty'>- VACIO -</label>
+              <label className='empty'>- VACÍO -</label>
             </div>
             <div className='file-slot'>
-              <label className='empty'>- VACIO -</label>
+              <label className='empty'>- VACÍO -</label>
             </div>
           </div>
         </div>
@@ -66,8 +69,9 @@ const NewTaskModal = () => {
             buttonText='GUARDAR'
           />
         </div>
-
       </div>
+      <TutorialStepFour />
+
     </div>
   )
 }
