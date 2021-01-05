@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { func } from 'prop-types'
 import RedirectTo from '../_utils/RedirectTo'
 
 export function signUp (user) {
@@ -118,6 +119,42 @@ export function getUserProfile (token) {
     headers: {
       'Content-type': 'application/json',
       Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function getNewSessionKey (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateSessionKey`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function updateUserData (token, userUpdate) {
+  return Axios({
+    method: 'PUT',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateUser`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    },
+    data: userUpdate
+  })
+}
+
+export function getRandomItems (additionalQuerys = []) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.RANDOM_ITEMS_API}?results=20${additionalQuerys.map(query => `&&${query.key}=${query.value}`)}`,
+    headers: {
+      'Content-type': 'application/json'
     }
   })
 }

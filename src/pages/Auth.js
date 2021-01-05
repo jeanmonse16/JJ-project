@@ -6,6 +6,7 @@ import { setUserSession } from '../_actions'
 import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
 import AuthMethod from '../AuthMethod'
 import TabController from '../_utils/TabController'
+import RedirectTo from '../_utils/RedirectTo'
 
 const Auth = ({ path, setUserSession }) => {
   console.log(path)
@@ -27,13 +28,9 @@ const Auth = ({ path, setUserSession }) => {
   const [isActiveAuthPage, setIsActiveAuthPage] = useState(() => AuthPagesController.isActiveTab)
 
   const authAction = (response) => {
-    AuthMethod((payload) => setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
+    AuthMethod((payload) => setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message.key : null)
     RedirectTo('/dashboard')
   }
-
-  useEffect(() => {
-    console.log('effect!')
-  })
 
   return (
     <div className='logSign-container'>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Router, Redirect } from '@reach/router'
 import Auth from './pages/Auth'
@@ -11,16 +11,25 @@ import PasswordForgotten from './pages/PasswordForgotten'
 import UpdatePassword from './pages/UpdatePassword'
 import Dashboard from './pages/Dashboard'
 import AboutUs from './pages/AboutOf'
-import { setUserSession } from './_actions'
+import { setUserSession, logOutUser } from './_actions'
+import SessionKeyUpdater from './_utils/SessionKeyUpdater'
 
-/*
 const App = (props) => {
   const [isAuth, setIsAuth] = useState(function () {
     return props.userSession
   })
 
+  const sessionKeyUpdater = SessionKeyUpdater(props.userSession, props.setUserSession, props.logOutUser)
+
+  useEffect(() => {
+    !isAuth() &&
+      sessionKeyUpdater.isRunningKeySessionUpdater() &&
+        sessionKeyUpdater.start()
+  })
+
   return (
     <Router>
+      {isAuth() && <Redirect noThrow from='/' to='/dashboard' />}
       {isAuth() && <Redirect noThrow from='sign-up' to='/dashboard' />}
       {isAuth() && <Redirect noThrow from='sign-in' to='/dashboard' />}
       {isAuth() && <Redirect noThrow from='activate-account' to='/dashboard' />}
@@ -47,8 +56,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  setUserSession
+  setUserSession,
+  logOutUser
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
-*/

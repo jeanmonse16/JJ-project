@@ -45,7 +45,7 @@ const LoginForm = (props) => {
       setSignInLoading(loginLoader.isLoading())
       signIn(userInfo)
         .then(response => {
-          AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
+          AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message.key : null)
           RedirectTo('/dashboard')
           if (!mountedRef.current) return null
         })

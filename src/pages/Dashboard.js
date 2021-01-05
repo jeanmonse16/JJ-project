@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 import Top from '../components/dashboard/Top'
 import Column from '../components/dashboard/Column'
+
 import NewTaskModal from '../components/dashboard/NewTaskModal'
 import WelcomeModal from '../components/dashboard/welcomeModal'
 import Tutorial from '../components/dashboard/Tutorial'
@@ -12,22 +13,26 @@ import { Loader } from '../_utils/Loader'
 import { getUserProfile as getUserProfileRequest } from '../_services/user_service'
 import { logOutUser, setUserProfile } from '../_actions'
 import RedirectTo from '../_utils/RedirectTo'
+import TabController from '../_utils/TabController'
 
 const Dashboard = (props) => {
   const profileLoader = Loader()
   const [isLoadingProfile, setIsLoadingProfile] = useState(profileLoader.isLoading())
-
   const getUserProfile = () => {
     profileLoader.loading()
     setIsLoadingProfile(profileLoader.isLoading())
 
     getUserProfileRequest(props.token)
       .then(response => {
-        console.log(response)
-        props.setUserProfile(response.data.message.profile)
+        const userProfile = response.data.message.profile
+        props.setUserProfile(userProfile)
+        if (!userProfile.username && userProfile.firstTime) {
+          setActiveModal(ModalsController.tabs()[1])
+        } else if (userProfile.firstTime) {
+          setActiveModal(ModalsController.tabs()[2])
+        }
       })
       .catch(error => {
-        console.log(error.response)
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -45,6 +50,17 @@ const Dashboard = (props) => {
       })
   }
 
+  const [ModalsController, setModalsController] = useState(
+    TabController([
+      { canShow: false },
+      { name: 'welcome', Component: WelcomeModal, canShow: true, onSave: (i, updateProfile = true) => { setActiveModal(ModalsController.tabs()[i]); updateProfile && getUserProfile() } },
+      { name: 'tutorial', Component: Tutorial, canShow: true, onSave: (i, updateProfile = true) => { setActiveModal(ModalsController.tabs()[i]); updateProfile && getUserProfile() } },
+      { name: 'newTask', Component: NewTaskModal, canShow: true, onSave: (i, updateProfile = true) => { setActiveModal(ModalsController.tabs()[i]); updateProfile && getUserProfile() } },
+      { name: 'profile', Component: ProfileModal, canShow: true, onSave: (i, updateProfile = true) => { setActiveModal(ModalsController.tabs()[i]); updateProfile && getUserProfile() } }
+    ])
+  )
+  const [ActiveModal, setActiveModal] = useState(ModalsController.activeTab())
+
   useEffect(() => {
     getUserProfile()
   }, [])
@@ -53,11 +69,11 @@ const Dashboard = (props) => {
 
     <div className='dashboard-container'>
       {isLoadingProfile
-        ? <Loading />
+        ? <Loading LoadingBarText='Cargando...' />
         : <>
           <Top
             username={props.userData.username || props.userData.alias}
-            notificationAcount='9'
+            totalNewNotifications={props.userData.notSeenNotifications}
           />
           <div className='principal-menu-container'>
             <label id='add-btn'>Añadir
@@ -124,9 +140,9 @@ const Dashboard = (props) => {
           </div>
           <div className='task-container'>
             <div className='task-center'>
-              <Column
+              {/* <Column
                 columnNumber='1'
-              />
+              /> */}
               <div className='new-column-container'>
                 <div className='new-column-center'>
                   <i className='new-column-icon fal fa-plus' />
@@ -135,9 +151,9 @@ const Dashboard = (props) => {
               </div>
             </div>
           </div>
+          {ActiveModal.canShow && <ActiveModal.Component onSave={ActiveModal.onSave} />}
+          {/* (!props.userData.username && props.userData.firstTime) && <WelcomeModal /> */}
           <NewTaskModal />
-          <WelcomeModal />
-          <Tutorial />
           <ProfileModal
             userName={props.userData.username || props.userData.alias}
             userEmail='hermanadeluis@gmail.com'

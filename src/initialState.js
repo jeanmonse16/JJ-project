@@ -12,5 +12,6 @@ const authMethod = () => {
 export default {
   'userSession': () => authMethod(),
   'userData': {},
-  'token': window.localStorage.getItem('token')
+  'token': window.localStorage.getItem('token'),
+  'tutorialStepIndex': window.localStorage.getItem('tutorialStepIndex')
 }

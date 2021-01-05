@@ -9,13 +9,16 @@
     font-weight: 600;
     transform: scale(1);
 }
-.btn:hover{
+.activeBtn:hover{
     cursor: pointer;
     box-shadow: black 0 0 5px;
     transform: scale(1.05);
 }
-.btn:focus{
+.activeBtn:focus{
     outline: 0;
     box-shadow: black 0 0 5px;
     transform: scale(1);
+}
+.disabledBtn{
+    opacity: 0.2;
 }

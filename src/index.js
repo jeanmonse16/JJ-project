@@ -11,15 +11,15 @@ import './assets/fontawesome-pro/all'
 
 import Dashboard from './pages/Dashboard'
 
+window.React = React
+
 const store = createStore(reducer, initialState)
 
 const container = document.getElementById('app')
 
 render(
   <Provider store={store}>
-    <Dashboard />
+    <App />
   </Provider>,
   container
 )
-
-window.React = React

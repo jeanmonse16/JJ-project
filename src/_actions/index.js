@@ -12,3 +12,8 @@ export const setUserProfile = (payload) => ({
   type: 'SET_USER_PROFILE',
   payload
 })
+
+export const setActiveTutorialStep = (payload) => ({
+  type: 'SET_ACTIVE_TUTORIAL_STEP',
+  payload
+})

@@ -15,6 +15,11 @@ export default (state, action) => {
       ...state,
       userData: action.payload
     }
+  } else if (action.type === 'SET_ACTIVE_TUTORIAL_STEP') {
+    return {
+      ...state,
+      tutorialStepIndex: action.payload
+    }
   } else {
     return state
   }
