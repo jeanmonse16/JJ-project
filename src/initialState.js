@@ -13,5 +13,5 @@ export default {
   'userSession': () => authMethod(),
   'userData': {},
   'token': window.localStorage.getItem('token'),
-  'tutorialStepIndex': window.localStorage.getItem('tutorialStepIndex')
+  'tutorialStepName': window.localStorage.getItem('tutorialStepName') || 'start'
 }

@@ -89,45 +89,12 @@ const LoginForm = (props) => {
   }, [])
 
   return (
-  /*
-    <div className='login-center'>
-      <div className='section-left'>
-        <div className='login-form'>
-          <h2>INGRESA</h2>
-          <form>
-            <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-            <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
-            <div className='login-options'>
-              <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
-              <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
-            </div>
-            <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
-          </form>
-          <div className='login-thro-text'>
-            <p>Ó</p>
-            <p>INGRESA A TRAVÉS DE TU CUENTA DE:</p>
-          </div>
-          <FacebookSignIn page='facebook' authAction={authAction} />
-          <GoogleSignIn page='login' authAction={authAction} />
-        </div>
-      </div>
-      <div className='section-right'>
-        <div className='login-text'>
-          <p>Inicia seccion en tu cuenta de TaskMaster</p>
-          <p className='no-account'>¿no tienes una cuenta?</p>
-          <div className='access-register'>
-            <button onClick={() => RedirectTo('/sign-up')}>REGISTRARSE</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    */
 
     <div className='login-form'>
       <h2>INGRESA</h2>
       <form>
-        <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-        <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+        <InputGroup inputId='login-email' inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+        <InputGroup inputId='login-password' inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
         <div className='login-options'>
           <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
           <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>

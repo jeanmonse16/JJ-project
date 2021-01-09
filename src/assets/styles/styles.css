@@ -2562,7 +2562,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .tutorial-modal .tutorial-start-body .tutorial-modal-exit-icon{
     position: absolute;

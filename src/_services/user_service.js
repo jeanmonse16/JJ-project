@@ -1,5 +1,4 @@
 import Axios from 'axios'
-import { func } from 'prop-types'
 import RedirectTo from '../_utils/RedirectTo'
 
 export function signUp (user) {

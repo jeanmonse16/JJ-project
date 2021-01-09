@@ -6,6 +6,7 @@ import GenerateRandomNumber from '../../_utils/GenerateRandomNumber'
 import { getRandomItems as getRandomItemsRequest, updateUserData as updateUserDataRequest } from '../../_services/user_service'
 import { Loader } from '../../_utils/Loader'
 
+import '../../assets/styles/inputGroup.css'
 import UploadImg from '../../assets/images/profile-image.png'
 
 const welcomeModal = ({ userData, token, onSave }) => {
@@ -120,14 +121,16 @@ const welcomeModal = ({ userData, token, onSave }) => {
                 <input type='file' accept='image/*' onChange={handleImageUpload} />
                 <img src={userInfo.profileImage || UploadImg} />
               </div>
-              <div onClick={setProfileImageAsRandomGravatar}>
+              <div className='random-image-container' onClick={setProfileImageAsRandomGravatar}>
                 <i className='random-image-icon far fa-dice' />
               </div>
             </div>
         }
         <div className='new-username-container'>
-          <input name='username' className='new-username' type='text' placeholder='NOMBRE DE USUARIO' onInput={handleInputChange} onChange={handleInputChange} value={userInfo.username} />
-          <div onClick={setRandomUsername}>
+          <div className='input-group'>
+            <input name='username' type='text' placeholder='NOMBRE DE USUARIO' onInput={handleInputChange} onChange={handleInputChange} value={userInfo.username} />
+          </div>
+          <div className='random-username-container' onClick={setRandomUsername}>
             <i className='random-usename-icon far fa-dice' />
           </div>
         </div>
@@ -142,8 +145,6 @@ const welcomeModal = ({ userData, token, onSave }) => {
 {
   /*
   import InputGroup from '../InputGroup'
-
-import UploadImg from '../../assets/images/profile-image.png'
 
 const WelcomeModal = () =>{
     return(

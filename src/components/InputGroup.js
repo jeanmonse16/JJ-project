@@ -5,7 +5,7 @@ const InputGroup = (props) => {
   const { inputType, inputName, inputPlaceHolder, onChange } = props
   return (
     <div className='input-group'>
-      <input type={inputType} name={inputName} placeholder={inputPlaceHolder} onChange={onChange} onPaste={onChange} autoComplete='on' />
+      <input type={inputType} name={inputName} placeholder={inputPlaceHolder} onChange={onChange} onInput={onChange} onPaste={onChange} autoComplete='on' />
     </div>
   )
 }
