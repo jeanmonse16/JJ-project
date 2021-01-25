@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import md5 from 'md5'
 import ButtonGroup from '../ButtonGroup'
 import GenerateRandomNumber from '../../_utils/GenerateRandomNumber'
-import { getRandomItems as getRandomItemsRequest, updateUserData as updateUserDataRequest } from '../../_services/user_service'
+import { getRandomItems as getRandomItemsRequest, updateUserData as updateUserDataRequest } from '../../_services'
 import { Loader } from '../../_utils/Loader'
 
 import '../../assets/styles/inputGroup.css'
@@ -140,36 +140,6 @@ const welcomeModal = ({ userData, token, onSave }) => {
       </div>
     </div>
   )
-}
-
-{
-  /*
-  import InputGroup from '../InputGroup'
-
-const WelcomeModal = () =>{
-    return(
-        <div className="welcome-modal">
-            <div className="welcome-modal-body">
-                <h2>BIENVENIDO A TASKMASTER</h2>
-                <p>Añade un nombre de usuario y una foto de perfil</p>
-                <div className="new-profile-image-container">
-                    <div className="new-profile-image">
-                        <div className="upload-image-icon-container">
-                            <i className="upload-image-icon far fa-upload"></i>
-                        </div>
-                        <input type="file"/>
-                        <img src={UploadImg}/>
-                    </div>
-                    <div className="random-image-container">
-                        <i className="random-image-icon far fa-dice"></i>
-                    </div>
-                </div>
-                <div className="new-username-container">
-                    <InputGroup inputType="text" inputPlaceHolder="NOMBRE DE USUARIO"/>
-                    <div className="random-username-container">
-                        <i className="random-image-icon far fa-dice"></i>
-                    </div>
-  */
 }
 
 const mapStateToProps = state => ({

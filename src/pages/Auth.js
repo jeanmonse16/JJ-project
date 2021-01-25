@@ -9,7 +9,6 @@ import TabController from '../_utils/TabController'
 import RedirectTo from '../_utils/RedirectTo'
 
 const Auth = ({ path, setUserSession }) => {
-  console.log(path)
   const Pages = path === '/sign-in'
     ? [
       { name: 'sign-in', view: LoginForm },

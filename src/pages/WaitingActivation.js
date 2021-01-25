@@ -15,7 +15,7 @@ export default () => {
   var urlParams = new URLSearchParams(window.location.search);
 
   console.log(urlParams.has('post')); // true
-  
+
 */
   const emailQueryParam = GetUrlParameter('email')
   const accountCheckLoader = Loader()
@@ -64,7 +64,6 @@ export default () => {
   }
 
   useEffect(() => {
-    console.log('espere....')
     checkForAccountVerification()
   }, [])
 
@@ -76,11 +75,11 @@ export default () => {
           : <>
             <h2>ACTIVA TU CUENTA</h2>
             <p>Revisa el link de activación que se te envió a tu correo electrónico</p>
-            <div className="resend">
+            <div className='resend'>
               <p>¿No recibiste ningún link de activación en tu correo?</p>
               <p>Pulsa en el boton de abajo para reenviar el link de activación a tu correo electrónico</p>
             </div>
-            <ButtonGroup buttonText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending}/>
+            <ButtonGroup buttonText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending} />
           </>
           // eslint-disable-next-line indent
         }

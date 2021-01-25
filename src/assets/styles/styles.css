@@ -1582,7 +1582,6 @@
     box-shadow: 0 1px 5px black;
     z-index: 200;
     animation: deplegar-menu 0.5s forwards ease;
-    display: none;
 }
 .dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box{
     list-style: none;
@@ -1613,9 +1612,7 @@
     position: absolute;
     left: 15px;
 }
-.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box ul{
-    display: none;
-}
+
 .dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box ul li label{
     padding: 10px 10px 10px 60px;
 }
@@ -1719,7 +1716,6 @@
     overflow: hidden;
     z-index: 200;
     animation: deplegar-menu 0.5s forwards ease;
-    display: none;
 }
 .dashboard-container .dashbord-menu .top-container .profile-menu-container label{
     position: relative;
@@ -2038,12 +2034,12 @@
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-information{
     position: relative;
-    width: 250px;
     height: 100%;
 
     /*FLEX*/
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-header{
     position: relative;
@@ -2612,8 +2608,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    display: none;
+    justify-content: center
 }
 .dashboard-container .tutorial-modal .tutorial-end-body .tutorial-modal-exit-icon{
     position: absolute;
@@ -2945,7 +2940,6 @@
     animation: aparecer-box 1s forwards ease;
     z-index: 100;
     overflow: hidden;
-    display: none;
 }
 .dashboard-container .tutorial-step-four span:nth-of-type(1){
     position: absolute;
@@ -3097,7 +3091,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .profile-modal .profile-modal-body{
     position: relative;
@@ -3211,7 +3204,6 @@
 .dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level .low-level{
     background-color: rgb(255, 181, 181);
     width: 33.3%;
-    color: gray;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-right: solid 1px black;
@@ -3225,7 +3217,6 @@
 .dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level .high-level{
     background-color: rgb(216, 255, 164);
     width: 33.3%;
-    color: gray;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -3237,7 +3228,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 .dashboard-container .profile-modal .profile-modal-body .edit-profile h2{
     color: #2bcbba;
@@ -3472,7 +3462,6 @@
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level .low-level{
     background-color: rgb(255, 181, 181);
     width: 33.3%;
-    color: gray;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-right: solid 1px black;
@@ -3486,7 +3475,6 @@
 .dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level .high-level{
     background-color: rgb(216, 255, 164);
     width: 33.3%;
-    color: gray;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }

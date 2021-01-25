@@ -77,36 +77,6 @@ const RegisterForm = (props) => {
   }
 
   return (
-  /* <div className='register-center'>
-      <div className='section'>
-        <div className='register-text'>
-          <p>Registrate en TaskMaster</p>
-          <p className='already-account'>¿ya tienes una cuenta?</p>
-          <div className='access-login'>
-            <button onClick={e => RedirectTo('/sign-in', e)}>INICIAR SESIÓN</button>
-          </div>
-        </div>
-      </div>
-      <div className='section'>
-        <div className=' register-form'>
-          <h2>REGISTRATE</h2>
-          <form>
-            <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-            <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
-            <InputGroup inputType='password' inputName='confirmedPassword' inputPlaceHolder='Confirma tu contraseña' onChange={onChange} />
-            <ButtonGroup buttonText='REGISTARSE' handleClick={onSubmit} loading={signUpLoading} />
-          </form>
-           <div className='register-thro-text'>
-            <p>Ó</p>
-            <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
-          </div>
-          <FacebookSignIn page='register' authAction={authAction} />
-          <GoogleSignIn page='register' authAction={authAction} />
-        </div>
-      </div>
-    </div>
-    */
-
     <div className=' register-form'>
       <h2>REGÍSTRATE</h2>
       <form>

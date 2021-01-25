@@ -13,5 +13,8 @@ export default {
   'userSession': () => authMethod(),
   'userData': {},
   'token': window.localStorage.getItem('token'),
-  'tutorialStepName': window.localStorage.getItem('tutorialStepName') || 'start'
+  'tutorialSteps': ['start', 'firstStep', 'secondStep', 'thirdStep', 'fourthStep', 'fifthStep', 'end'],
+  'activeTutorialStepName': window.localStorage.getItem('tutorialStepName') || null,
+  'taskColumns': [],
+  'taskToEdit': {}
 }

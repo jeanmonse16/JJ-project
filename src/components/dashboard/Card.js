@@ -1,33 +1,39 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import FileAttach from './FileAttach'
+import TimeTooling from '../../_utils/TimeTooling'
+import { getFromFilenamePath, fileColors, fileExtensions } from '../../_utils/FileUtilities'
+import UUIDGenerator from '../../_utils/UUID_Generator'
+import { setTaskToEdit } from '../../_actions'
 
 const Card = (props) => {
-  const { cardTitle, cardNumber, date, description } = props
+  const { cardTitle, cardNumber, date, description, files, openTaskModal, taskToEdit, setTaskToEdit } = props
+  const openFileInNewWindow = (fileUrl, title) => {
+    const win = window.open()
+    win.document.title = title
+    win.document.write('<iframe src="' + fileUrl + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>')
+  }
+  const handleTaskEdition = () => {
+    setTaskToEdit(taskToEdit)
+    openTaskModal()
+  }
+
   return (
     <div className='card-container'>
-      <div className='card-attach'>
-        <FileAttach
-          fileColor='#00bcd4'
-          fileName='menudeopciones.jpg'
-          fileIcon='file-attach-icon far fa-file-pdf'
-        />
-        <FileAttach
-          fileColor='#26c6da'
-          fileName='menudeopciones.jpg'
-          fileIcon='file-attach-icon far fa-file-word'
-        />
-        <FileAttach
-          fileColor='#4dd0e1'
-          fileName='menudeopciones.jpg'
-          fileIcon='file-attach-icon far fa-file-powerpoint'
-        />
-        <FileAttach
-          fileColor='#80deea'
-          fileName='menudeopciones.jpg'
-          fileIcon='file-attach-icon far fa-file-pdf'
-        />
-      </div>
-      <div className='card-information'>
+      {files.length
+        ? <div className='card-attach'>
+          {files.map((file, i) => (
+            <FileAttach
+              key={UUIDGenerator()}
+              fileColor={fileColors[i]}
+              fileName={getFromFilenamePath(file).filename}
+              fileIcon={`file-attach-icon far fa-file-${fileExtensions[getFromFilenamePath(file).fileExtension]}`}
+              handleClick={() => openFileInNewWindow(ENV.filesUrl + getFromFilenamePath(file).filename, getFromFilenamePath(file).filename)}
+            />
+          ))}
+          </div>
+        : null}
+      <div className='card-information' style={{ width: files.length ? '250px' : '100%' }} onClick={handleTaskEdition}>
         <div className='card-header'>
           <div className='card-title'>
             <p>{cardTitle}</p>
@@ -38,43 +44,15 @@ const Card = (props) => {
           <p>{description}</p>
         </div>
         <div className='card-date'>
-          <label>{date}</label>
+          <label>{TimeTooling.formatDate(new Date(date))}</label>
         </div>
       </div>
     </div>
   )
 }
 
-{ /*
-const Card = (props) =>{
-    const {cardTitle, cardNumber, date, description} = props
-    return(
-        <div className="card-container">
-            <div className="card-information">
-                <div className="card-header">
-                    <div className="card-title">
-                        <p>{cardTitle}</p>
-                    </div>
-                    <p className="card-number">#{cardNumber}</p>
-                </div>
-                <div className="card-description">
-                    <p>{description}</p>
-                </div>
-                <div className="card-date">
-                    <label>{date}</label>
-                </div>
-            </div>
-        </div>
-        <div className='card-description'>
-          <p>{description}</p>
-        </div>
-        <div className='card-date'>
-          <label>{date}</label>
-        </div>
-      </div>
-    </div>
-  )
+const mapDispatchToProps = {
+  setTaskToEdit
 }
-*/ }
 
-export default Card
+export default connect(null, mapDispatchToProps)(Card)

@@ -25,12 +25,7 @@ export const FacebookSignIn = ({ customClass, authAction = null }) => {
       .then(LoginResponse => {
         facebookLoader.loaded()
         setIsLoadingSignIn(facebookLoader.isLoading())
-        Swal.fire({
-          icon: 'success',
-          title: 'Bienvenido',
-          text: 'Disfruta de taskmaster!'
-        })
-        setTimeout(() => authAction(LoginResponse), 3000)
+        authAction(LoginResponse)
       })
       .catch(error => {
         console.log(error)
@@ -76,12 +71,7 @@ export const GoogleSignIn = ({ customClass, authAction = null }) => {
       .then(LoginResponse => {
         googleLoader.loaded()
         setIsLoadingSignIn(googleLoader.isLoading())
-        Swal.fire({
-          icon: 'success',
-          title: 'Benvigut',
-          text: 'Disfruta de taskmaster'
-        })
-        setTimeout(() => authAction(LoginResponse), 3000)
+        authAction(LoginResponse)
       })
       .catch(error => {
         console.log(error)

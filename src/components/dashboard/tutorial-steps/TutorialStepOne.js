@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import ButtonGroup from '../../ButtonGroup'
 
-const TutorialStepOne = () => {
+const TutorialStepOne = ({ onJump, onAccept, alias }) => {
   return (
     <div className='tutorial-step-one'>
       <span />
@@ -16,14 +17,18 @@ const TutorialStepOne = () => {
       <p><b>"Añadir una nueva columna"</b></p>
       <div className='step-one-button-section'>
         <ButtonGroup
-          buttonText='SALTAR'
+          buttonText='SALTAR' handleClick={() => onJump(alias)}
         />
         <ButtonGroup
-          buttonText='CONTINUAR'
+          buttonText='CONTINUAR' handleClick={onAccept}
         />
       </div>
     </div>
   )
 }
 
-export default TutorialStepOne
+const mapStateToProps = state => ({
+  alias: state.userData.alias
+})
+
+export default connect(mapStateToProps, null)(TutorialStepOne)

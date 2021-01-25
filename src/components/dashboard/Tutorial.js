@@ -11,7 +11,7 @@ const TutorialButtons = ({ onJump, onAccept, finalStep = false }) => (
         <ButtonGroup
           buttonText='CERRAR' handleClick={onJump}
         />
-        </div>
+      </div>
       : <div className='tutorial-button-section'>
         <ButtonGroup
           buttonText='SALTAR' handleClick={onJump}
@@ -19,7 +19,7 @@ const TutorialButtons = ({ onJump, onAccept, finalStep = false }) => (
         <ButtonGroup
           buttonText='ACEPTAR' handleClick={onAccept}
         />
-      </div>}
+        </div>}
   </>
 )
 
@@ -145,7 +145,6 @@ const Tutorial = ({ onSave, setTutorialStep }) => {
 
   return (
     <div className='tutorial-modal'>
-      {console.log(ActiveTutorialStep)}
       {ActiveTutorialStep.Component && <ActiveTutorialStep.Component onJump={() => onSave(0, false)} onAccept={setNextTutorialStep} />}
     </div>
   )

@@ -147,13 +147,13 @@ export function updateUserData (token, userUpdate) {
   })
 }
 
-export function getRandomItems (additionalQuerys = []) {
+export function endUserFirstTime (token, alias) {
   return Axios({
-    method: 'GET',
+    method: 'PUT',
     // eslint-disable-next-line no-undef
-    url: `${ENV.RANDOM_ITEMS_API}?results=20${additionalQuerys.map(query => `&&${query.key}=${query.value}`)}`,
+    url: `${ENV.USERS_API}endUserFirstTime/${alias}`,
     headers: {
-      'Content-type': 'application/json'
+      Authorization: `Bearer ${token}`
     }
   })
 }

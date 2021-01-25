@@ -39,7 +39,6 @@ const Top = (props) => {
 
   return (
     <div className='dashboard-top-container'>
-      {console.log(isOnAccountMenu, isOnGeneralMenu, isOnNotificationsMenu)}
       <div onClick={(e) => toggleSubmenu(e, 'generalMenu')}>
         <i className='hamburger-button far fa-bars' />
       </div>

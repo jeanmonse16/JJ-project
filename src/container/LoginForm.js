@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
@@ -13,7 +13,6 @@ import { setUserSession } from '../_actions'
 import AuthMethod from '../AuthMethod'
 
 const LoginForm = (props) => {
-  const mountedRef = useRef(true)
   const loginLoader = Loader()
   const [signInLoading, setSignInLoading] = useState(loginLoader.isLoading())
 
@@ -41,13 +40,12 @@ const LoginForm = (props) => {
         text: wrongData[0]
       })
     } else {
+      let sessionToken = null
       loginLoader.loading()
       setSignInLoading(loginLoader.isLoading())
       signIn(userInfo)
         .then(response => {
-          AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message.key : null)
-          RedirectTo('/dashboard')
-          if (!mountedRef.current) return null
+          sessionToken = response.data.message.key
         })
         .catch(error => {
           if (error.response.data.message === 'SOCIAL_SIGN_USER!!!') {
@@ -73,6 +71,8 @@ const LoginForm = (props) => {
         .finally(() => {
           loginLoader.loaded()
           setSignInLoading(loginLoader.isLoading())
+          sessionToken && AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? sessionToken : null)
+          // RedirectTo('/dashboard')
         })
     }
   }
@@ -81,12 +81,6 @@ const LoginForm = (props) => {
     AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
     RedirectTo('/dashboard')
   }
-
-  useEffect(() => {
-    return () => {
-      mountedRef.current = false
-    }
-  }, [])
 
   return (
 

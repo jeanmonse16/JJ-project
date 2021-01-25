@@ -11,7 +11,9 @@ module.exports = (env, argv) => {
     "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
     "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
     "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
-    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/')
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:3010/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost')
   }
 
   const production = {
@@ -20,7 +22,9 @@ module.exports = (env, argv) => {
     "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
     "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
     "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
-    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/')
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:3010/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost')
   }
 
   const local = {
@@ -29,7 +33,9 @@ module.exports = (env, argv) => {
     "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
     "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
     "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
-    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/')
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:3010/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost')
   }
 
   const environtmentSettings = { "development": development, "production": production, "local": local }
