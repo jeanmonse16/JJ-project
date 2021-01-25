@@ -10,7 +10,7 @@ import RedirectTo from '../_utils/RedirectTo'
 import { ValidateMany } from '../_utils/Validator'
 import { Loader } from '../_utils/Loader'
 import InputGroup from '../components/InputGroup'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 
 const RegisterForm = (props) => {
   const registerLoader = Loader()
@@ -62,13 +62,11 @@ const RegisterForm = (props) => {
           registerLoader.loaded()
           setSignUpLoading(registerLoader.isLoading())
           const errorResponse = error.response
-          if (errorResponse.status === 400) {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Algo salió mal al procesar tu solicitud, intentalo de nuevo.'
-            })
-          }
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Algo salió mal al procesar tu solicitud, intentalo de nuevo.'
+          })
         })
     }
   }
@@ -79,33 +77,14 @@ const RegisterForm = (props) => {
   }
 
   return (
-    <div className='register-center'>
-      <div className='section'>
-        <div className='register-text'>
-          <p>Registrate en TaskMaster</p>
-          <p className='already-account'>¿ya tienes una cuenta?</p>
-          <div className='access-login'>
-            <button onClick={e => RedirectTo('/sign-in', e)}>INICIAR SESIÓN</button>
-          </div>
-        </div>
-      </div>
-      <div className='section'>
-        <div className=' register-form'>
-          <h2>REGISTRATE</h2>
-          <form>
-            <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-            <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
-            <InputGroup inputType='password' inputName='confirmedPassword' inputPlaceHolder='Confirma tu contraseña' onChange={onChange} />
-            <Go goText='REGISTARSE' handleClick={onSubmit} loading={signUpLoading} />
-          </form>
-          <div className='register-thro-text'>
-            <p>Ó</p>
-            <p>REGISTRATE A TRAVÉS DE TU CUENTA DE:</p>
-          </div>
-          <FacebookSignIn page='register' authAction={authAction} />
-          <GoogleSignIn page='register' authAction={authAction} />
-        </div>
-      </div>
+    <div className=' register-form'>
+      <h2>REGÍSTRATE</h2>
+      <form>
+        <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electrónico' onChange={onChange} />
+        <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+        <InputGroup inputType='password' inputName='confirmedPassword' inputPlaceHolder='Confirma tu contraseña' onChange={onChange} />
+        <ButtonGroup buttonText='REGISTRARSE' handleClick={onSubmit} loading={signUpLoading} />
+      </form>
     </div>
   )
 }

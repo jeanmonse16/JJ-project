@@ -37,11 +37,11 @@ const passwordValidator = (password) => {
         caracterRaro = true
       }
     }
-    if (mayuscula === true && minuscula === true && caracterRaro === true && numero === true) {
+    if (minuscula === true && numero === true) {
       return 1
     }
   }
-  return 'debes ingresar una contraseña con mínimo un caracter minúsculo, mayúsculo, un número y un caracter especial'
+  return 'debes ingresar una contraseña con mínimo un caracter minúsculo y un número'
 }
 
 const emailValidator = value => value.includes('@') && value.includes('.com') ? 1 : 'Debes ingresar un email válido'

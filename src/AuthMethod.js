@@ -6,6 +6,6 @@ export default (action, jwt = null) => {
     return action(sessionCookie)
   } else {
     window.localStorage.setItem('token', jwt)
-    return action(window.localStorage.getItem('token'))
+    return action({ token: window.localStorage.getItem('token'), session: true })
   }
 }

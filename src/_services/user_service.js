@@ -109,3 +109,51 @@ export function cookie () {
     }
   })
 }
+
+export function getUserProfile (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}profile`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function getNewSessionKey (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateSessionKey`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function updateUserData (token, userUpdate) {
+  return Axios({
+    method: 'PUT',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateUser`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    },
+    data: userUpdate
+  })
+}
+
+export function endUserFirstTime (token, alias) {
+  return Axios({
+    method: 'PUT',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}endUserFirstTime/${alias}`,
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+}

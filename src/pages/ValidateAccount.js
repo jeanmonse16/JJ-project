@@ -7,8 +7,7 @@ import { activateAccount as activateAccountRequest } from '../_services/user_ser
 import { Loader } from '../_utils/Loader'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import RedirectTo from '../_utils/RedirectTo'
-import '../assets/styles/validateAccount.css'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 import Spinner from '../_utils/Spinner'
 
 const ValidateAccount = (props) => {
@@ -53,23 +52,23 @@ const ValidateAccount = (props) => {
   return (
     <div className='validate-container'>
       <div className='validate-message'>
-        <div className='validate-text'>
-          {isLoadingActivation
-            ? <div> <Spinner color='#fff' height={140} width={400} /> </div>
-            : userAlreadyActive
-              ? <>
-                <p>Tu cuenta de <strong>TaskMaster</strong> ya estaba activa.</p>
-                <p>Pisa en el boton de abajo para iniciar sesión</p>
-                <Go goText='IR AL SIGN IN' handleClick={() => RedirectTo('/sign-in')} />
-              </>
-              : <>
-                <p>Tu cuenta de <strong>TaskMaster</strong> ha sido activada.</p>
-                <p>Pisa en el boton de abajo para ir a tu organizador</p>
-                <Go goText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard} />
-              </>
+        {!isLoadingActivation
+          ? <div> <Spinner color='#2bcbba' height={140} width={400} /> </div>
+          : userAlreadyActive
+            ? <>
+              <h2>CUENTA YA ACTIVADA</h2>
+              <p>Tu cuenta de <strong>TaskMaster</strong> ya estaba activa</p>
+              <p>Pulsa en el boton de abajo para iniciar sesión</p>
+              <ButtonGroup buttonText='IR AL SIGN IN' handleClick={() => RedirectTo('/sign-in')} />
+            </>
+            : <>
+              <h2>CUENTA ACTIVADA</h2>
+              <p>Tu cuenta de <strong>TaskMaster</strong> ha sido activada</p>
+              <p>Pulsa en el boton de abajo para ir a tu organizador</p>
+              <ButtonGroup buttonText='IR A MI ORGANIZADOR' handleClick={goToUserDashboard} />
+            </>
           // eslint-disable-next-line react/jsx-curly-newline
-          }
-        </div>
+        }
       </div>
     </div>
   )

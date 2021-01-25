@@ -1,0 +1,3487 @@
+/*----------GENERAL STYLES----------*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Righteous', cursive;
+}
+
+
+/*----------HOME PAGE STYLES----------*/
+
+
+.home-container{
+    position: relative;
+}
+.home-container .first-section{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    background-image: url('../images/first-section-bg.jpg');
+    background-size: cover;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.home-container .first-section .welcome-text{
+    color: white;
+    text-align: center;
+}
+.home-container .first-section .welcome-text p{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+.home-container .first-section .welcome-text .more{
+    font-size: 35px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+.home-container .first-section .welcome-text .only-page{
+    font-size: 45px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2.5px 2.5px 2.5px rgb(0, 0, 0);
+}
+.home-container .first-section .activities label{
+    margin: 0 15px;
+    font-size: 35px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+.home-container .first-section .activities img{
+    height: 25px;
+}
+.home-container .first-section button{
+    color: white;
+    margin-top: 25px;
+    background-color: #2bcbba;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 0 3px black;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+    transition: all 0.5s ease;
+}
+.home-container .first-section button:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.home-container .first-section button:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.home-container .first-section .wave{
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    background: url('../images/wave.png');
+    animation: deplazar-wave 10s infinite linear;
+}
+.home-container .first-section .wave::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 10s infinite linear;
+}
+.home-container .first-section .wave::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 20s infinite linear;
+    animation-delay: -5s;
+}
+@keyframes deplazar-wave{
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: 1360px;
+    }
+}
+@keyframes deplazar-reverse-wave{
+    from{
+        background-position: 1360px;
+    }
+    to{
+        background-position: 0;
+    }
+}
+.home-container .second-section{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    background-color: #f1f1f1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.home-container .second-section .left-section{
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.home-container .second-section .left-section .modes{
+    width: 30%;
+    height: 200px;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: black 0 0 15px;
+    transform: scale(1);
+    transition: all 0.5s ease;
+    animation: agrandar 4s infinite ease;
+}
+.home-container .second-section .left-section .modes:nth-child(1){
+    animation-delay: 1s;
+}
+.home-container .second-section .left-section .modes:nth-child(2){
+    animation-delay: 2s;
+}
+.home-container .second-section .left-section .modes:nth-child(3){
+    animation-delay: 4s;
+}
+.home-container .second-section .left-section .modes:nth-child(4){
+    animation-delay: 3s;
+}
+@keyframes agrandar{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }    
+}
+
+.home-container .second-section .left-section .modes-icon-container{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+}
+.home-container .second-section .left-section .modes-icon-container img{
+    width: 130px;
+    margin-top: 30px;
+    text-align: center;
+}
+.home-container .second-section .left-section .modes-icon-container .modes-icon{
+    font-size: 100px;
+    margin-top: 25px;
+}
+.home-container .second-section .left-section .modes-text{
+    width: 90%;
+    height: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+.home-container .second-section .left-section .modes-text p{
+    padding-top: 5px;
+}
+.home-container .second-section .middle-section{
+    width: 1px;
+    height: 550px;
+    border: solid 1px rgb(202, 202, 202);
+    background-color: rgb(202, 202, 202);
+}
+.home-container .second-section .right-section{
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-container .second-section .right-section p{
+    margin-left: 30px;
+    font-size: 50px;
+    color: #2bcbba;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.home-container .third-section{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    background-color: #f1f1f1;
+    background: url('../images/third-section-bg.jpg');
+    animation: slider 20s infinite linear;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes slider{
+    from{
+        background-position: 0;
+    }
+    to{
+        background-position: -1412px;
+    }
+}
+.home-container .third-section p{
+    position: relative;
+    color: #2bcbba;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    text-align: center;
+}
+.home-container .third-section .title{
+    font-size: 50px;
+    border-radius: 50px;
+}
+.home-container .third-section .subtitle{
+    font-size: 40px;
+    border-radius: 40px;
+}
+.home-container .four-section{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    background-color: #f1f1f1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-container .four-section .card-container{
+    width: 22.5%;
+    height: 400px;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+    
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.home-container .four-section .card-container:hover{
+    transform: scale(1.1);
+}
+.home-container .four-section .card-container:hover > .card-body{
+    transform: rotateY(180deg);
+}
+.home-container .four-section .card-container:hover > .bar::before{
+    transform: scaleX(1);
+}
+.home-container .four-section .card-container .card-body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: black 0 0 15px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.home-container .four-section .card-container .card-body .card-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.home-container .four-section .card-container .card-body .card-front .card-img{
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    border-radius: 99rem;
+    border: solid 10px black;
+}
+.home-container .four-section .card-container .card-body .card-front .card-img img{
+    width: 175px;
+    margin-top: 50px;
+}
+.home-container .four-section .card-container .card-body .card-front  h1{
+    text-align: center;
+    color: #2bcbba;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+}
+.home-container .four-section .card-container .card-body .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgb(26, 26, 26);
+    color: white;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.home-container .four-section .card-container .card-body .card-back  p{
+    margin: 0 20px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+.home-container .four-section .bar{
+    position: relative;
+    width: 80%;
+    margin-top: 20px;
+    height: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    box-shadow: black 0 0 5px;
+    background-color: #2bcbba;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.home-container .four-section .bar::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    background-color: rgb(26, 26, 26);
+    transition: all 0.5s ease;
+}
+.home-container .down{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    color: #2bcbba;
+    transform: scale(1);
+    z-index: 10;
+    animation: jump 1s infinite alternate ease;
+}
+.home-container .up{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+    color: #2bcbba;
+    transform: scale(1);
+    transform: rotate(180deg);
+    animation: jump 1s infinite alternate ease;
+}
+@keyframes jump{
+    0%{bottom: 40px;}
+    100%{bottom: 30px;}
+}
+.home-container .down:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+.home-container .up:hover{
+    cursor: pointer;
+    transform: rotate(180deg);
+    color: rgb(0, 0, 0);
+    animation: jump 1s infinite alternate;
+}
+
+/*----------ABOUT OF PAGE STYLES----------*/
+
+
+.about-container{
+    position: relative;
+}
+.about-container .about-top{
+    position: relative;
+    height: 630px;
+    width: 100%;
+    background-image: url('../images/about-bg.jpg');
+    background-size: cover;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-container .about-top p{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+.about-container .about-top .wave{
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    background: url('../images/wave.png');
+    animation: deplazar-wave 10s infinite linear;
+}
+.about-container .about-top .wave::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 10s infinite linear;
+}
+.about-container .about-top .wave::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 67px;
+    bottom: 0;
+    opacity: 0.4;
+    background: url('../images/wave.png');
+    animation: deplazar-reverse-wave 20s infinite linear;
+    animation-delay: -5s;
+}
+.about-container .about-text-section{
+    position: relative;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+.about-container .about-text-section .about-content{
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+}
+.about-container .about-text-section .about-content h1{
+    text-align: center;
+    line-height: 70px;
+    color: #2bcbba;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.about-container .about-text-section .about-content p{
+    font-size: 20px;
+}
+.about-container .about-text-section .about-content h2{
+    text-align: center;
+    font-size: 30px;
+    line-height: 70px;
+    color: #2bcbba;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+.about-container .about-text-section .about-content h3{
+    text-align: center;
+    font-size: 25px;
+    line-height: 70px;
+    color: #2bcbba;
+    -webkit-text-stroke: 1px black;
+    text-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+.about-container .about-text-section .about-content .developers-section{
+    width: 100%;
+    height: 400px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card{
+    width: 300px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: black 0 0 15px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    z-index: 10;
+    background-color: rgb(26, 26, 26);
+    filter: drop-shadow(0 0 5px black);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container p{
+    margin-top: 10px;
+    color: white;
+    font-size: 25px;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .photo-container img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: calc(50% - 60px);
+    bottom: -50px;
+    border-radius: 50%;
+    border: solid 10px rgb(26, 26, 26);
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container{
+    position: relative;
+    z-index: 5;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container p:nth-of-type(1){
+    position: absolute;
+    top: 65px;
+    text-decoration: underline;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social{
+    width: 100%;
+    margin-top: 80px;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a{
+    position: relative;
+    width: 50%;
+    margin: 15px 0;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a:hover{
+    color: #2bcbba;
+    transform: scale(1.05);
+}
+.about-container .about-text-section .about-content .developers-section .developers-card .description-container .social a .social-icon{
+    margin-right: 10px;
+    font-size: 20px;
+}
+/*----------LOGIN PAGE STYLES----------*/
+
+
+.login-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/login-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    position: absolute;
+}
+.login-container .login-center{
+    width: 100%;
+    min-width: 700px;
+    min-height: 400px;
+    margin-top: 4%;
+}
+.login-container .login-center .section-left{
+    float: left;
+    width: 45%;
+    text-align: center;
+}
+.login-container .login-center .section-right{
+    float: left;
+    width: 55%;
+    text-align: center;
+}
+.login-container .login-center .section-left .login-form{
+    margin: auto;
+    width: 75%;
+    min-width: 300px;
+    min-height: 400px;
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/login-bg-df.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border: solid 5px white;
+    border-radius: 15px;
+}
+.login-container .login-center .section-left .login-form h2{
+    padding-top: 35px;
+    padding-bottom: 25px;
+    color: #2bcbba;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
+}
+.login-container .login-center .section-left .login-form .login-options{
+    width: 60%;
+    min-width: 250px;
+    margin: auto;
+    height: 20px;
+    margin-bottom: 25px;
+    color: white;
+    position: relative;
+}
+.login-container .login-center .section-left .login-form .login-options .remember{
+    position: absolute;
+    left: 0;
+}
+.login-container .login-center .section-left .login-form .login-options .remember input{
+    margin-right: 10px;
+}
+.login-container .login-center .section-left .login-form .login-options .remember label:hover,
+.login-container .login-center .section-left .login-form .login-options .remember input:hover{
+    cursor: pointer;
+}
+.login-container .login-center .section-left .login-form .login-options .forgot{
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    color: white;
+}
+.login-container .login-center .section-left .login-form .login-options .forgot:hover{
+    text-decoration: underline;
+}
+.login-container .login-center .section-left .login-form .btn{
+    width: 60%;
+}
+.login-container .login-center .section-left .login-form .login-thro-text{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2bcbba;
+    font-weight: 800;
+    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 1.5px black;
+}
+.login-container .login-center .section-left .login-form .login-thro{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    background-color: white;
+    border: solid 2px black;
+    padding: 10px;
+    border-radius: 20px;
+    width: 20%;
+    transform: scale(1);
+}
+.login-container .login-center .section-left .login-form .login-thro:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.login-container .login-center .section-left .login-form .login-thro:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.login-container .login-center .section-left .login-form .login-thro .login-icons{
+    font-size: 20px;
+    color: #2bcbba;
+}
+.login-container .login-center .section-right .login-text{
+    margin: 135px auto;
+    width: 95%;
+    min-width: 300px;
+}
+.login-container .login-center .section-right .login-text p{
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.login-container .login-center .section-right .login-text .no-account{
+    margin-top: 30px;
+    font-size: 30px;
+}
+.login-container .login-center .section-right .login-text .access-register{
+    width: 100%;
+    margin-top: 15px;
+}
+.login-container .login-center .section-right .login-text .access-register button{
+    text-decoration: none;
+    color: white;
+    text-shadow: none;
+    background-color: #2bcbba;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+.login-container .login-center .section-right .login-text .access-register button:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.login-container .login-center .section-right .login-text .access-register button:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+
+
+/*----------REGISTER PAGE STYLES----------*/
+
+
+.register-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/register-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    position: absolute;
+}
+.register-container .register-center{
+    width: 100%;
+    min-width: 700px;
+    min-height: 400px;
+    margin-top: 4.5%;
+}
+.register-container .register-center .section{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.register-container .register-center .section .register-form{
+    margin: auto;
+    width: 70%;
+    min-width: 300px;
+    min-height: 400px;
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/register-bg-df.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    border: solid 5px white;
+    border-radius: 15px;
+}
+.register-container .register-center .section .register-form h2{
+    padding-top: 30px;
+    padding-bottom: 25px;
+    color: #2bcbba;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 2px black;
+}
+.register-container .register-center .section .register-form .btn{
+    width: 60%;
+}
+.register-container .register-center .section .register-text{
+    margin: 23% auto;
+    width: 95%;
+    min-width: 300px;
+    font-size: 35px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.register-container .register-center .section .register-text p{
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+.register-container .register-center .section .register-text .already-account{
+    margin-top: 30px;
+    font-size: 30px;
+}
+.register-container .register-center .section .register-text .access-login{
+    width: 100%;
+    margin-top: 15px;
+}
+.register-container .register-center .section .register-text .access-login button{
+    text-decoration: none;
+    color: white;
+    text-shadow: none;
+    background-color: #2bcbba;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+.register-container .register-center .section .register-text .access-login button:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.register-container .register-center .section .register-text .access-login button:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.register-container .register-center .section .register-form .register-thro-text{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2bcbba;
+    font-weight: 800;
+    text-shadow: black 0 0 5px;
+    -webkit-text-stroke: 1.5px black;
+}
+.register-container .register-center .section .register-form .register-thro{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    background-color: white;
+    border: solid 2px black;
+    padding: 10px;
+    border-radius: 20px;
+    width: 20%;
+    transform: scale(1);
+}
+.register-container .register-center .section .register-form .register-thro:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.register-container .register-center .section .register-form .register-thro:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.register-container .register-center .section .register-form .register-thro .register-icons{
+    font-size: 20px;
+    color: #2bcbba;
+}
+
+
+/*----------lOG-SIGN PAGE STYLES----------*/
+
+
+.logSign-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/login-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logSign-container .logSign-box{
+    width: 800px;
+    height: 500px;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: aparecer-box 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+}
+@keyframes  aparecer-box{
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.logSign-container .logSign-box .section-left{
+    position: relative;
+    background-color: #2bcbba;
+    
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-left .center{
+    width: 80%;
+    height: 90%;
+    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.logSign-container .logSign-box .section-left .center p{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 0 0 5px black;
+}
+.logSign-container .logSign-box .section-left .center button{
+    position: relative;
+    width: 80%;
+    height: 40px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border: solid 2px black;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-left .center button:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.logSign-container .logSign-box .section-left .center button:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.logSign-container .logSign-box .section-left .center .facebook{
+    background: #3b5998;
+    color: white;
+}
+.logSign-container .logSign-box .section-left .center .facebook-icon{
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+}
+.logSign-container .logSign-box .section-left .center .google{
+    background: white;
+    color:  black;
+}
+.logSign-container .logSign-box .section-left .center .google-icon{
+    position: absolute;
+    left: 10px;
+    width: 20px;
+}
+.logSign-container .logSign-box .section-left .or-ball{
+    position: absolute;
+    right: -30px;
+    top: 220px;
+    width: 60px;
+    height: 60px;
+    border-radius: 99rem;
+    background-color: #2bcbba;
+    color: white;
+    font-size: 40px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right{
+    background-color: white;
+    
+    /*FLEX*/
+    flex: 1 1;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center{
+    position: relative;
+    width: 80%;
+    height: 90%;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.logSign-container .logSign-box .section-right .center .switch{
+    width: 100%;
+    position: absolute;
+    font-size: 20px;
+    z-index: 10;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-around;
+}
+.logSign-container .logSign-box .section-right .center .switch .arrow{
+    font-size: 15px;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn{
+    position: relative;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: gray;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn:hover::before{
+    width: 100%;
+    background-color: gray;
+}
+.logSign-container .logSign-box .section-right .center .switch .sw-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.logSign-container .logSign-box .section-right .center .switch .activated::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .switch .activated:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
+}
+.logSign-container .logSign-box .section-right .center .login-form{
+    width: 100%;
+    animation: aparecer-form 1s forwards ease;
+    
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes aparecer-form{
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+.logSign-container .logSign-box .section-right .center .login-form h2{
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+.logSign-container .logSign-box .section-right .center .login-form p{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.logSign-container .logSign-box .section-right .center .login-form form{
+    width: 100%;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logSign-container .logSign-box .section-right .center .login-form form .input-group{
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options{
+    width: 100%;
+    margin: auto;
+    height: 20px;
+    margin-bottom: 25px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .remember input{
+    margin-right: 10px;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .remember label:hover,
+.logSign-container .logSign-box .section-right .center .login-form .login-options .remember input:hover{
+    cursor: pointer;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot{
+    position: relative;
+    color: black;
+    text-decoration: none;
+    
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot::before{
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background-color: #2bcbba;
+    transition: all 0.5s ease;
+}
+.logSign-container .logSign-box .section-right .center .login-form .login-options .forgot:hover::before{
+    width: 100%;
+    background-color: #2bcbba;
+}
+.logSign-container .logSign-box .section-right .center .login-form .btn{
+    width: 80%;
+}
+.logSign-container .logSign-box .section-right .center .register-form{
+    width: 100%;
+    animation: aparecer-form 1s forwards ease;
+    
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logSign-container .logSign-box .section-right .center .register-form h2{
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+.logSign-container .logSign-box .section-right .center .register-form p{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.logSign-container .logSign-box .section-right .center .register-form form{
+    width: 100%;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.logSign-container .logSign-box .section-right .center .register-form form .input-group{
+    width: 100%;
+    height: 44px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: 20px;
+    margin-bottom: 25px;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms{
+    position: absolute;
+    left: 0;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms input{
+    margin-right: 10px;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms label{
+    margin-right: 5px;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms a{
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: solid 2px #2bcbba;
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms a:hover{
+    border-bottom: solid 2px rgb(150, 150, 150);
+}
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms label:hover,
+.logSign-container .logSign-box .section-right .center .register-form .register-options .terms input:hover{
+    cursor: pointer;
+}
+.logSign-container .logSign-box .section-right .center .register-form .btn{
+    width: 80%;
+}
+
+
+/*----------VALIDATE ACCOUNT PAGE STYLES----------*/
+
+
+.validate-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/validate-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.validate-container .validate-message{
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+}
+.validate-container .validate-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.validate-container .validate-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.validate-container .validate-message .btn{
+    margin-top: 10px;
+}
+
+
+/*----------WAITING ACTIVATION PAGE STYLES----------*/
+
+
+.waiting-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/waiting-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.waiting-container .waiting-message{
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+}
+.waiting-container .waiting-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.waiting-container .waiting-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.waiting-container .waiting-message .resend{
+    margin-top: 20px;
+}
+.waiting-container .waiting-message .resend p{
+    color: grey;
+    font-size: 18px;
+}   
+.waiting-container .waiting-message .btn{
+    width: 40%;
+    margin-top: 10px;
+}
+
+
+/*----------PASSWORD FORGOTTEN PAGE STYLES----------*/
+
+
+
+.password-forgotten-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/password-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.password-forgotten-container .password-forgotten-message{
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    min-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+}
+.password-forgotten-container .password-forgotten-message .input-group{
+    width: 60%;
+}
+.password-forgotten-container .password-forgotten-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.password-forgotten-container .password-forgotten-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.password-forgotten-container .password-forgotten-message .input-group{
+    margin-bottom: 10px;
+}
+.password-forgotten-container .password-forgotten-message .btn{
+    width: 40%;
+}
+
+
+/*----------UPDATE PASSWORD PAGE STYLES----------*/
+
+
+.update-password-container{
+    background-image: linear-gradient( #2bcbbb25, rgba(0, 0, 0, 0.5)), url('../images/update-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.update-password-container .update-password-message{
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    min-width: 300px;
+    border-radius: 5px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.update-password-container .update-password-message img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.update-password-container .update-password-message .username{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.update-password-container .update-password-message .input-group{
+    width: 60%;
+}
+.update-password-container .update-password-message h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    -webkit-text-stroke: 2px black;
+}
+.update-password-container .update-password-message p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .input-group{
+    margin-bottom: 10px;
+}
+.update-password-container .update-password-message .btn{
+    width: 40%;
+    margin-top: 10px;
+}
+
+
+/*----------DASHBOARD PAGE STYLES----------*/
+
+
+.dashboard-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-container .dashbord-menu{
+    position: relative;
+    width: 100%;
+    z-index: 200;
+    animation: desplazar-menu 1s forwards ease;
+}
+.dashboard-container .dashbord-menu .top-container{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: solid 1px black;
+    background-color: #2bcbba;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@keyframes desplazar-menu{
+    from{
+        opacity: 0;
+        top: -100px;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-button{
+    font-size: 30px;
+    margin-left: 20px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.dashboard-container .dashbord-menu .top-container .section{
+    height: 100%;
+
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .dashbord-menu .top-container .section .notification-button{
+    position: relative;
+    width: 30px;
+    height: 100%;
+    margin-right: 15px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-icon{
+    font-size: 30px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-icon:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-number{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    background-color: #fc5c65;
+    border: solid 1px black;
+    border-radius: 99rem;
+    z-index: 1;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .dashbord-menu .top-container .section .notification-button .notification-number:hover{
+    cursor: pointer;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box{
+    margin-right: 20px;
+    height: 100%;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box label{
+    font-size: 15px;
+    margin-right: 10px;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box label:hover{
+    cursor: pointer;
+}
+.dashboard-container .dashbord-menu .top-container .section .profile-box img{
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container{
+    position: absolute;
+    left: 0; 
+    top: 51px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 1px 5px black;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box{
+    list-style: none;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label{
+    position: relative;
+    padding: 10px 10px 10px 40px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .hamburger-option-icon{
+    font-size: 15px;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .derecha{
+    position: absolute;
+    right: 15px;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li label .izquierda{
+    position: absolute;
+    left: 15px;
+}
+
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box ul li label{
+    padding: 10px 10px 10px 60px;
+}
+.dashboard-container .dashbord-menu .top-container .hamburger-menu-container .hamburger-box li .disable::before{
+    top: calc(50% - 4.5px);
+    right: 35px;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container{
+    position: absolute;
+    right: 5px; 
+    top: 56px;
+    width: 320px;
+    height: 375px;
+    border-radius: 10px;
+    filter: drop-shadow(0 1px 2px black);
+    background-color: white;
+    overflow: auto;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+@keyframes deplegar-menu{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container::-webkit-scrollbar{
+    width: 15px;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container::-webkit-scrollbar-thumb{
+    background-color: #2bcbba;
+    border-radius: 10px;
+    border: solid 5px white;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section{
+    width: 100%;
+    height: 70px;
+    margin-bottom: 5px;
+    
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:last-child{
+    margin-bottom: 0;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover > .notification-description .title{
+    text-decoration: underline;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover > .notification-view .notification-view-icon{
+    color: #fc5c65;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description{
+    width: 80%;
+    margin: 0 5px;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description .title{
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-description .description-text{
+    font-size: 12px;
+    text-align: justify;
+    overflow: hidden;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-view{
+    width: 20%;
+    border-right: solid 1px rgb(175, 175, 175);
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .dashbord-menu .top-container .notification-menu-container .notification-section .notification-view .notification-view-icon{
+    font-size: 45px;
+    color: gray;
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .top-container .profile-menu-container{
+    position: absolute;
+    right: 5px; 
+    top: 56px;
+    width: 200px;
+    filter: drop-shadow(0 1px 2px black);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 200;
+    animation: deplegar-menu 0.5s forwards ease;
+}
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label{
+    position: relative;
+    padding: 10px 10px 10px 35px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dashboard-container .dashbord-menu .top-container .profile-menu-container label .profile-option-icon{
+    position: absolute;
+    left: 10px;
+}
+.dashboard-container .dashbord-menu .disable{
+    position: relative;
+    color: gray;
+}
+.dashboard-container .dashbord-menu .disable:hover{
+    cursor: default;
+    text-decoration: none;
+}
+.dashboard-container .dashbord-menu .disable:hover::before{
+    opacity: 1;
+}
+.dashboard-container .dashbord-menu .disable::before{
+    position: absolute;
+    content: '(En desarrollo)';
+    opacity: 0;
+    top: 5px;
+    right: 5px;
+    font-size: 9px;
+    color: rgb(170, 79, 46);
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .bottom-container{
+    position: sticky;
+    width: 100%;
+    height: 30px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    background-color: white;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.dashboard-container .dashbord-menu .bottom-container label{
+    position: relative;
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 12.5px 0 12.5px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .dashbord-menu .bottom-container label:hover{
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+    text-decoration: underline;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 270px;
+    background-color: white;
+    filter: drop-shadow(0 2px 2px black);
+
+    /*FLEX*/
+    display: none;
+    flex-direction: column;
+}
+.dashboard-container .dashbord-menu .bottom-container label:hover > .options{
+    display: flex;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options label{
+    padding: 5px 0 5px 10px;
+    font-size: 15px;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container{
+    position: relative;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container input{
+    border: none;
+    font-size: 15px;
+    padding: 10px 30px 10px 10px;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container .search-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 15px;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options .search-container .search-icon:hover{
+    cursor: pointer;
+}
+.dashboard-container .dashbord-menu .bottom-container label .options hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.dashboard-container .task-container{
+    animation: aparecer-task 2s forwards ease;
+    overflow: hidden;
+    /*FLEX*/
+    flex: 1 1;
+}
+@keyframes aparecer-task{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.dashboard-container .task-container .task-center{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin: auto;
+}
+.dashboard-container .task-container .task-center::-webkit-scrollbar{
+    width: 15px;
+    background-color: #2bcbba;
+}
+.dashboard-container .task-container .task-center::-webkit-scrollbar-thumb{
+    background-color: white;
+    border-radius: 10px;
+    border: solid 5px #2bcbba;
+    display: none;
+}
+.dashboard-container .task-container .task-center:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.dashboard-container .task-container .task-center .column-container{
+    position: relative;
+    display: inline-block;
+    white-space: normal;
+    margin-top: 5px;
+    width: 350px;
+    height: 100%;
+    border-right: dashed 2px gray;
+    overflow: auto;
+}
+.dashboard-container .task-container .task-center .column-container::-webkit-scrollbar{
+    width: 15px;
+}
+.dashboard-container .task-container .task-center .column-container::-webkit-scrollbar-thumb{
+    background-color: #2bcbba;
+    border-radius: 10px;
+    border: solid 5px white;
+    display: none;
+}
+.dashboard-container .task-container .task-center .column-container:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer{
+    position: relative;
+    width: 100%;
+    height: 35px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer:hover > .edit-title-icon{
+    opacity: 1;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer input{
+    position: relative;
+    display: inline-block;
+    width: 265px;
+    margin-left: 15px;
+    font-size: 20px;
+    padding-bottom: 5px;
+    padding-right: 35px;
+    border: none;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer input:hover{
+    border-bottom: dashed 3px gray;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer input:focus{
+    outline: none;
+    border-bottom: dashed 3px #2bcbba;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon{
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon:hover{
+    cursor: pointer;
+}
+.dashboard-container .task-container .task-center .column-container .column-number{
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-left: 25px;
+}
+.dashboard-container .task-container .task-center .column-container .new-task-btn-container{
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+}
+    .dashboard-container .task-container .task-center .column-container button{
+    width: 300px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    transition: all 0.5s ease;
+}
+.dashboard-container .task-container .task-center .column-container button .new-task-icon{
+    font-size: 20px;
+    transition: all 1s ease;
+}
+.dashboard-container .task-container .task-center .column-container button:hover{
+    cursor: pointer;
+    background-color: rgb(215, 215, 215);
+    transform: scale(1.05);
+}
+.dashboard-container .task-container .task-center .column-container button:focus{
+    outline: 0;
+    background-color: rgb(215, 215, 215);
+    transform: scale(1);
+}
+.dashboard-container .task-container .task-center .column-container .card-container{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px auto 20px 25px ;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .task-container .task-center .column-container .card-container:hover{
+    transform: scale(1.01);
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach{
+    position: relative;
+    width: 50px;
+    height: 100%;
+    background-color: rgb(215, 215, 215);
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach{
+    margin-left: -200px;
+    width: 250px;
+    height: 40px;
+    box-shadow: 0 1px 3px black;
+    z-index: 50;
+    transition: all 1s ease;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach:hover{
+    cursor: pointer;
+    margin-left: 0px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-name{
+    width: 200px;
+    height: 40px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-name p{
+    margin-left: 10px;
+    font-size: 15px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-attach-preview{
+    width: 50px;
+    height: 40px;
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-attach .file-attach .file-attach-preview .file-attach-icon{
+    font-size: 25px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-information{
+    position: relative;
+    height: 100%;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    box-shadow: 0 1px 3px gray; 
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title{
+    width: 100%;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-number{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 10px;
+    color: gray;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description{
+    width: 230px;
+    height: 130px;
+    padding: 5px 10px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-date{
+    width: 100%;
+    height: 40px;
+    box-shadow: 0 -1px 3px gray; 
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-date label{
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: solid 2px #00acc1 ;
+}
+.dashboard-container .task-container .task-center .new-column-container{
+    position: relative;
+    display: inline-block;
+    white-space: normal;
+    margin-top: 5px;
+    width: 350px;
+    height: 100%;
+    border-right: dashed 2px gray;
+    overflow: auto;
+}
+.dashboard-container .task-container .task-center .new-column-container .new-column-center{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .task-container .task-center .new-column-container .new-column-center:hover{
+    cursor: pointer;
+    background-color: rgb(218, 218, 218);
+}
+.dashboard-container .task-container .task-center .new-column-container .new-column-center:hover > .new-column-icon,
+.dashboard-container .task-container .task-center .new-column-container .new-column-center:hover > p{
+    color: black;
+}
+.dashboard-container .task-container .task-center .new-column-container .new-column-center .new-column-icon{
+    font-size: 50px;
+    color: rgb(73, 73, 73);
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .task-container .task-center .new-column-container .new-column-center p{
+    font-size: 15px;
+    color: rgb(73, 73, 73);
+    transition: all 0.5s ease;
+}
+.dashboard-container .new-task-modal{
+    position: fixed;
+    z-index: 250;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .new-task-modal .new-task-modal-body{
+    position: relative;
+    width: 50%;
+    max-width: 650px;
+    min-width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-exit-icon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: gray;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-exit-icon:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+.dashboard-container .new-task-modal .new-task-modal-body h2{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2bcbba;
+    font-size: 30px;
+    line-height: 30px;
+    -webkit-text-stroke: 1px black;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-top{
+    width: 100%;
+    margin-bottom: 15px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-top input:focus{
+    box-shadow: black 0px 0px 5px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .description-container{
+    width: 100%;
+    margin-bottom: 15px;
+
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .description-container .description-area{
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+    padding: 10px;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border: solid 2px black;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    flex:  1 1;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .description-container .description-area:focus{
+    outline: 0;
+    border: solid 2px #2bcbba;
+    box-shadow: black 0px 0px 5px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .select-column-container{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .select-column-container .select-column{
+    width: 100%;
+    height: 50px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .select-column-container .select-column:hover{
+    cursor: pointer;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .select-column-container .select-column:focus{
+    outline: 0;
+    border: solid 2px #2bcbba;
+    box-shadow: black 0px 0px 5px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container{
+    width: 100%;
+    height: 160px;
+    margin-bottom: 30px;
+    background-color: white;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: space-between;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container{
+    width: 47.5%;
+    height: 100%;
+    border: solid 2px black;
+    border-radius: 10px;
+
+    /*FLEX*/
+    display: flex;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop{
+    margin: 4px;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    border: dashed 3px grey;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button:hover{
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button .upload-file-icon{
+    font-size: 50px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button input{
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop .upload-file-button input:hover{
+    cursor: pointer;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-drop-container .file-drop p{
+    margin: 5px;
+    font-size: 12px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box{
+    width: 47.5%;
+    height: 100%;
+    border: solid 2px black;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot{
+    position: relative;
+    border-bottom: solid 2px black;
+
+    /*FLEX*/
+    flex: 1 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot:last-child{
+    border-bottom: none;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .empty{
+    font-size: 15px;
+    color: gray;
+    font-weight: 500;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container:hover{
+    cursor: pointer;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container .file-up-icon{
+    font-size: 25px;
+    margin-left: 10px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container p{
+    width: 80%;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container .file-delete{
+    width: 20px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .files-container .file-box .file-slot .file-up-container .file-delete:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom{
+    width: 100%;
+    text-align: center;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom .btn{
+    margin: 0 20px;
+}
+.dashboard-container .welcome-modal{
+    position: fixed;
+    z-index: 250;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body{
+    position: relative;
+    width: 35%;
+    max-width: 650px;
+    min-width: 400px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+    
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .welcome-modal .welcome-modal-body p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container{
+    position: relative;
+    width: 105px;
+    margin-bottom: 20px;
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image{
+    position: relative;
+    width: 105px;
+    height: 105px;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image .upload-image-icon-container{
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border-radius: 99rem;
+    background-color: grey;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image .upload-image-icon-container .upload-image-icon{
+    font-size: 50px;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image input{
+    position: absolute;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image input:hover{
+    cursor: pointer;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image:hover .upload-image-icon-container{
+    opacity: 0.4;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .new-profile-image img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container{
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    font-size: 25px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar una avatar al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-profile-image-container .random-image-container:hover::before{
+    opacity: 1;
+    color: black;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container{
+    position: relative;
+    width: 60%;
+    margin-bottom: 20px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container{
+    position: absolute;
+    font-size: 25px;
+    bottom: 0;
+    right: -30px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar un nombre al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .welcome-modal .welcome-modal-body .new-username-container .random-username-container:hover::before{
+    opacity: 1;
+    color: black;
+}
+.dashboard-container .tutorial-modal{
+    position: fixed;
+    z-index: 250;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body{
+    position: relative;
+    max-width: 650px;
+    min-width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    text-align: center;
+    animation: aparecer-box 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body .tutorial-modal-exit-icon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: gray;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body .tutorial-modal-exit-icon:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+.dashboard-container .tutorial-modal .tutorial-start-body h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body .scroll-icon{
+    font-size: 150px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body label{
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-start-body .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body{
+    position: relative;
+    max-width: 650px;
+    min-width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .tutorial-modal-exit-icon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: gray;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .tutorial-modal-exit-icon:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+.dashboard-container .tutorial-modal .tutorial-end-body h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .check-icon{
+    font-size: 150px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body label{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.dashboard-container .tutorial-modal .tutorial-end-body .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-one{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-one span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+@keyframes border-bucle-1{
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+@keyframes border-bucle-2{
+    0%{
+        transform: translateY(-100%);
+    }
+    50%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+@keyframes border-bucle-3{
+    0%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes border-bucle-4{
+    0%{
+        transform: translateY(100%);
+    }
+    50%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+.dashboard-container .tutorial-step-one .number{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(128, 128, 128, 0.7);
+}
+.dashboard-container .tutorial-step-one h3{
+    font-size: 20px;
+    text-decoration: underline 3px #2bcbba;
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-one p{
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-one .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-two{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-two span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-two .number{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(128, 128, 128, 0.7);
+}
+.dashboard-container .tutorial-step-two h3{
+    font-size: 20px;
+    text-decoration: underline 3px #2bcbba;
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-two p{
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-two .example{
+    color: gray;
+    text-decoration: underline;
+}
+.dashboard-container .tutorial-step-two .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-three{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-three span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-three .number{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(128, 128, 128, 0.7);
+}
+.dashboard-container .tutorial-step-three h3{
+    font-size: 20px;
+    text-decoration: underline 3px #2bcbba;
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-three p{
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-three .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-four{
+    position: relative;
+    bottom: 0;
+    right: -20px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-four span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-four .number{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(128, 128, 128, 0.7);
+}
+.dashboard-container .tutorial-step-four h3{
+    font-size: 20px;
+    text-decoration: underline 3px #2bcbba;
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-four p{
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-four .btn{
+    margin: 0 20px;
+}
+.dashboard-container .tutorial-step-five{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 350px;
+    padding: 20px;
+    border: solid 1px black;
+    background-color: white;
+    white-space: normal;
+    text-align: center;
+    filter: drop-shadow(0 0 3px black);
+    animation: aparecer-box 1s forwards ease;
+    z-index: 100;
+    overflow: hidden;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(-100%);
+    animation: border-bucle-1 4s infinite linear;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(-100%);
+    animation: border-bucle-2 4s infinite linear;
+    animation-delay: 1s;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(3){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #2bcbba;
+    transform: translateX(100%);
+    animation: border-bucle-3 4s infinite linear;
+    animation-delay: 2s;
+}
+.dashboard-container .tutorial-step-five span:nth-of-type(4){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #2bcbba;
+    transform: translateY(100%);
+    animation: border-bucle-4 4s infinite linear;
+    animation-delay: 3s;
+}
+.dashboard-container .tutorial-step-five .number{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(128, 128, 128, 0.7);
+}
+.dashboard-container .tutorial-step-five h3{
+    font-size: 20px;
+    text-decoration: underline 3px #2bcbba;
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-five p{
+    margin-bottom: 10px;
+}
+.dashboard-container .tutorial-step-five .btn{
+    margin: 0 20px;
+}
+.dashboard-container .profile-modal{
+    position: fixed;
+    z-index: 250;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .profile-modal .profile-modal-body{
+    position: relative;
+    max-width: 650px;
+    min-width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 50px 20px 50px;
+    animation: aparecer-box 1s forwards ease;
+}
+.dashboard-container .profile-modal .profile-modal-body .profile-modal-exit-icon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: gray;
+}
+.dashboard-container .profile-modal .profile-modal-body .profile-modal-exit-icon:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile{
+    animation: aparecer-form 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+    margin-bottom: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .username{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information{
+    width: 100%;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information p{
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section{
+    position: relative;
+    width: 100%;
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .verify-email{
+    position: absolute;
+    width: 90px;
+    right: 10px;
+    top: 0;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: lightgreen;
+    font-size: 12px;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .verify-email .vefify-text{
+    font-size: 12px;
+    margin-right: 5px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level{
+    position: absolute;
+    width: 200px;
+    right: 10px;
+    top: 0;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level label{
+    font-size: 12px;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level .low-level{
+    background-color: rgb(255, 181, 181);
+    width: 33.3%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: solid 1px black;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level .medium-level{
+    background-color: hsl(59, 100%, 55%);
+    width: 33.3%;
+    font-weight: 700;
+    border-right: solid 1px black;
+}
+.dashboard-container .profile-modal .profile-modal-body .view-profile .acount-information .profile-section .password-security-level .high-level{
+    background-color: rgb(216, 255, 164);
+    width: 33.3%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile{
+    animation: aparecer-form 1s forwards ease;
+
+    /*FLEX*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile h2{
+    color: #2bcbba;
+    font-size: 30px;
+    -webkit-text-stroke: 1px black;
+    margin-bottom: 20px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container{
+    position: relative;
+    width: 105px;
+    margin-bottom: 20px;
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image{
+    position: relative;
+    width: 105px;
+    height: 105px;
+    overflow: hidden;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image:hover .upload-image-icon-container{
+    opacity: 0.4;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image .upload-image-icon-container{
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: grey;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image .upload-image-icon-container .upload-image-icon{
+    font-size: 50px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image input{
+    position: absolute;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image input:hover{
+    cursor: pointer;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image:hover > .upload-image-icon-container{
+    display: flex;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .profile-image img{
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+    border-radius: 99rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    box-shadow: 0 0 3px black;
+    background-color: white;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container{
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    font-size: 25px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar una avatar al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .profile-image-container .random-image-container:hover::before{
+    opacity: 1;
+    color: black;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container{
+    position: relative;
+    width:  225px;
+    height: 30px;
+    margin-bottom: 35px;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container input{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    border-bottom: solid 1px black;
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container input:hover{
+    border-bottom: solid 1px #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container input:focus{
+    outline: none;
+    border-bottom: solid 1px #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container{
+    position: absolute;
+    font-size: 25px;
+    bottom: 0;
+    right: -30px;
+    transition: all 0.5s ease;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container::before{
+    position: absolute;
+    opacity: 0;
+    content: 'Seleccionar un nombre al azar ';
+    bottom: -15px;
+    left: calc(50% - 90px);
+    width: 180px;
+    font-size: 10px;
+    transition: all 0.5s ease;
+
+    /*FLEX*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .username-container .random-username-container:hover::before{
+    opacity: 1;
+    color: black;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container p{
+    font-size: 15px;
+    font-weight: 500;
+    color: gray;
+    margin-top: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container{
+    position: relative;
+    width: 100%;
+    
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container input{
+    font-size: 15px;
+    font-weight: 500;
+    padding-right: 35px;
+    border: none;
+    border-bottom: solid 1px black;
+
+    /*FLEX*/
+    flex: 1 1;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .new-password-input{
+    padding-right: 220px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container input:hover{
+    border-bottom: solid 1px #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container input:focus{
+    outline: none;
+    border-bottom: solid 1px #2bcbba;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .view-password-icon{
+    position: absolute;
+    right: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .view-password-icon:hover{
+    cursor: pointer;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level{
+    position: absolute;
+    width: 200px;
+    right: 10px;
+    top: 0;
+    border: solid 1px black;
+    border-radius: 10px;
+    text-align: center;
+
+    /*FLEX*/
+    display: flex;
+    align-items: center;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level label{
+    font-size: 12px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level .low-level{
+    background-color: rgb(255, 181, 181);
+    width: 33.3%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-right: solid 1px black;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level .medium-level{
+    background-color: hsl(59, 100%, 55%);
+    width: 33.3%;
+    font-weight: 700;
+    border-right: solid 1px black;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .change-password-container .password-input-container .password-security-level .high-level{
+    background-color: rgb(216, 255, 164);
+    width: 33.3%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dashboard-container .profile-modal .profile-modal-body .edit-profile .edit-profile-buttom .btn{
+    margin: 0 20px;
+}
+
+.displayNone{
+    display: none;
+}

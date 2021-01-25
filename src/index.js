@@ -6,6 +6,13 @@ import App from './App'
 import initialState from './initialState'
 import reducer from './_reducers'
 
+import './assets/styles/styles.css'
+import './assets/fontawesome-pro/all'
+
+import Dashboard from './pages/Home'
+
+window.React = React
+
 const store = createStore(reducer, initialState)
 
 const container = document.getElementById('app')
