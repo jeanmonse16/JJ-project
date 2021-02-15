@@ -180,7 +180,6 @@ const TaskModal = (props) => {
   return (
     <div className='new-task-modal'>
       <div className='new-task-modal-body'>
-        {console.log(task, props)}
         <div onClick={close}>
           <i className='new-task-modal-exit-icon far fa-times' />
         </div>
@@ -227,7 +226,7 @@ const TaskModal = (props) => {
                     fileUpIcon={`file-up-icon far fa-file-${fileExtensions[getFromFilenamePath(file.name).fileExtension]}`}
                     fileUpName={file.name}
                     handleRemove={() => removeTaskFile(i)}
-                    />}
+                  />}
               </div>
             ))}
           </div>

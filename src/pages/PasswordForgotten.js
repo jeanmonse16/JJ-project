@@ -25,6 +25,11 @@ export default () => {
         .then(response => {
           passwordUpdateLoader.loaded()
           setPasswordUpdateLoading(passwordUpdateLoader.isLoading())
+          Swal.fire({
+            icon: 'success',
+            title: 'Correo enviado!',
+            text: 'Revisa tu correo para restablecer tu contraseña.'
+          })
         })
         .catch(error => {
           passwordUpdateLoader.loaded()

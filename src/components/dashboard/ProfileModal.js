@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import { ValidateOne, ValidateMany } from '../../_utils/Validator'
 import md5 from 'md5'
 import ButtonGroup from '../ButtonGroup'
 import { getFromFilenamePath } from '../../_utils/FileUtilities'
@@ -7,7 +8,7 @@ import GenerateRandomNumber from '../../_utils/GenerateRandomNumber'
 import PasswordSecurityLevel from '../../_utils/PasswordSecurityLevel'
 import { getRandomItems as getRandomItemsRequest, updateUserData as updateUserDataRequest } from '../../_services'
 import Swal from 'sweetalert2'
-import { ValidateMany } from '../../_utils/Validator'
+
 import { Loader } from '../../_utils/Loader'
 
 import UserImg from '../../assets/images/user-profile.jpg'
@@ -26,6 +27,7 @@ const ProfileModal = (props) => {
   const [editModeUser, setEditModeUser] = useState({
     userPhoto: userPhoto,
     userPhotoFile: null,
+    gravatarAsPhoto: false,
     username: username,
     currentPassword: '',
     newPassword: '',
@@ -54,7 +56,8 @@ const ProfileModal = (props) => {
       setEditModeUser({
         ...editModeUser,
         userPhoto: e.target.result,
-        userPhotoFile: file
+        userPhotoFile: file,
+        gravatarAsPhoto: false
       })
     }
   }
@@ -63,7 +66,8 @@ const ProfileModal = (props) => {
     setEditModeUser({
       ...editModeUser,
       userPhoto: gravatars[GenerateRandomNumber(0, 4)],
-      userPhotoFile: null
+      userPhotoFile: null,
+      gravatarAsPhoto: true
     })
   }
 
@@ -87,6 +91,15 @@ const ProfileModal = (props) => {
   const [userUpdateLoader, setUserUpdateLoader] = useState(Loader())
   const [isLoadingUserUpdate, setIsLoadingUserUpdate] = useState(userUpdateLoader.isLoading())
 
+  const [currentPasswordInputType, setCurrentPasswordInputType] = useState('password')
+  const handleEyeClick = () => {
+    if (currentPasswordInputType === 'password') {
+      setCurrentPasswordInputType('text')
+    } else {
+      setCurrentPasswordInputType('password')
+    }
+  }
+
   const handleUserUpdate = () => {
     userUpdateLoader.loading()
     setIsLoadingUserUpdate(userUpdateLoader.isLoading())
@@ -95,7 +108,7 @@ const ProfileModal = (props) => {
     if (username !== editModeUser.username) {
       formData.append('username', editModeUser.username)
     }
-    if (editModeUser.newPassword && editModeUser.confirmedNewPassword && editModeUser.currentPassword) {
+    if (editModeUser.newPassword && editModeUser.confirmedNewPassword && editModeUser.currentPassword && !socialMediaUser) {
       const wrongData = ValidateMany([{ value: editModeUser.newPassword, type: 'password' }, { value: editModeUser.confirmedNewPassword, type: 'password' }])
         .filter(result => result !== 'succesfully Validated')
 
@@ -120,6 +133,9 @@ const ProfileModal = (props) => {
     }
     if (editModeUser.userPhotoFile) {
       formData.append('file', editModeUser.userPhotoFile)
+    }
+
+    if (editModeUser.gravatarAsPhoto) {
       formData.append('profileImage', editModeUser.userPhoto)
     }
 
@@ -191,7 +207,7 @@ const ProfileModal = (props) => {
               <ButtonGroup
                 buttonText='EDITAR' handleClick={() => setEditProfileMode(true)}
               />
-              </div>
+            </div>
             : <div className='edit-profile'>
               <h2>EDITAR PERFIL DE TASKMASTER</h2>
               <div className='profile-image-container'>
@@ -218,8 +234,8 @@ const ProfileModal = (props) => {
                   <div className='change-password-container'>
                     <p>ACTUAL CONTRASEÑA:</p>
                     <div className='password-input-container'>
-                      <i className='view-password-icon far fa-eye' />
-                      <input type='password' name='currentPassword' onInput={handleUserEditionChange} />
+                      <div onClick={handleEyeClick} style={{ marginBottom: '15px' }}><i className='view-password-icon far fa-eye' /></div>
+                      <input type={currentPasswordInputType} name='currentPassword' onInput={handleUserEditionChange} />
                     </div>
                     <p>NUEVA CONTRASEÑA:</p>
                     <div className='password-input-container'>
@@ -244,7 +260,7 @@ const ProfileModal = (props) => {
                   buttonText='GUARDAR' handleClick={handleUserUpdate} loading={isLoadingUserUpdate}
                 />
               </div>
-              </div>
+            </div>
         }
       </div>
     </div>

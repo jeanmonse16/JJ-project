@@ -8,7 +8,7 @@ import { logOutUser, setActiveTutorialStep } from '../../_actions'
 import ProfileImg from '../../assets/images/profile-image.png'
 
 const Menu = (props) => {
-  const { username, totalNewNotifications } = props
+  const { username, totalNewNotifications, userPhoto = null } = props
   // const [submenusSwitcher, setSubmenusSwitcher] = useState(Switcher())
   const submenusSwitcher = Switcher()
   const submenus = ['generalMenu', 'notificationsMenu', 'accountMenu']
@@ -81,7 +81,7 @@ const Menu = (props) => {
           </div>
           <div className='profile-box' onClick={(e) => toggleSubmenu(e, 'accountMenu')}>
             <label>{username}</label>
-            <img src={ProfileImg} />
+            <img src={userPhoto || ProfileImg} />
           </div>
         </div>
         {isOnGeneralMenu &&

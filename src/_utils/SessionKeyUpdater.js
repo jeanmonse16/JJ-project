@@ -6,7 +6,7 @@ export default (getUserSession, setUserSession, logOutUser) => {
   const [isRunningKeySessionUpdater, setIsRunningKeySessionUpdater] = window.React.useState(false)
   const [timeOutId, setTimeOutId] = window.React.useState(null)
 
-  const start = () => getUserSession() ? setTimeOutId(window.setInterval(runSessionKeyUpdater, 300000)) : setIsRunningKeySessionUpdater(false)
+  const start = () => setTimeOutId(window.setInterval(runSessionKeyUpdater, 180000))
 
   const runSessionKeyUpdater = () => {
     const token = window.localStorage.getItem('token')
@@ -24,6 +24,7 @@ export default (getUserSession, setUserSession, logOutUser) => {
 
   const stop = () => {
     window.clearInterval(timeOutId)
+    setIsRunningKeySessionUpdater(false)
   }
 
   return {

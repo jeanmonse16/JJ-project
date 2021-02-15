@@ -75,6 +75,18 @@ export function sendEmailForPasswordUpdate (email) {
   })
 }
 
+export function updateUserPassword (hash, passwords) {
+  return Axios({
+    method: 'put',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}auth/updatePassword/${hash}`,
+    headers: {
+      'Content-type': 'application/json'
+    },
+    data: JSON.stringify(passwords)
+  })
+}
+
 export function facebookSignIn (user) {
   return Axios({
     method: 'post',

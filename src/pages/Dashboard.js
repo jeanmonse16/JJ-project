@@ -156,8 +156,8 @@ const Dashboard = (props) => {
   const [ActiveModal, setActiveModal] = useState(ModalsController.activeTab())
 
   const skipTutorial = (alias) => {
-    window.localStorage.removeItem('tutorialStepName')
     setActiveTutorialStep(null)
+    props.setActiveTutorialStep(null)
     endUserFirstTimeRequest(props.token, alias)
   }
 
@@ -255,7 +255,6 @@ const Dashboard = (props) => {
   return (
 
     <div className='dashboard-container'>
-      {console.log(props)}
       {isLoadingProfile
         ? <Loading LoadingBarText='Cargando...' />
         : <>
@@ -265,6 +264,7 @@ const Dashboard = (props) => {
             addNewColumn={AddNewColumn.props.handleClick}
             addNewTask={handleNewTaskButtonClick}
             showUserProfile={showUserProfile}
+            userPhoto={props.userData.profileImage}
           />
           <div className='task-container'>
             <div className='task-center'>
