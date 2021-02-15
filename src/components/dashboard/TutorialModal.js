@@ -50,7 +50,7 @@ const Tutorial = ({ onSave, setTutorialStep, activeTutorialStepName, tutorialSte
 
   const skipTutorial = () => {
     endUserFirstTime()
-    onSave(0, false)
+    onSave(0, false, false)
   }
 
   const setNextTutorialStep = () => {

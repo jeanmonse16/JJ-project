@@ -60,6 +60,12 @@ const LoginForm = (props) => {
               title: 'Oops...',
               text: 'Algo salió mal o las Credenciales son inválidas, intentalo de nuevo.'
             })
+          } else if (error.response && error.response.status === 403) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Tu cuenta no ha sido activada :(.'
+            })
           } else {
             Swal.fire({
               icon: 'error',

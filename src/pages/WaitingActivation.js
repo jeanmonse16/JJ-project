@@ -14,8 +14,6 @@ export default () => {
 
   var urlParams = new URLSearchParams(window.location.search);
 
-  console.log(urlParams.has('post')); // true
-
 */
   const emailQueryParam = GetUrlParameter('email')
   const accountCheckLoader = Loader()

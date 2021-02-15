@@ -61,7 +61,7 @@ const RegisterForm = (props) => {
         .catch(error => {
           registerLoader.loaded()
           setSignUpLoading(registerLoader.isLoading())
-          const errorResponse = error.response
+          const errorMessage = error.code
           Swal.fire({
             icon: 'error',
             title: 'Oops...',

@@ -22,10 +22,16 @@ const App = (props) => {
   const sessionKeyUpdater = SessionKeyUpdater(props.userSession, props.setUserSession, props.logOutUser)
 
   useEffect(() => {
-    !isAuth() &&
-      sessionKeyUpdater.isRunningKeySessionUpdater() &&
-        sessionKeyUpdater.start()
+    setIsAuth(function () {
+      return props.userSession
+    })
   })
+
+  useEffect(() => {
+    isAuth()
+      ? !sessionKeyUpdater.isRunningKeySessionUpdater() && sessionKeyUpdater.start()
+      : sessionKeyUpdater.stop()
+  }, [isAuth])
 
   return (
     <Router>

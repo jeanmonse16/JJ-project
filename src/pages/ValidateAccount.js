@@ -11,29 +11,33 @@ import ButtonGroup from '../components/ButtonGroup'
 import Spinner from '../_utils/Spinner'
 
 const ValidateAccount = (props) => {
+  const useLoader = () => {
+    const [isLoading, setIsLoading] = useState(false)
+
+    return {
+      isOn: () => isLoading,
+      on: () => setIsLoading(true),
+      off: () => setIsLoading(false)
+    }
+  }
   const activationHash = GetUrlParameter('activation')
-  const activationLoader = Loader()
-  const [isLoadingActivation, setIsLoadingActivation] = useState(activationLoader.isLoading())
+  const Loader = useLoader()
   const [userAlreadyActive, setUserAlreadyActive] = useState(false)
   const [userKey, setUserKey] = useState(null)
 
   const activateAccount = () => {
-    activationLoader.loading()
-    setIsLoadingActivation(activationLoader.isLoading())
+    Loader.on()
 
     if (activationHash.length) {
       return activateAccountRequest(activationHash)
         .then(response => {
-          activationLoader.loaded()
-          setIsLoadingActivation(activationLoader.isLoading())
           setUserKey(response.data.message.key)
         })
         .catch(error => {
-          activationLoader.loaded()
-          setIsLoadingActivation(activationLoader.isLoading())
           if (error.response.status === 500) { setUserAlreadyActive(true) }
           console.log(error)
         })
+        .finally(Loader.off)
     } else {
       return RedirectTo('/welcome')
     }
@@ -52,7 +56,7 @@ const ValidateAccount = (props) => {
   return (
     <div className='validate-container'>
       <div className='validate-message'>
-        {!isLoadingActivation
+        {Loader.isOn()
           ? <div> <Spinner color='#2bcbba' height={140} width={400} /> </div>
           : userAlreadyActive
             ? <>
