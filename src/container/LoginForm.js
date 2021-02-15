@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from '@reach/router'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 import InputGroup from '../components/InputGroup'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 import { ValidateMany } from '../_utils/Validator'
 import { FacebookSignIn, GoogleSignIn } from '../_utils/SocialSignIn'
 import { Loader } from '../_utils/Loader'
@@ -13,7 +13,6 @@ import { setUserSession } from '../_actions'
 import AuthMethod from '../AuthMethod'
 
 const LoginForm = (props) => {
-  const mountedRef = useRef(true)
   const loginLoader = Loader()
   const [signInLoading, setSignInLoading] = useState(loginLoader.isLoading())
 
@@ -41,13 +40,12 @@ const LoginForm = (props) => {
         text: wrongData[0]
       })
     } else {
+      let sessionToken = null
       loginLoader.loading()
       setSignInLoading(loginLoader.isLoading())
       signIn(userInfo)
         .then(response => {
-          AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? response.data.message : null)
-          RedirectTo('/dashboard')
-          if (!mountedRef.current) return null
+          sessionToken = response.data.message.key
         })
         .catch(error => {
           if (error.response.data.message === 'SOCIAL_SIGN_USER!!!') {
@@ -62,6 +60,12 @@ const LoginForm = (props) => {
               title: 'Oops...',
               text: 'Algo salió mal o las Credenciales son inválidas, intentalo de nuevo.'
             })
+          } else if (error.response && error.response.status === 403) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Tu cuenta no ha sido activada :(.'
+            })
           } else {
             Swal.fire({
               icon: 'error',
@@ -73,6 +77,8 @@ const LoginForm = (props) => {
         .finally(() => {
           loginLoader.loaded()
           setSignInLoading(loginLoader.isLoading())
+          sessionToken && AuthMethod((payload) => props.setUserSession(payload), ENV.authMethod === 'jwt' ? sessionToken : null)
+          // RedirectTo('/dashboard')
         })
     }
   }
@@ -82,45 +88,19 @@ const LoginForm = (props) => {
     RedirectTo('/dashboard')
   }
 
-  useEffect(() => {
-    return () => {
-      mountedRef.current = false
-    }
-  }, [])
-
   return (
-    <div className='login-center'>
-      <div className='section-left'>
-        <div className='login-form'>
-          <h2>INGRESA</h2>
-          <form>
-            <InputGroup inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
-            <InputGroup inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
-            <div className='login-options'>
-              <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
-              <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
-            </div>
-            <Go goText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
-          </form>
-          <div className='login-thro-text'>
-            <p>Ó</p>
-            <p>INGRESA A TRAVÉS DE TU CUENTA DE:</p>
-          </div>
-          {/* <button className='login-thro'><i className='login-icons fab fa-facebook-f' /></button>
-          <button className='login-thro'><i className='login-icons fab fa-google' /></button> */}
-          <FacebookSignIn page='login' authAction={authAction} />
-          <GoogleSignIn page='login' authAction={authAction} />
+
+    <div className='login-form'>
+      <h2>INGRESA</h2>
+      <form>
+        <InputGroup inputId='login-email' inputType='text' inputName='email' inputPlaceHolder='Introduce tu correo electronico' onChange={onChange} />
+        <InputGroup inputId='login-password' inputType='password' inputName='password' inputPlaceHolder='Introduce tu contraseña' onChange={onChange} />
+        <div className='login-options'>
+          <div className='remember'><input type='checkbox' id='remember' /><label htmlFor='remember'>Recordar</label></div>
+          <Link to='/password-forgotten' className='forgot'>¿Olvidaste tu contraseña?</Link>
         </div>
-      </div>
-      <div className='section-right'>
-        <div className='login-text'>
-          <p>Inicia seccion en tu cuenta de TaskMaster</p>
-          <p className='no-account'>¿no tienes una cuenta?</p>
-          <div className='access-register'>
-            <button onClick={() => RedirectTo('/sign-up')}>REGISTRARSE</button>
-          </div>
-        </div>
-      </div>
+        <ButtonGroup buttonText='INICIAR SESIÓN' loading={signInLoading} handleClick={onSubmit} />
+      </form>
     </div>
   )
 }

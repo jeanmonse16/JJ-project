@@ -11,5 +11,10 @@ const authMethod = () => {
 
 export default {
   'userSession': () => authMethod(),
-  'userData': {}
+  'userData': {},
+  'token': window.localStorage.getItem('token'),
+  'tutorialSteps': ['start', 'firstStep', 'secondStep', 'thirdStep', 'fourthStep', 'fifthStep', 'end'],
+  'activeTutorialStepName': window.localStorage.getItem('tutorialStepName') || null,
+  'taskColumns': [],
+  'taskToEdit': {}
 }

@@ -1,0 +1,26 @@
+.btn{
+    min-width: 120px;
+    padding: 10px;
+    background-color: #2bcbba;
+    border: solid 2px black;
+    border-radius: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 0 3px black;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+}
+.activeBtn:hover{
+    cursor: pointer;
+    box-shadow: black 0 0 5px;
+    transform: scale(1.05);
+}
+.activeBtn:focus{
+    outline: 0;
+    box-shadow: black 0 0 5px;
+    transform: scale(1);
+}
+.disabledBtn{
+    opacity: 0.2;
+}

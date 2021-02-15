@@ -75,6 +75,18 @@ export function sendEmailForPasswordUpdate (email) {
   })
 }
 
+export function updateUserPassword (hash, passwords) {
+  return Axios({
+    method: 'put',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}auth/updatePassword/${hash}`,
+    headers: {
+      'Content-type': 'application/json'
+    },
+    data: JSON.stringify(passwords)
+  })
+}
+
 export function facebookSignIn (user) {
   return Axios({
     method: 'post',
@@ -106,6 +118,54 @@ export function cookie () {
     url: 'http://localhost:3010/cookies',
     headers: {
       'Content-type': 'application/json'
+    }
+  })
+}
+
+export function getUserProfile (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}profile`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function getNewSessionKey (token) {
+  return Axios({
+    method: 'GET',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateSessionKey`,
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    }
+  })
+}
+
+export function updateUserData (token, userUpdate) {
+  return Axios({
+    method: 'PUT',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}updateUser`,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'multipart/form-data'
+    },
+    data: userUpdate
+  })
+}
+
+export function endUserFirstTime (token, alias) {
+  return Axios({
+    method: 'PUT',
+    // eslint-disable-next-line no-undef
+    url: `${ENV.USERS_API}endUserFirstTime/${alias}`,
+    headers: {
+      Authorization: `Bearer ${token}`
     }
   })
 }

@@ -5,9 +5,8 @@ import { checkForAccountVerification as checkForAccountVerificationRequest, rese
 import RedirectTo from '../_utils/RedirectTo'
 import GetUrlParameter from '../_utils/GetUrlParameter'
 import { Loader } from '../_utils/Loader'
-import '../assets/styles/waitingActivation.css'
 import Spinner from '../_utils/Spinner'
-import Go from '../components/Go'
+import ButtonGroup from '../components/ButtonGroup'
 
 export default () => {
   /* ejemplo de como manejar parametros con la clase URLSEARCHPARAMS
@@ -15,8 +14,7 @@ export default () => {
 
   var urlParams = new URLSearchParams(window.location.search);
 
-  console.log(urlParams.has('post')); // true
-  */
+*/
   const emailQueryParam = GetUrlParameter('email')
   const accountCheckLoader = Loader()
   const [isLoadingAccountCheck, setIsLoadingAccountCheck] = useState(accountCheckLoader.isLoading())
@@ -64,7 +62,6 @@ export default () => {
   }
 
   useEffect(() => {
-    console.log('espere....')
     checkForAccountVerification()
   }, [])
 
@@ -72,16 +69,15 @@ export default () => {
     <div className='waiting-container'>
       <div className='waiting-message'>
         {isLoadingAccountCheck
-          ? <div style={{ marginTop: '70px' }}> <Spinner color='#2bcbba' height={150} width={400} /> </div>
+          ? <div> <Spinner color='#2bcbba' height={150} width={400} /> </div>
           : <>
             <h2>ACTIVA TU CUENTA</h2>
-            <div className='waiting-text'>
-              <p>Revisa el link de activación que se te envió a tu correo electrónico</p>
-              <div className='resend'>
-                <p>¿No recibiste ningún link de activación en tu correo?</p>
-                <Go goText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending} />
-              </div>
+            <p>Revisa el link de activación que se te envió a tu correo electrónico</p>
+            <div className='resend'>
+              <p>¿No recibiste ningún link de activación en tu correo?</p>
+              <p>Pulsa en el boton de abajo para reenviar el link de activación a tu correo electrónico</p>
             </div>
+            <ButtonGroup buttonText='REENVIAR' handleClick={resendEmailForVerification} loading={isLoadingEmailResending} />
           </>
           // eslint-disable-next-line indent
         }
