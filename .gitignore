@@ -2,3 +2,5 @@ node_modules
 keytmp.pem
 dist
 package-lock.json
+
+.vercel

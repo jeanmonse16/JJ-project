@@ -4,9 +4,9 @@
   "description": "JJ-project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --https --history-api-fallback  --mode=development",
+    "dev": "webpack-dev-server --history-api-fallback  --mode=development",
     "localDev": "webpack-dev-server --https --history-api-fallback  --mode=none",
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jeanpier",
