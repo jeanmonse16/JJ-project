@@ -3,16 +3,16 @@ import { Link } from '@reach/router'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-import FrontendDeveloper from '../assets/images/Joalbert_Milano.jpg'
-import BackendDeveloper from '../assets/images/Luis_Monserrate.jpg'
+import Developer1 from '../assets/images/Joalbert_Milano.jpg'
+import Developer2 from '../assets/images/Luis_Monserrate.jpg'
 
 export default () => {
   return (
     <div className='about-container'>
       <div className='about-top'>
-        <Header />
-          <p>Conoce mas acerca de TaskMaster</p>
-        <div className="wave"></div>
+        <Header activeTab='ACERCA DE' />
+        <p>Conoce mas acerca de TaskMaster</p>
+        <div className='wave' />
       </div>
       <div className='about-text-section'>
         <div className='about-content'>
@@ -26,33 +26,33 @@ export default () => {
           <p>Además, TaskMaster cuenta con un aportando estadístico, donde se muestran todo tipo de información relevante acerca de las actividades realizadas o por hacer que tengas en tu organizador, otorgando una vista más clara y precisa, con números y gráficos acerca de dichas actividades.</p>
           <h2>Elaborado por J&J ENTERPRISE</h2>
           <h3>DESARROLLADORES</h3>
-          <div className="developers-section">
-              <div className="developers-card">
-                <div className="photo-container">
-                    <p>FRONTEND DEVELOPER</p>
-                    <img src={FrontendDeveloper}/>
-                </div>
-                <div className="description-container">
-                  <p>Joalbert Milano</p>
-                  <div className="social">
-                    <Link to='/'><i className='social-icon fab fa-instagram' />Joalbert_Milano</Link>
-                    <Link to='/'><i className='social-icon fab fa-github' />JoalbertMilano</Link>
-                  </div>
+          <div className='developers-section'>
+            <div className='developers-card'>
+              <div className='photo-container'>
+                <p>DEVELOPER</p>
+                <img src={Developer1} />
+              </div>
+              <div className='description-container'>
+                <p>Joalbert Milano</p>
+                <div className='social'>
+                  <a target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/joalbert_milano/'><i className='social-icon fab fa-instagram' />Joalbert_Milano</a>
+                  <a target='_blank' rel='noopener noreferrer' href='https://github.com/JoalbertMilano'><i className='social-icon fab fa-github' />JoalbertMilano</a>
                 </div>
               </div>
-              <div className="developers-card">
-                <div className="photo-container">
-                      <p>BACKEND DEVELOPER</p>
-                      <img src={BackendDeveloper}/>
-                  </div>
-                  <div className="description-container">
-                    <p>Luis Monserrate</p>
-                    <div className="social">
-                      <Link to='/'><i className='social-icon fab fa-instagram' />Jeanpier.monse</Link>
-                      <Link to='/'><i className='social-icon fab fa-github' />Jeanmonse16</Link>
-                    </div>
-                  </div>
+            </div>
+            <div className='developers-card'>
+              <div className='photo-container'>
+                <p>DEVELOPER</p>
+                <img src={Developer2} />
               </div>
+              <div className='description-container'>
+                <p>Jeanpier Monserrate</p>
+                <div className='social'>
+                  <a target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/jeanpier.monse/'><i className='social-icon fab fa-instagram' />Jeanpier.monse</a>
+                  <a target='_blank' rel='noopener noreferrer' href='https://github.com/jeanmonse16'><i className='social-icon fab fa-github' />Jeanmonse16</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

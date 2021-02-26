@@ -21,7 +21,7 @@ const Home = (props) => {
   return (
     <div className='home-container'>
       <div className='first-section'>
-        <Header />
+        <Header activeTab='INICIO' />
         <div className='welcome-text'>
           <p>Organiza las actividades de tu vida</p>
           <div className='activities'>
