@@ -111,17 +111,6 @@ export function googleSignIn (user) {
   })
 }
 
-export function cookie () {
-  return Axios({
-    method: 'GET',
-    // eslint-disable-next-line no-undef
-    url: 'http://localhost:3010/cookies',
-    headers: {
-      'Content-type': 'application/json'
-    }
-  })
-}
-
 export function getUserProfile (token) {
   return Axios({
     method: 'GET',
