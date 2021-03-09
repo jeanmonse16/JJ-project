@@ -6,19 +6,39 @@ const path = require('path')
 
 module.exports = (env, argv) => {
   const development = {
-    "usersApi": JSON.stringify('http://localhost:3010/users/')
+    "authMethod": JSON.stringify('jwt'),
+    "USERS_API": JSON.stringify('http://localhost:9000/.netlify/functions/api/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
+    "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:9000/netlify/functions/api/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost:9000/')
   }
 
   const production = {
-    "usersApi": JSON.stringify('not-available-yet/')
+    "authMethod": JSON.stringify('jwt'),
+    "USERS_API": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app/.netlify/functions/api/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
+    "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app/netlify/functions/api/taskfiles/'),
+    "cdnOrigin": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app')
   }
 
-  const environmentSettings = {
-    // eslint-disable-next-line quote-props
-    "development": development,
-    "production": production,
-    "none": development
+  const local = {
+    "authMethod": JSON.stringify('jwt'),
+    "USERS_API": JSON.stringify('http://localhost:3010/users/'),
+    "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
+    "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
+    "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
+    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:3010/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost')
   }
+
+  const environtmentSettings = { "development": development, "production": production, "local": local }
 
   return {
     devServer: {
@@ -27,7 +47,7 @@ module.exports = (env, argv) => {
       port: 3000
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'public'),
       filename: 'app.bundle.js',
       publicPath: '/'
     },
@@ -75,9 +95,7 @@ module.exports = (env, argv) => {
         template: 'src/index.html'
       }),
       new webpack.DefinePlugin({
-        USERS_API: JSON.stringify('http://localhost:3010/users/'),
-        FACEBOOK_APP_ID: JSON.stringify('928954197608186'),
-        GOOGLE_APP_ID: JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com')
+        ENV: environtmentSettings[argv.mode] || environtmentSettings.local
       })
     ]
   }

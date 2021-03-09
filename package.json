@@ -4,8 +4,9 @@
   "description": "JJ-project",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --https --history-api-fallback",
-    "build": "webpack",
+    "dev": "webpack-dev-server --history-api-fallback --https --mode=development",
+    "localDev": "webpack-dev-server --https --history-api-fallback  --mode=none",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jeanpier",
@@ -37,8 +38,9 @@
   "dependencies": {
     "@reach/router": "1.3.3",
     "@ungap/url-search-params": "^0.2.2",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "intersection-observer": "0.7.0",
+    "md5": "2.3.0",
     "prop-types": "15.7.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
@@ -46,6 +48,9 @@
     "react-google-login": "^5.1.21",
     "react-icons": "3.7.0",
     "react-loader-spinner": "^3.1.14",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "sass": "1.22.12",
     "styled-components": "5.0.1",
     "sweetalert2": "^10.0.2"
