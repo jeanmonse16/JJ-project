@@ -109,7 +109,7 @@ const Menu = (props) => {
             </ul>
           </div>}
         {isOnNotificationsMenu &&
-          <div className='notification-menu-container'>
+          <div className='notification-menu-container '>
             <NotificationSection
               notificationTitle='Tarea caducada'
               notificationDescriptionText='La tarea #112156 "Examen de matamaticas" se ha cadicad/a hace 12 horas'
@@ -144,7 +144,7 @@ const Menu = (props) => {
         {isOnAccountMenu &&
           <div className='profile-menu-container'>
             <label onClick={handleUserProfileButtonClick}><i className='profile-option-icon far fa-user' />Perfil</label>
-            <label><i className='profile-option-icon fal fa-tools' />Soporte y Ayuda</label>
+            <label className='disable'><i className='profile-option-icon fal fa-tools' />Soporte y Ayuda</label>
             <label className='disable'><i className='profile-option-icon far fa-moon-stars' />Modo oscuro</label>
             <label className='disable'><i className='profile-option-icon fas fa-chart-bar' />Estadísticas</label>
             <label onClick={logOutUser}><i className='profile-option-icon far fa-sign-out' />Cerrar sesión</label>
@@ -163,21 +163,21 @@ const Menu = (props) => {
             <label className='disable'>Paso adelante</label>
             <label className='disable'>Paso atrás</label>
             <hr />
-            <label>Editar actividad</label>
+            <label className='disable'>Editar actividad</label>
             <hr />
-            <label>Eliminar actividad</label>
-            <label>Eliminar columna</label>
+            <label className='disable'>Eliminar actividad</label>
+            <label className='disable'>Eliminar columna</label>
             <hr />
-            <label>Mover actividad</label>
+            <label className='disable'>Mover actividad</label>
           </div>
         </label>
         <label id='select-btn'>Selección
           <div className='options'>
-            <label>Seleccionar tarea</label>
-            <label>Seleccionar columna</label>
+            <label className='disable'>Seleccionar tarea</label>
+            <label className='disable'>Seleccionar columna</label>
             <hr />
-            <label>Deseleccionar</label>
-            <label>Volver a seleccionar</label>
+            <label className='disable'>Deseleccionar</label>
+            <label className='disable'>Volver a seleccionar</label>
           </div>
         </label>
         <label id='view-btn'>Vista
@@ -200,17 +200,17 @@ const Menu = (props) => {
         </label>
         <label id='help-btn'>Ayuda
           <div className='options'>
-            <label>Bienvenida</label>
-            <label>Documentacion</label>
-            <label>Trucos y consejos</label>
+            <label className='disable'>Bienvenida</label>
+            <label className='disable'>Documentacion</label>
+            <label className='disable'>Trucos y consejos</label>
             <hr />
-            <label>Síguenos en Instagram</label>
-            <label>Síguenos en YouTube</label>
-            <label>Síguenos en Twitter</label>
+            <label className='disable'>Síguenos en Instagram</label>
+            <label className='disable'>Síguenos en YouTube</label>
+            <label className='disable'>Síguenos en Twitter</label>
             <hr />
-            <label>Reportar problema</label>
+            <label className='disable'>Reportar problema</label>
             <hr />
-            <label>Acerca de</label>
+            <label className='disable'>Acerca de</label>
           </div>
         </label>
       </div>

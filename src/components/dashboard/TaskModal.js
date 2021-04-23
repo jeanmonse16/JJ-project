@@ -232,9 +232,10 @@ const TaskModal = (props) => {
           </div>
         </div>
         <div className='new-task-modal-bottom'>
-          <ButtonGroup
+          <button className="btn delete activeBtn">BORRAR</button>
+          {/* <ButtonGroup
             buttonText='DESCARTAR' handleClick={close}
-          />
+          /> */}
           <ButtonGroup
             buttonText='GUARDAR'
             canSubmit={canSaveTask}

@@ -2407,6 +2407,9 @@
 .dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom .btn{
     margin: 0 20px;
 }
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom .delete{
+    background-color: #fc5c65;
+}
 .dashboard-container .welcome-modal{
     position: fixed;
     z-index: 250;
