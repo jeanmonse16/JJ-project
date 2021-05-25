@@ -3,7 +3,12 @@ import { connect } from 'react-redux'
 import ButtonGroup from '../ButtonGroup'
 import FileUploaded from './FileUploaded'
 import { Loader } from '../../_utils/Loader'
-import { createTask as createTaskRequest, updateTask as updateTaskRequest, uploadFiles as uploadFilesRequest } from '../../_services'
+import {
+  createTask as createTaskRequest,
+  updateTask as updateTaskRequest,
+  uploadFiles as uploadFilesRequest,
+  removeTask as removeTaskRequest
+} from '../../_services'
 import { getFromFilenamePath, fileColors, fileExtensions } from '../../_utils/FileUtilities'
 import UUIDGenerator from '../../_utils/UUID_Generator'
 import { setTaskToEdit } from '../../_actions'
@@ -29,6 +34,8 @@ const TaskModal = (props) => {
 
   const taskLoader = Loader()
   const [isLoadingTask, setIsLoadingTask] = useState(taskLoader.isLoading())
+  const removeLoader = Loader()
+  const [isLoadingRemoval, setIsLoadingRemoval] = useState(removeLoader.isLoading())
   const [task, setTask] = useState(() => {
     const taskFiles = Object.entries(taskToEdit).length
       ? taskToEdit.files.map(file => ({
@@ -114,6 +121,8 @@ const TaskModal = (props) => {
           close()
           taskLoader.loaded()
           setIsLoadingTask(taskLoader.isLoading())
+          removeLoader.loaded()
+          setIsLoadingRemoval(removeLoader.isLoading())
           if (props.activeTutorialStepName === 'fourthStep' || props.activeTutorialStepName === 'fifthStep') {
             handleTutorialNextStep()
           }
@@ -123,6 +132,8 @@ const TaskModal = (props) => {
       console.error(error)
       taskLoader.loaded()
       setIsLoadingTask(taskLoader.isLoading())
+      removeLoader.loaded()
+      setIsLoadingRemoval(removeLoader.isLoading())
       if (props.activeTutorialStepName === 'fourthStep' || props.activeTutorialStepName === 'fifthStep') {
         handleTutorialNextStep()
       }
@@ -171,6 +182,16 @@ const TaskModal = (props) => {
         .catch(requestHandler.onError)
         .finally(requestHandler.finally)
     }
+  }
+
+  const removeTask = () => {
+    removeLoader.loading()
+    setIsLoadingRemoval(removeLoader.isLoading())
+
+    removeTaskRequest(token, taskToEdit.task_id)
+      .then(requestHandler.onSuccess)
+      .catch(requestHandler.onError)
+      .finally(requestHandler.finally)
   }
 
   useEffect(() => {
@@ -236,9 +257,12 @@ const TaskModal = (props) => {
           </div>
         </div>
         <div className='new-task-modal-bottom'>
-          <ButtonGroup
-            buttonText='DESCARTAR' handleClick={close}
-          />
+          {
+            Object.entries(taskToEdit).length
+              ? <ButtonGroup deleteButton handleClick={removeTask} loading={isLoadingRemoval} buttonText='BORRAR'> </ButtonGroup>
+              : <ButtonGroup buttonText='DESCARTAR' handleClick={close} />
+          }
+
           <ButtonGroup
             buttonText='GUARDAR'
             canSubmit={canSaveTask}

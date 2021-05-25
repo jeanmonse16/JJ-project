@@ -6,7 +6,7 @@ const ColumnTitle = (props) => {
   return (
     <div className='column-title-cotainer'>
       <input type='text' id={titleId} defaultValue={title} placeholder='Título columna #1' onBlur={() => handleEvent('onBlur', props.activeTutorialStepName)} onInput={setColumnName} />
-      <i className='edit-title-icon fal fa-pencil-alt' />
+      <i className="edit-title-icon fas fa-trash-alt" />
     </div>
   )
 }

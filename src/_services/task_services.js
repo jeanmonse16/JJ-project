@@ -37,3 +37,13 @@ export function uploadFiles (token, files, send = true) {
     })
     : Promise.resolve({})
 }
+
+export function removeTask (token, taskId) {
+  return Axios({
+    method: 'DELETE',
+    url: `${ENV.USERS_API}tasks/${taskId}`,
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  })
+}

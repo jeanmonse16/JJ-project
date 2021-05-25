@@ -1920,10 +1920,12 @@
     top: 5px;
     font-size: 20px;
     opacity: 0;
+    color: #fc5c65;
     transition: all 0.5s ease;
 }
 .dashboard-container .task-container .task-center .column-container .column-title-cotainer .edit-title-icon:hover{
     cursor: pointer;
+    transform: scale(1.1);
 }
 .dashboard-container .task-container .task-center .column-container .column-number{
     font-size: 15px;
@@ -2045,26 +2047,78 @@
     position: relative;
     width: 100%;
     height: 40px;
-    box-shadow: 0 1px 3px gray; 
+    box-shadow: 0 1px 3px gray;
+    
+    /* FLEX */
+    display: flex;
 }
-.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title{
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title-container{
     width: 100%;
+    transition: all 1s ease;
 }
-.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title p{
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title-container .card-title{
     font-size: 15px;
     font-weight: 500;
     margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-number{
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .card-title-container .card-number{
     font-size: 15px;
     font-weight: 500;
     margin-left: 10px;
     color: gray;
 }
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .delete-btn-container{
+    width: 15%;
+    opacity: 0;
+    transition: all 1s ease;
+
+    /* FLEX */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fc5c65;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .delete-btn-container .delete-btn{
+    transition: all 0.5s ease;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-header .delete-btn-container .delete-btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.dashboard-container .task-container .task-center .column-container .card-container:hover .card-header .card-title-container{
+    width: 85%;
+}
+.dashboard-container .task-container .task-center .column-container .card-container:hover .card-header .delete-btn-container{
+    opacity: 1;
+}
 .dashboard-container .task-container .task-center .column-container .card-container .card-description{
-    width: 230px;
-    height: 130px;
-    padding: 5px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 118px;
+    padding: 5px 0 5px 15px;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description::-webkit-scrollbar{
+    width: 15px;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description::-webkit-scrollbar-thumb{
+    background-color: #2bcbba;
+    border-radius: 10px;
+    border: solid 5px white;
+    display: none;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+.dashboard-container .task-container .task-center .column-container .card-container .card-description p{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .dashboard-container .task-container .task-center .column-container .card-container .card-date{
     width: 100%;
@@ -2352,6 +2406,9 @@
 }
 .dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom .btn{
     margin: 0 20px;
+}
+.dashboard-container .new-task-modal .new-task-modal-body .new-task-modal-bottom .delete{
+    background-color: #fc5c65;
 }
 .dashboard-container .welcome-modal{
     position: fixed;

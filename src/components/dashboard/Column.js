@@ -5,7 +5,7 @@ import Card from './Card'
 import UUIDGenerator from '../../_utils/UUID_Generator'
 
 const Column = (props) => {
-  const { name, id = null, tasks = [], handleEvent = (e) => null, handleNewTaskButtonClick, setColumnName = () => null, inputId } = props
+  const { getUserProfile = () => null, name, id = null, tasks = [], handleEvent = (e) => null, handleNewTaskButtonClick, setColumnName = () => null, inputId } = props
   return (
     <div className='column-container'>
       {
@@ -18,10 +18,10 @@ const Column = (props) => {
             <button onClick={handleNewTaskButtonClick}><i className='new-task-icon far fa-plus' /></button>
             {
               tasks.map((task, i) => (
-                <Card key={UUIDGenerator()} cardTitle={task.title} cardNumber={task.task_id} date={task.expires_at} description={task.description} files={task.files} taskToEdit={task} openTaskModal={handleNewTaskButtonClick} />
+                <Card key={UUIDGenerator()} getUserProfile={getUserProfile} cardTitle={task.title} cardNumber={task.task_id} date={task.expires_at} description={task.description} files={task.files} taskToEdit={task} openTaskModal={handleNewTaskButtonClick} />
               ))
             }
-            </>
+          </>
           : <> <ColumnTitle title='' titleId={inputId} handleEvent={handleEvent} setColumnName={setColumnName} />
             <button onClick={() => {
               handleEvent('onClick', props.activeTutorialStepName)
@@ -29,7 +29,7 @@ const Column = (props) => {
             }}
             ><i className='new-task-icon far fa-plus' />
             </button>
-            </>
+          </>
         /* Caso Al crear la columna:
                 <ColumnTitle
                     title="title-column-1"

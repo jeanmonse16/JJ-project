@@ -271,7 +271,7 @@ const Dashboard = (props) => {
               {ActiveTutorialStep && <ActiveTutorialStep.Component onJump={ActiveTutorialStep.handleJump} onAccept={ActiveTutorialStep.handleAccept} />}
               {
                 props.taskColumns.map((Column, i) => {
-                  if (Column.isGeneric) { return <Column.Component key={Column.id} {...Column.props} name={Column.name} /> } else { return <Column.Component key={Column.id} id={Column.id} tasks={Column.tasks} name={Column.name} {...Column.props} /> }
+                  if (Column.isGeneric) { return <Column.Component key={Column.id} {...Column.props} getUserProfile={getUserProfile} name={Column.name} /> } else { return <Column.Component key={Column.id} id={Column.id} tasks={Column.tasks} name={Column.name} getUserProfile={getUserProfile} {...Column.props} /> }
                 })
               }
             </div>
@@ -285,7 +285,7 @@ const Dashboard = (props) => {
               userPassword='********'
             /> */
           }
-        </>}
+          </>}
     </div>
 
   )
