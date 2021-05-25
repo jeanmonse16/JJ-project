@@ -28,10 +28,10 @@ const Card = (props) => {
               fileColor={fileColors[i]}
               fileName={getFromFilenamePath(file).filename}
               fileIcon={`file-attach-icon far fa-file-${fileExtensions[getFromFilenamePath(file).fileExtension]}`}
-              handleClick={() => openFileInNewWindow(ENV.filesUrl + getFromFilenamePath(file).filename, getFromFilenamePath(file).filename)}
+              handleClick={() => openFileInNewWindow(file, getFromFilenamePath(file).filename)}
             />
           ))}
-          </div>
+        </div>
         : null}
       <div className='card-information' style={{ width: files.length ? '250px' : '100%' }} onClick={handleTaskEdition}>
         <div className='card-header'>

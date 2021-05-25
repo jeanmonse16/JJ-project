@@ -175,6 +175,10 @@ const TaskModal = (props) => {
 
   useEffect(() => {
     if (props.activeTutorialStepName === 'fourthStep') { setShowTutorialStep(true) }
+
+    return () => {
+      setTaskToEdit({})
+    }
   }, [])
 
   return (
@@ -226,7 +230,7 @@ const TaskModal = (props) => {
                     fileUpIcon={`file-up-icon far fa-file-${fileExtensions[getFromFilenamePath(file.name).fileExtension]}`}
                     fileUpName={file.name}
                     handleRemove={() => removeTaskFile(i)}
-                  />}
+                    />}
               </div>
             ))}
           </div>

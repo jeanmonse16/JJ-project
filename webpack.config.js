@@ -7,13 +7,13 @@ const path = require('path')
 module.exports = (env, argv) => {
   const development = {
     "authMethod": JSON.stringify('jwt'),
-    "USERS_API": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app/.netlify/functions/api/users/'),
+    "USERS_API": JSON.stringify('http://localhost:9000/.netlify/functions/api/users/'),
     "FACEBOOK_APP_ID": JSON.stringify('928954197608186'),
     "GOOGLE_APP_ID": JSON.stringify('39290471449-jfojerbm3kggrh32smknhreil1vc5m8e.apps.googleusercontent.com'),
-    "GRAVATAR_API": JSON.stringify('https://www.gravatar.com/avatar/'),
-    "RANDOM_ITEMS_API": JSON.stringify('https://randomuser.me/api/'),
-    "filesUrl": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app/netlify/functions/api/taskfiles/'),
-    "cdnOrigin": JSON.stringify('https://festive-heyrovsky-0aafff.netlify.app')
+    "GRAVATAR_API": JSON.stringify('http://www.gravatar.com/avatar/'),
+    "RANDOM_ITEMS_API": JSON.stringify('http://randomuser.me/api/'),
+    "filesUrl": JSON.stringify('http://localhost:9000/netlify/functions/api/taskfiles/'),
+    "cdnOrigin": JSON.stringify('http://localhost:9000')
   }
 
   const production = {
